@@ -1,0 +1,20 @@
+<resources>
+    <color name="color_primary">#1976D2</color>
+    <color name="color_primary_dark">#0D47A1</color>
+    <color name="color_accent">#FF4081</color>
+    <color name="color_background">#F5F5F5</color>
+    <color name="color_surface">#FFFFFF</color>
+    <color name="color_on_surface">#212121</color>
+    <color name="color_text_secondary">#757575</color>
+    <color name="color_divider">#E0E0E0</color>
+
+    <!-- Vocab card colors (8 presets) -->
+    <color name="card_color_0">#EF9A9A</color>  <!-- red -->
+    <color name="card_color_1">#FFCC80</color>  <!-- orange -->
+    <color name="card_color_2">#FFF176</color>  <!-- yellow -->
+    <color name="card_color_3">#A5D6A7</color>  <!-- green -->
+    <color name="card_color_4">#80DEEA</color>  <!-- cyan -->
+    <color name="card_color_5">#90CAF9</color>  <!-- blue -->
+    <color name="card_color_6">#CE93D8</color>  <!-- purple -->
+    <color name="card_color_7">#F48FB1</color>  <!-- pink -->
+</resources>

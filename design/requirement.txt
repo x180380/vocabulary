@@ -1,0 +1,32 @@
+Task: Help me design and architect an Android app tailored for Chinese speakers to memorize English vocabulary hands-free (while running, walking, or driving).
+
+Core Requirements:
+A. Please refer to following screens(ignore two float buttons on screens) from other APP. following screen layout and style just for you reference, you can optimize them.
+screen 1: list of your favorite vocabs. user operations: 
+1. select a vocab to start memorizing. 
+2. select a vocab from screen 4 and add it to favorites. 
+3. remove vocab from favorites.
+screen 2: display a list words in a selected vocab.  user operations: 
+1. start playing words, go to screen 9. 
+2. control hide chinese , english or display both. 
+3. batch edit in screen 5: delete, move to other vocab and tag words.  
+4. click a word to display word detail in screen 3. 
+5. filter words by tag. 
+6. order words by alphabet or time.
+screen 3: display word detail incuding word, chinese explanation, example. user operations: 
+1. slide screen naviage words.  
+2. click and play word and example audio. 
+3. auto play words, go to screen 9. 
+4. hiding control: hide chinese or English , disply both. 
+5. display audio control: whether auto play audio.
+screen 4: display all vocabs, user can select one and add it to screen 1.
+screen 5: edit words list on screen 2.
+screen 6: auto play words. 
+screen 7: setting screens.
+screen 8: word detail when both chinese and English are displaying
+screen 9: select three listening word methods and play word one by one in screen 3. 
+method 1: hide English word in screen 3 and play Chinese explanation, then user say the English word or guess the word in brain. if touch screen 3 in any place, play the word audio then go to next word.
+method 2: hide Chinese explanation in screen 3 and play English word audio, then user guess the Chinese explanation in brain. if touch screen 3 in any place, play Chinese explanation then go to next word.
+method 3: display and play both English word and Chinese explanation. after pause serveral seconds, auto go to next word.
+
+B. use java as program language

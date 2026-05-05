@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /Users/lixinlong/project/vocabulary -name \".*\" -o -name \"*\" 2>/dev/null | wc -l)",
+      "WebSearch",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:dev.to)",
+      "Bash(java -version)",
+      "Read(//Users/lixinlong/Library/Android/**)",
+      "Read(//usr/local/**)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/gradle/gradle/v8.7.0/gradlew\" -o /Users/lixinlong/project/vocabulary/gradlew)",
+      "Bash(chmod +x /Users/lixinlong/project/vocabulary/gradlew)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/gradle/gradle/v8.7.0/gradle/wrapper/gradle-wrapper.jar\" -o /Users/lixinlong/project/vocabulary/gradle/wrapper/gradle-wrapper.jar)",
+      "Bash(xxd)",
+      "Bash(./gradlew --version)"
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/vocabListFragment">
+
+    <fragment
+        android:id="@+id/vocabListFragment"
+        android:name="com.vocabapp.presentation.vocablist.VocabListFragment"
+        android:label="@string/title_vocab_list"
+        tools:layout="@layout/fragment_vocab_list">
+
+        <action
+            android:id="@+id/action_vocabList_to_wordList"
+            app:destination="@id/wordListFragment" />
+        <action
+            android:id="@+id/action_vocabList_to_addVocab"
+            app:destination="@id/addVocabFragment" />
+        <action
+            android:id="@+id/action_vocabList_to_settings"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_vocabList_to_playbackMode"
+            app:destination="@id/playbackModeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/wordListFragment"
+        android:name="com.vocabapp.presentation.wordlist.WordListFragment"
+        android:label=""
+        tools:layout="@layout/fragment_word_list">
+
+        <argument
+            android:name="vocabBookId"
+            app:argType="long" />
+        <argument
+            android:name="vocabBookTitle"
+            app:argType="string"
+            android:defaultValue="" />
+
+        <action
+            android:id="@+id/action_wordList_to_wordDetail"
+            app:destination="@id/wordDetailFragment" />
+        <action
+            android:id="@+id/action_wordList_to_playbackMode"
+            app:destination="@id/playbackModeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/wordDetailFragment"
+        android:name="com.vocabapp.presentation.worddetail.WordDetailFragment"
+        android:label=""
+        tools:layout="@layout/fragment_word_detail">
+
+        <argument
+            android:name="vocabBookId"
+            app:argType="long" />
+        <argument
+            android:name="startWordId"
+            app:argType="long" />
+        <argument
+            android:name="playbackMode"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addVocabFragment"
+        android:name="com.vocabapp.presentation.addvocab.AddVocabFragment"
+        android:label="@string/title_add_vocab"
+        tools:layout="@layout/fragment_add_vocab" />
+
+    <fragment
+        android:id="@+id/playbackModeFragment"
+        android:name="com.vocabapp.presentation.playbackmode.PlaybackModeFragment"
+        android:label="@string/title_playback_mode"
+        tools:layout="@layout/fragment_playback_mode">
+
+        <argument
+            android:name="vocabBookId"
+            app:argType="long" />
+
+        <action
+            android:id="@+id/action_playbackMode_to_wordDetail"
+            app:destination="@id/wordDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.vocabapp.presentation.settings.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings" />
+
+</navigation>

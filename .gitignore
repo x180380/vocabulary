@@ -1,0 +1,23 @@
+# Gradle
+.gradle/
+build/
+**/build/
+
+# Local configuration
+local.properties
+
+# Android Studio / IntelliJ
+*.iml
+.idea/
+*.idea/
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services (keep template, ignore generated)
+google-services.json
+
+# OS
+.DS_Store
+Thumbs.db

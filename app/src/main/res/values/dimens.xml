@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="card_corner_radius">12dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="card_margin">6dp</dimen>
+    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="text_size_word">28sp</dimen>
+    <dimen name="text_size_phonetic">14sp</dimen>
+    <dimen name="text_size_definition">16sp</dimen>
+    <dimen name="text_size_example">14sp</dimen>
+    <dimen name="bottom_bar_height">56dp</dimen>
+</resources>

@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">单词本</string>
+
+    <!-- Screen titles -->
+    <string name="title_vocab_list">我的单词本</string>
+    <string name="title_add_vocab">添加单词本</string>
+    <string name="title_settings">收藏设置</string>
+    <string name="title_playback_mode">播放单词</string>
+
+    <!-- Actions -->
+    <string name="action_add">添加</string>
+    <string name="action_delete">删除</string>
+    <string name="action_move_to">移动至</string>
+    <string name="action_tag">标记</string>
+    <string name="action_cancel">取消</string>
+    <string name="action_confirm">确认</string>
+    <string name="action_select_all">全选</string>
+    <string name="action_edit">编辑</string>
+    <string name="action_create">新建单词本</string>
+    <string name="action_filter">筛选</string>
+    <string name="action_save">保存</string>
+
+    <!-- Word list bottom bar -->
+    <string name="listen_words">听单词</string>
+    <string name="hide_definition">隐藏释义</string>
+    <string name="card_study">卡片学习</string>
+
+    <!-- Sort options -->
+    <string name="sort_time_desc">时间倒序</string>
+    <string name="sort_time_asc">时间正序</string>
+    <string name="sort_alpha">字母排序</string>
+
+    <!-- Word detail -->
+    <string name="hide_word">隐藏单词</string>
+    <string name="show_word">显示单词</string>
+    <string name="hide_chinese">隐藏中文</string>
+    <string name="show_both">完整展示</string>
+    <string name="tap_to_reveal">点击显示单词</string>
+    <string name="auto_play">自动播放</string>
+
+    <!-- Playback modes -->
+    <string name="mode_chinese_recall_english">听中文回忆单词</string>
+    <string name="mode_english_recall_chinese">听单词回忆中文</string>
+    <string name="mode_study">学习模式</string>
+
+    <!-- Settings -->
+    <string name="setting_default_display">卡片默认展示</string>
+    <string name="setting_pronunciation">默认发音</string>
+    <string name="setting_auto_advance">自动切换间隔</string>
+    <string name="accent_american">美音</string>
+    <string name="accent_british">英音</string>
+    <string name="seconds_format">%d秒</string>
+
+    <!-- Empty states -->
+    <string name="empty_vocab_list">还没有单词本\n点击 + 添加</string>
+    <string name="empty_word_list">这个单词本还没有单词</string>
+
+    <!-- Batch mode -->
+    <string name="selected_count">已选择%d</string>
+
+    <!-- Create vocab -->
+    <string name="vocab_name_hint">输入单词本名称</string>
+
+    <!-- Word count -->
+    <string name="word_count_format">%d词</string>
+    <string name="word_progress_format">%d/%d</string>
+    <string name="play_word">Play pronunciation</string>
+    <string name="bookmark_word">Bookmark word</string>
+</resources>

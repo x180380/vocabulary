@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_background">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_surface"
+        android:elevation="4dp"
+        app:title="@string/title_add_vocab"
+        app:navigationIcon="@drawable/ic_back" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNewVocabBook"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="@string/action_create"
+        android:textSize="16sp"
+        android:layout_margin="16dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点击上方按钮新建单词本"
+        android:textSize="14sp"
+        android:textColor="@color/color_text_secondary"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp" />
+
+</LinearLayout>
