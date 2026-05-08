@@ -1,52 +1,2800 @@
 [
-  {"english":"abandon","chineseDefinition":"v. 放弃；抛弃","definitions":[{"partOfSpeech":"v.","meaning":"放弃；抛弃"}],"phonetics":{"british":"/əˈbændən/","american":"/əˈbændən/"},"examples":[{"english":"He abandoned his car on the motorway.","chinese":"他把车遗弃在了高速公路上。"}]},
-  {"english":"abstract","chineseDefinition":"adj. 抽象的 n. 摘要","definitions":[{"partOfSpeech":"adj.","meaning":"抽象的"},{"partOfSpeech":"n.","meaning":"摘要；抽象"}],"phonetics":{"british":"/ˈæbstrækt/","american":"/ˈæbstrækt/"},"examples":[{"english":"Art can be abstract or realistic.","chinese":"艺术可以是抽象的，也可以是写实的。"}]},
-  {"english":"accurate","chineseDefinition":"adj. 准确的；精确的","definitions":[{"partOfSpeech":"adj.","meaning":"准确的；精确的"}],"phonetics":{"british":"/ˈækjərət/","american":"/ˈækjərət/"},"examples":[{"english":"The weather forecast was not accurate.","chinese":"天气预报不准确。"}]},
-  {"english":"adapt","chineseDefinition":"v. 适应；改编","definitions":[{"partOfSpeech":"v.","meaning":"适应；改编"}],"phonetics":{"british":"/əˈdæpt/","american":"/əˈdæpt/"},"examples":[{"english":"Animals adapt to their environment over time.","chinese":"动物随着时间推移适应它们的环境。"}]},
-  {"english":"adequate","chineseDefinition":"adj. 足够的；适当的","definitions":[{"partOfSpeech":"adj.","meaning":"足够的；适当的"}],"phonetics":{"british":"/ˈædɪkwət/","american":"/ˈædɪkwət/"},"examples":[{"english":"Make sure you get adequate sleep each night.","chinese":"确保每晚有足够的睡眠。"}]},
-  {"english":"admire","chineseDefinition":"v. 钦佩；欣赏","definitions":[{"partOfSpeech":"v.","meaning":"钦佩；欣赏"}],"phonetics":{"british":"/ədˈmaɪə/","american":"/ədˈmaɪər/"},"examples":[{"english":"I admire her courage and determination.","chinese":"我钦佩她的勇气和决心。"}]},
-  {"english":"adopt","chineseDefinition":"v. 采用；收养","definitions":[{"partOfSpeech":"v.","meaning":"采用；收养"}],"phonetics":{"british":"/əˈdɒpt/","american":"/əˈdɑːpt/"},"examples":[{"english":"The committee adopted a new policy.","chinese":"委员会采用了新政策。"}]},
-  {"english":"advantage","chineseDefinition":"n. 优势；有利条件","definitions":[{"partOfSpeech":"n.","meaning":"优势；有利条件"}],"phonetics":{"british":"/ədˈvɑːntɪdʒ/","american":"/ədˈvæntɪdʒ/"},"examples":[{"english":"Being bilingual gives you an advantage in business.","chinese":"会两种语言在商业中能给你带来优势。"}]},
-  {"english":"affect","chineseDefinition":"v. 影响；感动","definitions":[{"partOfSpeech":"v.","meaning":"影响；感动"}],"phonetics":{"british":"/əˈfekt/","american":"/əˈfekt/"},"examples":[{"english":"Pollution affects everyone's health.","chinese":"污染影响每个人的健康。"}]},
-  {"english":"aggressive","chineseDefinition":"adj. 有进攻性的；好斗的","definitions":[{"partOfSpeech":"adj.","meaning":"有进攻性的；好斗的；侵略性的"}],"phonetics":{"british":"/əˈɡresɪv/","american":"/əˈɡresɪv/"},"examples":[{"english":"The dog became aggressive when threatened.","chinese":"狗受到威胁时变得具有攻击性。"}]},
-  {"english":"analyze","chineseDefinition":"v. 分析","definitions":[{"partOfSpeech":"v.","meaning":"分析"}],"phonetics":{"british":"/ˈænəlaɪz/","american":"/ˈænəlaɪz/"},"examples":[{"english":"Scientists analyzed the data carefully.","chinese":"科学家们仔细分析了数据。"}]},
-  {"english":"anxiety","chineseDefinition":"n. 焦虑；担忧","definitions":[{"partOfSpeech":"n.","meaning":"焦虑；担忧"}],"phonetics":{"british":"/æŋˈzaɪəti/","american":"/æŋˈzaɪəti/"},"examples":[{"english":"Many students feel anxiety before exams.","chinese":"许多学生考试前感到焦虑。"}]},
-  {"english":"appreciate","chineseDefinition":"v. 欣赏；感激；理解","definitions":[{"partOfSpeech":"v.","meaning":"欣赏；感激；理解"}],"phonetics":{"british":"/əˈpriːʃieɪt/","american":"/əˈpriːʃieɪt/"},"examples":[{"english":"I really appreciate your help.","chinese":"我非常感激你的帮助。"}]},
-  {"english":"appropriate","chineseDefinition":"adj. 适当的；恰当的","definitions":[{"partOfSpeech":"adj.","meaning":"适当的；恰当的"}],"phonetics":{"british":"/əˈprəʊpriət/","american":"/əˈproʊpriət/"},"examples":[{"english":"It is appropriate to dress formally for the interview.","chinese":"面试时穿正装是适当的。"}]},
-  {"english":"argument","chineseDefinition":"n. 争论；论点","definitions":[{"partOfSpeech":"n.","meaning":"争论；论点"}],"phonetics":{"british":"/ˈɑːɡjumənt/","american":"/ˈɑːrɡjumənt/"},"examples":[{"english":"They had a heated argument about politics.","chinese":"他们就政治问题进行了激烈争论。"}]},
-  {"english":"attitude","chineseDefinition":"n. 态度；看法","definitions":[{"partOfSpeech":"n.","meaning":"态度；看法"}],"phonetics":{"british":"/ˈætɪtjuːd/","american":"/ˈætɪtuːd/"},"examples":[{"english":"A positive attitude helps you succeed.","chinese":"积极的态度有助于你成功。"}]},
-  {"english":"attract","chineseDefinition":"v. 吸引","definitions":[{"partOfSpeech":"v.","meaning":"吸引"}],"phonetics":{"british":"/əˈtrækt/","american":"/əˈtrækt/"},"examples":[{"english":"The colorful flowers attracted many bees.","chinese":"五颜六色的花朵吸引了许多蜜蜂。"}]},
-  {"english":"available","chineseDefinition":"adj. 可获得的；有空的","definitions":[{"partOfSpeech":"adj.","meaning":"可获得的；有空的"}],"phonetics":{"british":"/əˈveɪləbl/","american":"/əˈveɪləbl/"},"examples":[{"english":"Are you available tomorrow afternoon?","chinese":"你明天下午有空吗？"}]},
-  {"english":"avoid","chineseDefinition":"v. 避免；回避","definitions":[{"partOfSpeech":"v.","meaning":"避免；回避"}],"phonetics":{"british":"/əˈvɔɪd/","american":"/əˈvɔɪd/"},"examples":[{"english":"Try to avoid eating too much junk food.","chinese":"尽量避免吃太多垃圾食品。"}]},
-  {"english":"aware","chineseDefinition":"adj. 意识到的；知道的","definitions":[{"partOfSpeech":"adj.","meaning":"意识到的；知道的"}],"phonetics":{"british":"/əˈweə/","american":"/əˈwer/"},"examples":[{"english":"Are you aware of the risks involved?","chinese":"你意识到其中的风险了吗？"}]},
-  {"english":"balance","chineseDefinition":"n./v. 平衡；余额","definitions":[{"partOfSpeech":"n.","meaning":"平衡；余额"},{"partOfSpeech":"v.","meaning":"使平衡"}],"phonetics":{"british":"/ˈbæləns/","american":"/ˈbæləns/"},"examples":[{"english":"A healthy diet requires a balance of nutrients.","chinese":"健康饮食需要营养均衡。"}]},
-  {"english":"benefit","chineseDefinition":"n./v. 好处；受益","definitions":[{"partOfSpeech":"n.","meaning":"好处；利益"},{"partOfSpeech":"v.","meaning":"受益；有益于"}],"phonetics":{"british":"/ˈbenɪfɪt/","american":"/ˈbenɪfɪt/"},"examples":[{"english":"Regular exercise has many health benefits.","chinese":"定期锻炼对健康有很多好处。"}]},
-  {"english":"beyond","chineseDefinition":"prep. 超出；在…之外","definitions":[{"partOfSpeech":"prep.","meaning":"超出；在…之外；超越"}],"phonetics":{"british":"/bɪˈjɒnd/","american":"/bɪˈjɑːnd/"},"examples":[{"english":"This problem is beyond my understanding.","chinese":"这个问题超出了我的理解范围。"}]},
-  {"english":"challenge","chineseDefinition":"n./v. 挑战","definitions":[{"partOfSpeech":"n.","meaning":"挑战"},{"partOfSpeech":"v.","meaning":"挑战；质疑"}],"phonetics":{"british":"/ˈtʃælɪndʒ/","american":"/ˈtʃælɪndʒ/"},"examples":[{"english":"Learning a new language is a real challenge.","chinese":"学习一门新语言是一项真正的挑战。"}]},
-  {"english":"circumstance","chineseDefinition":"n. 情况；环境；境遇","definitions":[{"partOfSpeech":"n.","meaning":"情况；环境；境遇"}],"phonetics":{"british":"/ˈsɜːkəmstæns/","american":"/ˈsɜːrkəmstæns/"},"examples":[{"english":"Under no circumstances should you lie.","chinese":"无论如何都不能撒谎。"}]},
-  {"english":"concentrate","chineseDefinition":"v. 集中；专注","definitions":[{"partOfSpeech":"v.","meaning":"集中；专注；浓缩"}],"phonetics":{"british":"/ˈkɒnsntreɪt/","american":"/ˈkɑːnsntreɪt/"},"examples":[{"english":"It's hard to concentrate when there is noise.","chinese":"有噪音时很难集中注意力。"}]},
-  {"english":"confident","chineseDefinition":"adj. 自信的；确信的","definitions":[{"partOfSpeech":"adj.","meaning":"自信的；确信的"}],"phonetics":{"british":"/ˈkɒnfɪdənt/","american":"/ˈkɑːnfɪdənt/"},"examples":[{"english":"She was confident she would pass the exam.","chinese":"她确信自己会通过考试。"}]},
-  {"english":"conflict","chineseDefinition":"n./v. 冲突；矛盾","definitions":[{"partOfSpeech":"n.","meaning":"冲突；矛盾"},{"partOfSpeech":"v.","meaning":"冲突；抵触"}],"phonetics":{"british":"/ˈkɒnflɪkt/","american":"/ˈkɑːnflɪkt/"},"examples":[{"english":"There is a conflict between work and family.","chinese":"工作与家庭之间存在冲突。"}]},
-  {"english":"consequence","chineseDefinition":"n. 后果；结果","definitions":[{"partOfSpeech":"n.","meaning":"后果；结果"}],"phonetics":{"british":"/ˈkɒnsɪkwəns/","american":"/ˈkɑːnsɪkwəns/"},"examples":[{"english":"Think about the consequences before you act.","chinese":"行动之前想想后果。"}]},
-  {"english":"consider","chineseDefinition":"v. 考虑；认为","definitions":[{"partOfSpeech":"v.","meaning":"考虑；认为；重视"}],"phonetics":{"british":"/kənˈsɪdə/","american":"/kənˈsɪdər/"},"examples":[{"english":"Please consider all the options carefully.","chinese":"请仔细考虑所有选项。"}]},
-  {"english":"contribute","chineseDefinition":"v. 贡献；捐献；投稿","definitions":[{"partOfSpeech":"v.","meaning":"贡献；捐献；投稿"}],"phonetics":{"british":"/kənˈtrɪbjuːt/","american":"/kənˈtrɪbjuːt/"},"examples":[{"english":"Everyone should contribute to society.","chinese":"每个人都应该为社会做贡献。"}]},
-  {"english":"convince","chineseDefinition":"v. 说服；使确信","definitions":[{"partOfSpeech":"v.","meaning":"说服；使确信"}],"phonetics":{"british":"/kənˈvɪns/","american":"/kənˈvɪns/"},"examples":[{"english":"I tried to convince him to change his mind.","chinese":"我试图说服他改变主意。"}]},
-  {"english":"critical","chineseDefinition":"adj. 批评的；关键的","definitions":[{"partOfSpeech":"adj.","meaning":"批评的；批判性的；关键的"}],"phonetics":{"british":"/ˈkrɪtɪkl/","american":"/ˈkrɪtɪkl/"},"examples":[{"english":"It is critical to act quickly in an emergency.","chinese":"紧急情况下迅速行动至关重要。"}]},
-  {"english":"curiosity","chineseDefinition":"n. 好奇心","definitions":[{"partOfSpeech":"n.","meaning":"好奇心"}],"phonetics":{"british":"/ˌkjʊəriˈɒsəti/","american":"/ˌkjʊriˈɑːsəti/"},"examples":[{"english":"Curiosity is the key to learning.","chinese":"好奇心是学习的关键。"}]},
-  {"english":"demand","chineseDefinition":"n./v. 需求；要求","definitions":[{"partOfSpeech":"n.","meaning":"需求；要求"},{"partOfSpeech":"v.","meaning":"要求；需要"}],"phonetics":{"british":"/dɪˈmɑːnd/","american":"/dɪˈmænd/"},"examples":[{"english":"There is a growing demand for organic food.","chinese":"对有机食品的需求不断增长。"}]},
-  {"english":"devote","chineseDefinition":"v. 把…专用于；献身","definitions":[{"partOfSpeech":"v.","meaning":"把…专用于；献身；奉献"}],"phonetics":{"british":"/dɪˈvəʊt/","american":"/dɪˈvoʊt/"},"examples":[{"english":"She devoted her life to helping others.","chinese":"她把一生奉献给了帮助他人。"}]},
-  {"english":"diverse","chineseDefinition":"adj. 多样的；各种各样的","definitions":[{"partOfSpeech":"adj.","meaning":"多样的；各种各样的"}],"phonetics":{"british":"/daɪˈvɜːs/","american":"/daɪˈvɜːrs/"},"examples":[{"english":"Our team has diverse backgrounds and skills.","chinese":"我们的团队有多样化的背景和技能。"}]},
-  {"english":"dominant","chineseDefinition":"adj. 占主导地位的；显性的","definitions":[{"partOfSpeech":"adj.","meaning":"占主导地位的；显性的"}],"phonetics":{"british":"/ˈdɒmɪnənt/","american":"/ˈdɑːmɪnənt/"},"examples":[{"english":"English is the dominant language in business.","chinese":"英语是商业领域的主导语言。"}]},
-  {"english":"efficient","chineseDefinition":"adj. 高效的；有效率的","definitions":[{"partOfSpeech":"adj.","meaning":"高效的；有效率的"}],"phonetics":{"british":"/ɪˈfɪʃnt/","american":"/ɪˈfɪʃnt/"},"examples":[{"english":"We need to find a more efficient way to work.","chinese":"我们需要找到一种更有效率的工作方式。"}]},
-  {"english":"emphasize","chineseDefinition":"v. 强调；重视","definitions":[{"partOfSpeech":"v.","meaning":"强调；重视"}],"phonetics":{"british":"/ˈemfəsaɪz/","american":"/ˈemfəsaɪz/"},"examples":[{"english":"The teacher emphasized the importance of reading.","chinese":"老师强调了阅读的重要性。"}]},
-  {"english":"encourage","chineseDefinition":"v. 鼓励；促进","definitions":[{"partOfSpeech":"v.","meaning":"鼓励；促进"}],"phonetics":{"british":"/ɪnˈkʌrɪdʒ/","american":"/ɪnˈkɜːrɪdʒ/"},"examples":[{"english":"Parents should encourage their children to read.","chinese":"父母应该鼓励孩子阅读。"}]},
-  {"english":"ensure","chineseDefinition":"v. 确保；保证","definitions":[{"partOfSpeech":"v.","meaning":"确保；保证"}],"phonetics":{"british":"/ɪnˈʃʊə/","american":"/ɪnˈʃʊr/"},"examples":[{"english":"We must ensure the safety of all students.","chinese":"我们必须确保所有学生的安全。"}]},
-  {"english":"establish","chineseDefinition":"v. 建立；创立；确立","definitions":[{"partOfSpeech":"v.","meaning":"建立；创立；确立"}],"phonetics":{"british":"/ɪˈstæblɪʃ/","american":"/ɪˈstæblɪʃ/"},"examples":[{"english":"They established a new company last year.","chinese":"他们去年成立了一家新公司。"}]},
-  {"english":"evaluate","chineseDefinition":"v. 评估；评价","definitions":[{"partOfSpeech":"v.","meaning":"评估；评价"}],"phonetics":{"british":"/ɪˈvæljueɪt/","american":"/ɪˈvæljueɪt/"},"examples":[{"english":"Teachers evaluate students through tests.","chinese":"教师通过考试评估学生。"}]},
-  {"english":"evidence","chineseDefinition":"n. 证据；证明","definitions":[{"partOfSpeech":"n.","meaning":"证据；证明"}],"phonetics":{"british":"/ˈevɪdəns/","american":"/ˈevɪdəns/"},"examples":[{"english":"There is no evidence to support that claim.","chinese":"没有证据支持那种说法。"}]},
-  {"english":"evolution","chineseDefinition":"n. 进化；演变","definitions":[{"partOfSpeech":"n.","meaning":"进化；演变；发展"}],"phonetics":{"british":"/ˌiːvəˈluːʃn/","american":"/ˌevəˈluːʃn/"},"examples":[{"english":"Darwin's theory of evolution changed science.","chinese":"达尔文的进化论改变了科学。"}]},
-  {"english":"expand","chineseDefinition":"v. 扩展；膨胀","definitions":[{"partOfSpeech":"v.","meaning":"扩展；扩大；膨胀"}],"phonetics":{"british":"/ɪkˈspænd/","american":"/ɪkˈspænd/"},"examples":[{"english":"The company plans to expand into new markets.","chinese":"公司计划向新市场扩张。"}]},
-  {"english":"expect","chineseDefinition":"v. 期待；预期","definitions":[{"partOfSpeech":"v.","meaning":"期待；预期"}],"phonetics":{"british":"/ɪkˈspekt/","american":"/ɪkˈspekt/"},"examples":[{"english":"I expect you to arrive on time.","chinese":"我希望你准时到达。"}]},
-  {"english":"experience","chineseDefinition":"n./v. 经验；经历","definitions":[{"partOfSpeech":"n.","meaning":"经验；经历"},{"partOfSpeech":"v.","meaning":"经历；体验"}],"phonetics":{"british":"/ɪkˈspɪəriəns/","american":"/ɪkˈspɪriəns/"},"examples":[{"english":"Travel gives you valuable life experience.","chinese":"旅行给你宝贵的人生经历。"}]},
-  {"english":"explore","chineseDefinition":"v. 探索；探险","definitions":[{"partOfSpeech":"v.","meaning":"探索；探险；研究"}],"phonetics":{"british":"/ɪkˈsplɔː/","american":"/ɪkˈsplɔːr/"},"examples":[{"english":"Scientists continue to explore the universe.","chinese":"科学家继续探索宇宙。"}]}
+    {
+        "id": 1001,
+        "english": "accelerate",
+        "phonetics": {
+            "british": "əkˈseləreɪt",
+            "american": "ækˈseləreɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "加速，促进"
+            }
+        ],
+        "examples": [
+            {
+                "english": "We need to accelerate the pace of reform.",
+                "chinese": "我们需要加快改革步伐。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1002,
+        "english": "accessible",
+        "phonetics": {
+            "british": "əkˈsesɪbl",
+            "american": "ækˈsesɪbl"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "可接近的，可使用的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The internet has made information more accessible.",
+                "chinese": "互联网使信息更容易获取。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1003,
+        "english": "accommodate",
+        "phonetics": {
+            "british": "əˈkɒmədeɪt",
+            "american": "əˈkɑːmədeɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "容纳，适应，为...提供住宿"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The hotel can accommodate up to 500 guests.",
+                "chinese": "这家酒店最多可容纳500位客人。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1004,
+        "english": "acknowledge",
+        "phonetics": {
+            "british": "əkˈnɒlɪdʒ",
+            "american": "ækˈnɑːlɪdʒ"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "承认，承认...的存在，致谢"
+            }
+        ],
+        "examples": [
+            {
+                "english": "She acknowledged that she had made a mistake.",
+                "chinese": "她承认自己犯了错误。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1005,
+        "english": "advocate",
+        "phonetics": {
+            "british": "ˈædvəkeɪt",
+            "american": "ˈædvəkeɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "倡导，提倡"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "倡导者，辩护律师"
+            }
+        ],
+        "examples": [
+            {
+                "english": "He advocates a return to traditional values.",
+                "chinese": "他提倡回归传统价值观。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1006,
+        "english": "aesthetic",
+        "phonetics": {
+            "british": "iːsˈθetɪk",
+            "american": "esˈθetɪk"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "审美的，美学的"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "美学，审美观"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The building has great aesthetic appeal.",
+                "chinese": "这座建筑具有极大的审美吸引力。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1007,
+        "english": "ambiguous",
+        "phonetics": {
+            "british": "æmˈbɪɡjuəs",
+            "american": "æmˈbɪɡjuəs"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "模糊的，有歧义的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "His answer was deliberately ambiguous.",
+                "chinese": "他的回答故意含糊其辞。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1008,
+        "english": "analogy",
+        "phonetics": {
+            "british": "əˈnælədʒi",
+            "american": "əˈnælədʒi"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "类比，比拟"
+            }
+        ],
+        "examples": [
+            {
+                "english": "He drew an analogy between the brain and a computer.",
+                "chinese": "他把大脑和计算机进行类比。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1009,
+        "english": "anticipate",
+        "phonetics": {
+            "british": "ænˈtɪsɪpeɪt",
+            "american": "ænˈtɪsɪpeɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "预期，期待，预见"
+            }
+        ],
+        "examples": [
+            {
+                "english": "We anticipate that sales will increase next year.",
+                "chinese": "我们预计明年销售额将增加。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1010,
+        "english": "arbitrary",
+        "phonetics": {
+            "british": "ˈɑːbɪtrəri",
+            "american": "ˈɑːrbɪtreri"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "任意的，武断的，专制的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The choice seemed completely arbitrary.",
+                "chinese": "这个选择看起来完全是任意的。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1011,
+        "english": "assertion",
+        "phonetics": {
+            "british": "əˈsɜːʃn",
+            "american": "əˈsɜːrʃn"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "断言，主张，声明"
+            }
+        ],
+        "examples": [
+            {
+                "english": "His assertion that he was innocent was not believed.",
+                "chinese": "他声称自己无辜，但没有人相信。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1012,
+        "english": "assumption",
+        "phonetics": {
+            "british": "əˈsʌmpʃn",
+            "american": "əˈsʌmpʃn"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "假设，假定，承担"
+            }
+        ],
+        "examples": [
+            {
+                "english": "We should not make assumptions about people.",
+                "chinese": "我们不应对人妄加猜测。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1013,
+        "english": "attribute",
+        "phonetics": {
+            "british": "ˈætrɪbjuːt",
+            "american": "ˈætrɪbjuːt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "把...归因于"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "属性，特征"
+            }
+        ],
+        "examples": [
+            {
+                "english": "She attributed her success to hard work.",
+                "chinese": "她把她的成功归因于勤奋。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1014,
+        "english": "authentic",
+        "phonetics": {
+            "british": "ɔːˈθentɪk",
+            "american": "ɔːˈθentɪk"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "真实的，真正的，可靠的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "This is an authentic Ming dynasty vase.",
+                "chinese": "这是一件真正的明朝花瓶。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1015,
+        "english": "autonomy",
+        "phonetics": {
+            "british": "ɔːˈtɒnəmi",
+            "american": "ɔːˈtɑːnəmi"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "自治，自主权"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The region has considerable autonomy.",
+                "chinese": "该地区拥有相当大的自治权。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1016,
+        "english": "bias",
+        "phonetics": {
+            "british": "ˈbaɪəs",
+            "american": "ˈbaɪəs"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "偏见，偏差"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "使有偏见"
+            }
+        ],
+        "examples": [
+            {
+                "english": "We must be aware of our own biases.",
+                "chinese": "我们必须意识到自己的偏见。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1017,
+        "english": "catastrophe",
+        "phonetics": {
+            "british": "kəˈtæstrəfi",
+            "american": "kəˈtæstrəfi"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "大灾难，灾祸"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The earthquake was an absolute catastrophe.",
+                "chinese": "这场地震是一场彻底的灾难。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1018,
+        "english": "circumstance",
+        "phonetics": {
+            "british": "ˈsɜːkəmstəns",
+            "american": "ˈsɜːrkəmstæns"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "情况，环境，境况"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Under no circumstances should you leave the building.",
+                "chinese": "在任何情况下你都不应该离开大楼。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1019,
+        "english": "cognitive",
+        "phonetics": {
+            "british": "ˈkɒɡnɪtɪv",
+            "american": "ˈkɑːɡnɪtɪv"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "认知的，认识的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Reading improves cognitive development in children.",
+                "chinese": "阅读促进儿童的认知发展。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1020,
+        "english": "coincide",
+        "phonetics": {
+            "british": "ˌkəʊɪnˈsaɪd",
+            "american": "ˌkoʊɪnˈsaɪd"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "同时发生，一致，符合"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The concert coincided with my birthday.",
+                "chinese": "音乐会恰好与我的生日同一天。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1021,
+        "english": "collapse",
+        "phonetics": {
+            "british": "kəˈlæps",
+            "american": "kəˈlæps"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "倒塌，崩溃，瓦解"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "倒塌，崩溃"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The old building finally collapsed.",
+                "chinese": "那栋老建筑终于倒塌了。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1022,
+        "english": "compelling",
+        "phonetics": {
+            "british": "kəmˈpelɪŋ",
+            "american": "kəmˈpelɪŋ"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "引人注目的，令人信服的，不可抗拒的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "She made a compelling argument.",
+                "chinese": "她提出了一个令人信服的论点。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1023,
+        "english": "compensation",
+        "phonetics": {
+            "british": "ˌkɒmpənˈseɪʃn",
+            "american": "ˌkɑːmpənˈseɪʃn"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "补偿，赔偿，薪酬"
+            }
+        ],
+        "examples": [
+            {
+                "english": "He received compensation for his injuries.",
+                "chinese": "他因受伤获得了赔偿。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1024,
+        "english": "complicated",
+        "phonetics": {
+            "british": "ˈkɒmplɪkeɪtɪd",
+            "american": "ˈkɑːmplɪkeɪtɪd"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "复杂的，难以理解的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The situation is more complicated than it seems.",
+                "chinese": "情况比看起来更加复杂。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1025,
+        "english": "comprehensive",
+        "phonetics": {
+            "british": "ˌkɒmprɪˈhensɪv",
+            "american": "ˌkɑːmprɪˈhensɪv"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "综合的，全面的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The report provides a comprehensive overview.",
+                "chinese": "该报告提供了全面的概述。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1026,
+        "english": "concentrate",
+        "phonetics": {
+            "british": "ˈkɒnsntreɪt",
+            "american": "ˈkɑːnsntreɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "集中注意力，聚集，浓缩"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Try to concentrate on what the teacher is saying.",
+                "chinese": "试着专注于老师所说的话。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1027,
+        "english": "contradiction",
+        "phonetics": {
+            "british": "ˌkɒntrəˈdɪkʃn",
+            "american": "ˌkɑːntrəˈdɪkʃn"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "矛盾，反驳，否认"
+            }
+        ],
+        "examples": [
+            {
+                "english": "There is a contradiction between what he says and does.",
+                "chinese": "他言行之间存在矛盾。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1028,
+        "english": "controversy",
+        "phonetics": {
+            "british": "ˈkɒntrəvɜːsi",
+            "american": "ˈkɑːntrəvɜːrsi"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "争论，争议"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The new law sparked great controversy.",
+                "chinese": "新法律引发了极大争议。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1029,
+        "english": "coordinate",
+        "phonetics": {
+            "british": "kəʊˈɔːdɪneɪt",
+            "american": "koʊˈɔːrdɪneɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "协调，配合"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "坐标"
+            }
+        ],
+        "examples": [
+            {
+                "english": "We need to coordinate our efforts.",
+                "chinese": "我们需要协调我们的努力。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1030,
+        "english": "crucial",
+        "phonetics": {
+            "british": "ˈkruːʃl",
+            "american": "ˈkruːʃl"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "至关重要的，关键的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "This decision is crucial to our future.",
+                "chinese": "这个决定对我们的未来至关重要。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1031,
+        "english": "cynical",
+        "phonetics": {
+            "british": "ˈsɪnɪkl",
+            "american": "ˈsɪnɪkl"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "愤世嫉俗的，冷嘲的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "He has become increasingly cynical about politics.",
+                "chinese": "他对政治越来越愤世嫉俗。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1032,
+        "english": "dedicate",
+        "phonetics": {
+            "british": "ˈdedɪkeɪt",
+            "american": "ˈdedɪkeɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "献身，致力于，题献"
+            }
+        ],
+        "examples": [
+            {
+                "english": "She dedicated her life to helping others.",
+                "chinese": "她将一生献给了帮助他人。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1033,
+        "english": "deliberate",
+        "phonetics": {
+            "british": "dɪˈlɪbərət",
+            "american": "dɪˈlɪbərət"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "故意的，深思熟虑的"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "深思，商议"
+            }
+        ],
+        "examples": [
+            {
+                "english": "It was a deliberate attempt to mislead people.",
+                "chinese": "这是一次故意误导人们的企图。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1034,
+        "english": "demonstrate",
+        "phonetics": {
+            "british": "ˈdemənstreɪt",
+            "american": "ˈdemənstreɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "证明，示范，示威游行"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The experiment demonstrates the principle clearly.",
+                "chinese": "这个实验清楚地证明了这一原理。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1035,
+        "english": "derive",
+        "phonetics": {
+            "british": "dɪˈraɪv",
+            "american": "dɪˈraɪv"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "获得，来自，推导"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Many English words derive from Latin.",
+                "chinese": "许多英语单词来源于拉丁语。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1036,
+        "english": "devastating",
+        "phonetics": {
+            "british": "ˈdevəsteɪtɪŋ",
+            "american": "ˈdevəsteɪtɪŋ"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "毁灭性的，令人极度震惊的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The flood had a devastating effect on the town.",
+                "chinese": "洪水对这个小镇造成了毁灭性的影响。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1037,
+        "english": "diminish",
+        "phonetics": {
+            "british": "dɪˈmɪnɪʃ",
+            "american": "dɪˈmɪnɪʃ"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "减少，降低，贬低"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Nothing could diminish her enthusiasm.",
+                "chinese": "没有什么能减弱她的热情。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1038,
+        "english": "discipline",
+        "phonetics": {
+            "british": "ˈdɪsɪplɪn",
+            "american": "ˈdɪsɪplɪn"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "纪律，学科，训练"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "训练，惩罚"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Success requires discipline and hard work.",
+                "chinese": "成功需要纪律和努力工作。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1039,
+        "english": "distinction",
+        "phonetics": {
+            "british": "dɪˈstɪŋkʃn",
+            "american": "dɪˈstɪŋkʃn"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "区别，差异，卓越"
+            }
+        ],
+        "examples": [
+            {
+                "english": "There is a clear distinction between the two concepts.",
+                "chinese": "这两个概念之间有明确的区别。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1040,
+        "english": "diverse",
+        "phonetics": {
+            "british": "daɪˈvɜːs",
+            "american": "daɪˈvɜːrs"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "多样的，不同的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The city has a diverse population.",
+                "chinese": "这座城市拥有多元化的人口。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1041,
+        "english": "eliminate",
+        "phonetics": {
+            "british": "ɪˈlɪmɪneɪt",
+            "american": "ɪˈlɪmɪneɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "消除，排除，淘汰"
+            }
+        ],
+        "examples": [
+            {
+                "english": "We must eliminate poverty and hunger.",
+                "chinese": "我们必须消除贫困和饥饿。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1042,
+        "english": "emerge",
+        "phonetics": {
+            "british": "ɪˈmɜːdʒ",
+            "american": "ɪˈmɜːrdʒ"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "出现，浮现，摆脱"
+            }
+        ],
+        "examples": [
+            {
+                "english": "A new theory has emerged in recent years.",
+                "chinese": "近年来出现了一种新理论。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1043,
+        "english": "emphasis",
+        "phonetics": {
+            "british": "ˈemfəsɪs",
+            "american": "ˈemfəsɪs"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "强调，重点，重要性"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The school places great emphasis on sports.",
+                "chinese": "该学校非常重视体育运动。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1044,
+        "english": "encounter",
+        "phonetics": {
+            "british": "ɪnˈkaʊntə",
+            "american": "ɪnˈkaʊntər"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "遇到，邂逅"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "遭遇，相遇"
+            }
+        ],
+        "examples": [
+            {
+                "english": "I encountered many difficulties along the way.",
+                "chinese": "我在途中遇到了许多困难。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1045,
+        "english": "enhance",
+        "phonetics": {
+            "british": "ɪnˈhɑːns",
+            "american": "ɪnˈhæns"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "提高，增强，增进"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Exercise can enhance your mood and energy.",
+                "chinese": "运动可以提升你的心情和精力。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1046,
+        "english": "enormous",
+        "phonetics": {
+            "british": "ɪˈnɔːməs",
+            "american": "ɪˈnɔːrməs"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "巨大的，庞大的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The project required an enormous amount of work.",
+                "chinese": "这个项目需要大量的工作。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1047,
+        "english": "essence",
+        "phonetics": {
+            "british": "ˈesns",
+            "american": "ˈesns"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "本质，实质，精华"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The essence of democracy is freedom.",
+                "chinese": "民主的本质是自由。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1048,
+        "english": "ethical",
+        "phonetics": {
+            "british": "ˈeθɪkl",
+            "american": "ˈeθɪkl"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "道德的，伦理的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Doctors must follow strict ethical guidelines.",
+                "chinese": "医生必须遵守严格的道德准则。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1049,
+        "english": "evident",
+        "phonetics": {
+            "british": "ˈevɪdənt",
+            "american": "ˈevɪdənt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "明显的，显然的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "It is evident that he is telling the truth.",
+                "chinese": "很明显他说的是实话。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1050,
+        "english": "evolve",
+        "phonetics": {
+            "british": "ɪˈvɒlv",
+            "american": "ɪˈvɑːlv"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "发展，进化，逐渐形成"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Language evolves constantly over time.",
+                "chinese": "语言随着时间不断演变。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1051,
+        "english": "exclusive",
+        "phonetics": {
+            "british": "ɪkˈskluːsɪv",
+            "american": "ɪkˈskluːsɪv"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "独有的，排外的，高档的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "This is an exclusive club for members only.",
+                "chinese": "这是一个只限会员的高级俱乐部。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1052,
+        "english": "facilitate",
+        "phonetics": {
+            "british": "fəˈsɪlɪteɪt",
+            "american": "fəˈsɪlɪteɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "促进，使容易，推动"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Technology facilitates communication across the world.",
+                "chinese": "技术促进了全世界的交流。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1053,
+        "english": "fluctuate",
+        "phonetics": {
+            "british": "ˈflʌktʃueɪt",
+            "american": "ˈflʌktʃueɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "波动，起伏，变动"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Prices fluctuate with supply and demand.",
+                "chinese": "价格随供需关系波动。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1054,
+        "english": "fundamental",
+        "phonetics": {
+            "british": "ˌfʌndəˈmentl",
+            "american": "ˌfʌndəˈmentl"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "基本的，根本的"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "基本原理，基础"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Freedom of speech is a fundamental right.",
+                "chinese": "言论自由是一项基本权利。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1055,
+        "english": "generate",
+        "phonetics": {
+            "british": "ˈdʒenəreɪt",
+            "american": "ˈdʒenəreɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "产生，引起，发电"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Wind turbines generate electricity.",
+                "chinese": "风力涡轮机发电。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1056,
+        "english": "genuine",
+        "phonetics": {
+            "british": "ˈdʒenjuɪn",
+            "american": "ˈdʒenjuɪn"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "真正的，真实的，诚恳的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "I have a genuine interest in art.",
+                "chinese": "我对艺术有真正的兴趣。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1057,
+        "english": "gradual",
+        "phonetics": {
+            "british": "ˈɡrædʒuəl",
+            "american": "ˈɡrædʒuəl"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "逐渐的，渐进的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "There has been a gradual improvement in his health.",
+                "chinese": "他的健康状况逐渐好转。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1058,
+        "english": "heritage",
+        "phonetics": {
+            "british": "ˈherɪtɪdʒ",
+            "american": "ˈherɪtɪdʒ"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "遗产，传统，文化遗产"
+            }
+        ],
+        "examples": [
+            {
+                "english": "We must protect our cultural heritage.",
+                "chinese": "我们必须保护我们的文化遗产。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1059,
+        "english": "hierarchy",
+        "phonetics": {
+            "british": "ˈhaɪərɑːki",
+            "american": "ˈhaɪərɑːrki"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "等级制度，层次结构"
+            }
+        ],
+        "examples": [
+            {
+                "english": "There is a strict hierarchy in the military.",
+                "chinese": "军队中有严格的等级制度。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1060,
+        "english": "illustrate",
+        "phonetics": {
+            "british": "ˈɪləstreɪt",
+            "american": "ˈɪləstreɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "说明，举例，给...作图解"
+            }
+        ],
+        "examples": [
+            {
+                "english": "This example illustrates my point perfectly.",
+                "chinese": "这个例子完美地说明了我的观点。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1061,
+        "english": "implement",
+        "phonetics": {
+            "british": "ˈɪmplɪment",
+            "american": "ˈɪmplɪment"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "实施，执行，落实"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "工具，器具"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The government plans to implement new policies.",
+                "chinese": "政府计划实施新政策。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1062,
+        "english": "imply",
+        "phonetics": {
+            "british": "ɪmˈplaɪ",
+            "american": "ɪmˈplaɪ"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "暗示，意味着，隐含"
+            }
+        ],
+        "examples": [
+            {
+                "english": "His silence implied that he agreed.",
+                "chinese": "他的沉默意味着他同意了。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1063,
+        "english": "inadequate",
+        "phonetics": {
+            "british": "ɪnˈædɪkwət",
+            "american": "ɪnˈædɪkwət"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "不足的，不充分的，不适当的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The current facilities are inadequate for our needs.",
+                "chinese": "目前的设施不能满足我们的需求。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1064,
+        "english": "incorporate",
+        "phonetics": {
+            "british": "ɪnˈkɔːpəreɪt",
+            "american": "ɪnˈkɔːrpəreɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "纳入，包含，合并"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The design incorporates many modern features.",
+                "chinese": "这个设计融入了许多现代特色。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1065,
+        "english": "inevitable",
+        "phonetics": {
+            "british": "ɪnˈevɪtəbl",
+            "american": "ɪnˈevɪtəbl"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "不可避免的，必然的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Change is inevitable in life.",
+                "chinese": "改变在生活中是不可避免的。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1066,
+        "english": "infrastructure",
+        "phonetics": {
+            "british": "ˈɪnfrəstrʌktʃə",
+            "american": "ˈɪnfrəstrʌktʃər"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "基础设施，基础架构"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The country needs to invest in its infrastructure.",
+                "chinese": "该国需要投资其基础设施。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1067,
+        "english": "innovative",
+        "phonetics": {
+            "british": "ˈɪnəveɪtɪv",
+            "american": "ˈɪnəveɪtɪv"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "创新的，革新的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The company is known for its innovative products.",
+                "chinese": "该公司以其创新产品而闻名。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1068,
+        "english": "insight",
+        "phonetics": {
+            "british": "ˈɪnsaɪt",
+            "american": "ˈɪnsaɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "洞察力，见解，深刻理解"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The book offers valuable insights into human nature.",
+                "chinese": "这本书对人性提供了宝贵的见解。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1069,
+        "english": "integrate",
+        "phonetics": {
+            "british": "ˈɪntɪɡreɪt",
+            "american": "ˈɪntɪɡreɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "整合，融入，使...一体化"
+            }
+        ],
+        "examples": [
+            {
+                "english": "We need to integrate new technology into our teaching.",
+                "chinese": "我们需要将新技术融入我们的教学中。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1070,
+        "english": "interpret",
+        "phonetics": {
+            "british": "ɪnˈtɜːprɪt",
+            "american": "ɪnˈtɜːrprɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "解释，口译，理解"
+            }
+        ],
+        "examples": [
+            {
+                "english": "How do you interpret his behavior?",
+                "chinese": "你怎么理解他的行为？"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1071,
+        "english": "justify",
+        "phonetics": {
+            "british": "ˈdʒʌstɪfaɪ",
+            "american": "ˈdʒʌstɪfaɪ"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "证明...正当，为...辩护，证明合理"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Can you justify your decision?",
+                "chinese": "你能为你的决定辩护吗？"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1072,
+        "english": "logical",
+        "phonetics": {
+            "british": "ˈlɒdʒɪkl",
+            "american": "ˈlɑːdʒɪkl"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "合乎逻辑的，合理的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "That is the logical conclusion.",
+                "chinese": "这是合乎逻辑的结论。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1073,
+        "english": "magnitude",
+        "phonetics": {
+            "british": "ˈmæɡnɪtjuːd",
+            "american": "ˈmæɡnɪtuːd"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "规模，重要性，震级"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The magnitude of the problem was not fully understood.",
+                "chinese": "这个问题的严重程度没有被完全理解。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1074,
+        "english": "manipulate",
+        "phonetics": {
+            "british": "məˈnɪpjuleɪt",
+            "american": "məˈnɪpjuleɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "操纵，操控，熟练使用"
+            }
+        ],
+        "examples": [
+            {
+                "english": "He tried to manipulate the situation.",
+                "chinese": "他试图操控局面。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1075,
+        "english": "mechanism",
+        "phonetics": {
+            "british": "ˈmekənɪzəm",
+            "american": "ˈmekənɪzəm"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "机制，机械装置，方法"
+            }
+        ],
+        "examples": [
+            {
+                "english": "We need a mechanism for resolving disputes.",
+                "chinese": "我们需要一个解决争端的机制。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1076,
+        "english": "methodology",
+        "phonetics": {
+            "british": "ˌmeθəˈdɒlədʒi",
+            "american": "ˌmeθəˈdɑːlədʒi"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "方法论，研究方法"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Their research methodology was questioned.",
+                "chinese": "他们的研究方法受到了质疑。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1077,
+        "english": "monitor",
+        "phonetics": {
+            "british": "ˈmɒnɪtə",
+            "american": "ˈmɑːnɪtər"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "监视，监控，监测"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "显示器，监控器，班长"
+            }
+        ],
+        "examples": [
+            {
+                "english": "We need to monitor the patient's condition.",
+                "chinese": "我们需要监测病人的状况。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1078,
+        "english": "motivation",
+        "phonetics": {
+            "british": "ˌməʊtɪˈveɪʃn",
+            "american": "ˌmoʊtɪˈveɪʃn"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "动机，积极性，激励"
+            }
+        ],
+        "examples": [
+            {
+                "english": "What is your motivation for studying abroad?",
+                "chinese": "你出国留学的动机是什么？"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1079,
+        "english": "negotiate",
+        "phonetics": {
+            "british": "nɪˈɡəʊʃieɪt",
+            "american": "nɪˈɡoʊʃieɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "谈判，协商，顺利通过"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The two sides agreed to negotiate.",
+                "chinese": "双方同意进行谈判。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1080,
+        "english": "nevertheless",
+        "phonetics": {
+            "british": "ˌnevəðəˈles",
+            "american": "ˌnevərðəˈles"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adv.",
+                "meaning": "尽管如此，然而，仍然"
+            }
+        ],
+        "examples": [
+            {
+                "english": "It was raining. Nevertheless, they went out.",
+                "chinese": "下着雨。尽管如此，他们还是出去了。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1081,
+        "english": "nuclear",
+        "phonetics": {
+            "british": "ˈnjuːkliə",
+            "american": "ˈnuːkliər"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "核的，原子核的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Nuclear energy is a controversial topic.",
+                "chinese": "核能是一个有争议的话题。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1082,
+        "english": "objective",
+        "phonetics": {
+            "british": "əbˈdʒektɪv",
+            "american": "əbˈdʒektɪv"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "目标，目的"
+            },
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "客观的，公正的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Our main objective is to increase sales.",
+                "chinese": "我们的主要目标是增加销售额。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1083,
+        "english": "obstacle",
+        "phonetics": {
+            "british": "ˈɒbstəkl",
+            "american": "ˈɑːbstəkl"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "障碍，阻碍，绊脚石"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Lack of money is the main obstacle.",
+                "chinese": "资金不足是主要障碍。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1084,
+        "english": "occupation",
+        "phonetics": {
+            "british": "ˌɒkjuˈpeɪʃn",
+            "american": "ˌɑːkjuˈpeɪʃn"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "职业，占领，消遣"
+            }
+        ],
+        "examples": [
+            {
+                "english": "What is your occupation?",
+                "chinese": "你的职业是什么？"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1085,
+        "english": "opportunity",
+        "phonetics": {
+            "british": "ˌɒpəˈtjuːnɪti",
+            "american": "ˌɑːpərˈtuːnɪti"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "机会，时机"
+            }
+        ],
+        "examples": [
+            {
+                "english": "This is a great opportunity for growth.",
+                "chinese": "这是一个很好的成长机会。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1086,
+        "english": "opposition",
+        "phonetics": {
+            "british": "ˌɒpəˈzɪʃn",
+            "american": "ˌɑːpəˈzɪʃn"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "反对，对抗，在野党"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The plan met with fierce opposition.",
+                "chinese": "该计划遭到强烈反对。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1087,
+        "english": "optimistic",
+        "phonetics": {
+            "british": "ˌɒptɪˈmɪstɪk",
+            "american": "ˌɑːptɪˈmɪstɪk"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "乐观的，乐观主义的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "She is optimistic about the future.",
+                "chinese": "她对未来持乐观态度。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1088,
+        "english": "outstanding",
+        "phonetics": {
+            "british": "ˌaʊtˈstændɪŋ",
+            "american": "ˌaʊtˈstændɪŋ"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "杰出的，未解决的，显著的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "She is an outstanding student.",
+                "chinese": "她是一名杰出的学生。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1089,
+        "english": "phenomenon",
+        "phonetics": {
+            "british": "fɪˈnɒmɪnən",
+            "american": "fɪˈnɑːmɪnən"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "现象，奇才，奇异之事"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Global warming is a serious phenomenon.",
+                "chinese": "全球变暖是一种严重的现象。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1090,
+        "english": "philosophy",
+        "phonetics": {
+            "british": "fɪˈlɒsəfi",
+            "american": "fɪˈlɑːsəfi"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "哲学，人生观，哲理"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Philosophy explores the meaning of life.",
+                "chinese": "哲学探索生命的意义。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1091,
+        "english": "potential",
+        "phonetics": {
+            "british": "pəˈtenʃl",
+            "american": "pəˈtenʃl"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "潜在的，可能的"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "潜力，可能性"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Every child has great potential.",
+                "chinese": "每个孩子都有巨大的潜力。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1092,
+        "english": "predominant",
+        "phonetics": {
+            "british": "prɪˈdɒmɪnənt",
+            "american": "prɪˈdɑːmɪnənt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "占主导地位的，主要的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Red is the predominant color in her paintings.",
+                "chinese": "红色是她绘画中的主色。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1093,
+        "english": "priority",
+        "phonetics": {
+            "british": "praɪˈɒrɪti",
+            "american": "praɪˈɔːrɪti"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "优先，优先事项，重要性"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Education is the government's top priority.",
+                "chinese": "教育是政府的首要任务。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1094,
+        "english": "profound",
+        "phonetics": {
+            "british": "prəˈfaʊnd",
+            "american": "prəˈfaʊnd"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "深刻的，深远的，深厚的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "His work had a profound influence on science.",
+                "chinese": "他的工作对科学产生了深远的影响。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1095,
+        "english": "prohibit",
+        "phonetics": {
+            "british": "prəˈhɪbɪt",
+            "american": "proʊˈhɪbɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "禁止，阻止"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Smoking is prohibited in this building.",
+                "chinese": "本楼禁止吸烟。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1096,
+        "english": "promote",
+        "phonetics": {
+            "british": "prəˈməʊt",
+            "american": "prəˈmoʊt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "促进，推广，晋升"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Exercise promotes good health.",
+                "chinese": "运动促进身体健康。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1097,
+        "english": "proportion",
+        "phonetics": {
+            "british": "prəˈpɔːʃn",
+            "american": "prəˈpɔːrʃn"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "比例，部分，均衡"
+            }
+        ],
+        "examples": [
+            {
+                "english": "A large proportion of the students passed.",
+                "chinese": "很大比例的学生通过了考试。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1098,
+        "english": "psychology",
+        "phonetics": {
+            "british": "saɪˈkɒlədʒi",
+            "american": "saɪˈkɑːlədʒi"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "心理学，心理"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Psychology is the study of human behavior.",
+                "chinese": "心理学是研究人类行为的学科。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1099,
+        "english": "rational",
+        "phonetics": {
+            "british": "ˈræʃnəl",
+            "american": "ˈræʃnəl"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "理性的，合理的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "We need a rational approach to this problem.",
+                "chinese": "我们需要对这个问题采取理性的方法。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1100,
+        "english": "recognize",
+        "phonetics": {
+            "british": "ˈrekəɡnaɪz",
+            "american": "ˈrekəɡnaɪz"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "认识，识别，承认"
+            }
+        ],
+        "examples": [
+            {
+                "english": "I didn't recognize him at first.",
+                "chinese": "我起初没有认出他。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1101,
+        "english": "reform",
+        "phonetics": {
+            "british": "rɪˈfɔːm",
+            "american": "rɪˈfɔːrm"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "改革，改进，改造"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "改革，革新"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The country needs economic reform.",
+                "chinese": "该国需要经济改革。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1102,
+        "english": "regulate",
+        "phonetics": {
+            "british": "ˈreɡjuleɪt",
+            "american": "ˈreɡjuleɪt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "调节，控制，管理"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The government regulates food safety.",
+                "chinese": "政府监管食品安全。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1103,
+        "english": "reinforce",
+        "phonetics": {
+            "british": "ˌriːɪnˈfɔːs",
+            "american": "ˌriːɪnˈfɔːrs"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "加强，强化，增援"
+            }
+        ],
+        "examples": [
+            {
+                "english": "This reinforces my belief that he is honest.",
+                "chinese": "这加强了我对他诚实的信念。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1104,
+        "english": "relevant",
+        "phonetics": {
+            "british": "ˈreləvənt",
+            "american": "ˈreləvənt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "相关的，切题的，有意义的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Please stick to relevant information.",
+                "chinese": "请坚持相关信息。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1105,
+        "english": "reluctant",
+        "phonetics": {
+            "british": "rɪˈlʌktənt",
+            "american": "rɪˈlʌktənt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "不情愿的，勉强的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "She was reluctant to leave.",
+                "chinese": "她不情愿离开。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1106,
+        "english": "remedy",
+        "phonetics": {
+            "british": "ˈremədi",
+            "american": "ˈremədi"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "补救措施，药物，解决方法"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "补救，纠正"
+            }
+        ],
+        "examples": [
+            {
+                "english": "There is no simple remedy for this problem.",
+                "chinese": "这个问题没有简单的解决办法。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1107,
+        "english": "reveal",
+        "phonetics": {
+            "british": "rɪˈviːl",
+            "american": "rɪˈviːl"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "揭示，透露，显现"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The investigation revealed the truth.",
+                "chinese": "调查揭示了真相。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1108,
+        "english": "revolution",
+        "phonetics": {
+            "british": "ˌrevəˈluːʃn",
+            "american": "ˌrevəˈluːʃn"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "革命，大变革，旋转"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The industrial revolution changed society.",
+                "chinese": "工业革命改变了社会。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1109,
+        "english": "significant",
+        "phonetics": {
+            "british": "sɪɡˈnɪfɪkənt",
+            "american": "sɪɡˈnɪfɪkənt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "重要的，显著的，有意义的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "There has been a significant improvement.",
+                "chinese": "已经有了显著的改善。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1110,
+        "english": "simultaneously",
+        "phonetics": {
+            "british": "ˌsɪməlˈteɪniəsli",
+            "american": "ˌsaɪməlˈteɪniəsli"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adv.",
+                "meaning": "同时地，同步地"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The two events occurred simultaneously.",
+                "chinese": "两件事同时发生了。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1111,
+        "english": "sophisticated",
+        "phonetics": {
+            "british": "səˈfɪstɪkeɪtɪd",
+            "american": "səˈfɪstɪkeɪtɪd"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "复杂的，精密的，老练的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Modern technology is increasingly sophisticated.",
+                "chinese": "现代技术越来越复杂。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1112,
+        "english": "statistics",
+        "phonetics": {
+            "british": "stəˈtɪstɪks",
+            "american": "stəˈtɪstɪks"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "统计数字，统计学"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Statistics show that life expectancy is rising.",
+                "chinese": "统计数据显示预期寿命在提高。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1113,
+        "english": "stereotype",
+        "phonetics": {
+            "british": "ˈsteriəˌtaɪp",
+            "american": "ˈsteriəˌtaɪp"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "刻板印象，成见"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "对...形成固定看法"
+            }
+        ],
+        "examples": [
+            {
+                "english": "We should avoid racial stereotypes.",
+                "chinese": "我们应该避免种族刻板印象。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1114,
+        "english": "strategy",
+        "phonetics": {
+            "british": "ˈstrætədʒi",
+            "american": "ˈstrætədʒi"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "策略，战略，计划"
+            }
+        ],
+        "examples": [
+            {
+                "english": "We need a new marketing strategy.",
+                "chinese": "我们需要新的营销策略。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1115,
+        "english": "substantial",
+        "phonetics": {
+            "british": "səbˈstænʃl",
+            "american": "səbˈstænʃl"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "大量的，重要的，实质的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "He earned a substantial salary.",
+                "chinese": "他赚取了相当丰厚的薪水。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1116,
+        "english": "sustainable",
+        "phonetics": {
+            "british": "səˈsteɪnəbl",
+            "american": "səˈsteɪnəbl"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "可持续的，可持续发展的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "We need sustainable energy sources.",
+                "chinese": "我们需要可持续能源。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1117,
+        "english": "tendency",
+        "phonetics": {
+            "british": "ˈtendənsi",
+            "american": "ˈtendənsi"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "趋势，倾向，习性"
+            }
+        ],
+        "examples": [
+            {
+                "english": "There is a tendency to eat too much junk food.",
+                "chinese": "人们有吃太多垃圾食品的倾向。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1118,
+        "english": "transform",
+        "phonetics": {
+            "british": "trænsˈfɔːm",
+            "american": "trænsˈfɔːrm"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "改变，转变，改造"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Technology has transformed our lives.",
+                "chinese": "技术改变了我们的生活。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1119,
+        "english": "transparent",
+        "phonetics": {
+            "british": "trænsˈpærənt",
+            "american": "trænsˈpærənt"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "透明的，显而易见的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The government should be transparent.",
+                "chinese": "政府应该透明。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1120,
+        "english": "ultimate",
+        "phonetics": {
+            "british": "ˈʌltɪmət",
+            "american": "ˈʌltɪmət"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "最终的，终极的，根本的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The ultimate goal is to achieve world peace.",
+                "chinese": "最终目标是实现世界和平。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1121,
+        "english": "undermine",
+        "phonetics": {
+            "british": "ˌʌndəˈmaɪn",
+            "american": "ˌʌndərˈmaɪn"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "破坏，削弱，挖掘"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Corruption undermines public trust.",
+                "chinese": "腐败破坏公众信任。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1122,
+        "english": "universal",
+        "phonetics": {
+            "british": "ˌjuːnɪˈvɜːsl",
+            "american": "ˌjuːnɪˈvɜːrsl"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "普遍的，通用的，宇宙的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Music is a universal language.",
+                "chinese": "音乐是一种通用语言。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1123,
+        "english": "urban",
+        "phonetics": {
+            "british": "ˈɜːbən",
+            "american": "ˈɜːrbən"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "城市的，都市的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "More people are moving to urban areas.",
+                "chinese": "越来越多的人正在迁往城市地区。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1124,
+        "english": "utilize",
+        "phonetics": {
+            "british": "ˈjuːtɪlaɪz",
+            "american": "ˈjuːtɪlaɪz"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "利用，使用"
+            }
+        ],
+        "examples": [
+            {
+                "english": "We need to utilize our resources effectively.",
+                "chinese": "我们需要有效地利用我们的资源。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1125,
+        "english": "valid",
+        "phonetics": {
+            "british": "ˈvælɪd",
+            "american": "ˈvælɪd"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "有效的，有根据的，合理的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Your argument is valid.",
+                "chinese": "你的论点是有效的。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1126,
+        "english": "vanish",
+        "phonetics": {
+            "british": "ˈvænɪʃ",
+            "american": "ˈvænɪʃ"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "消失，突然不见"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The fog vanished as the sun rose.",
+                "chinese": "随着太阳升起，雾消散了。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1127,
+        "english": "variation",
+        "phonetics": {
+            "british": "ˌveəriˈeɪʃn",
+            "american": "ˌveriˈeɪʃn"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "变化，变异，变奏"
+            }
+        ],
+        "examples": [
+            {
+                "english": "There is a wide variation in price.",
+                "chinese": "价格变化很大。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1128,
+        "english": "virtual",
+        "phonetics": {
+            "british": "ˈvɜːtʃuəl",
+            "american": "ˈvɜːrtʃuəl"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "虚拟的，实际上的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Virtual reality is changing entertainment.",
+                "chinese": "虚拟现实正在改变娱乐方式。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1129,
+        "english": "vulnerable",
+        "phonetics": {
+            "british": "ˈvʌlnərəbl",
+            "american": "ˈvʌlnərəbl"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "脆弱的，易受伤的，易受攻击的"
+            }
+        ],
+        "examples": [
+            {
+                "english": "Children are particularly vulnerable to disease.",
+                "chinese": "儿童特别容易感染疾病。"
+            }
+        ],
+        "isBookmarked": false
+    },
+    {
+        "id": 1130,
+        "english": "welfare",
+        "phonetics": {
+            "british": "ˈwelfeə",
+            "american": "ˈwelfer"
+        },
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "福利，幸福，福祉"
+            }
+        ],
+        "examples": [
+            {
+                "english": "The government cares about the welfare of its citizens.",
+                "chinese": "政府关心公民的福祉。"
+            }
+        ],
+        "isBookmarked": false
+    }
 ]

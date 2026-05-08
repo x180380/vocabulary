@@ -20,6 +20,7 @@ import com.vocabapp.audio.TtsManager;
 import com.vocabapp.data.local.preferences.UserPreferencesManager;
 import com.vocabapp.databinding.FragmentWordDetailBinding;
 import com.vocabapp.domain.enums.PlaybackMode;
+import com.vocabapp.domain.enums.PronunciationAccent;
 import com.vocabapp.domain.enums.VisibilityMode;
 import com.vocabapp.domain.model.Definition;
 import com.vocabapp.domain.model.Word;
@@ -83,6 +84,16 @@ public class WordDetailFragment extends Fragment {
             }
 
             @Override
+            public void onPlayBritish(Word word) {
+                ttsManager.speakEnglish(word.english, PronunciationAccent.BRITISH, "phonetic_gb_" + word.id);
+            }
+
+            @Override
+            public void onPlayAmerican(Word word) {
+                ttsManager.speakEnglish(word.english, PronunciationAccent.AMERICAN, "phonetic_us_" + word.id);
+            }
+
+            @Override
             public void onPlayExample(Word word, int exampleIndex) {
                 if (word.examples != null && exampleIndex < word.examples.size()) {
                     ttsManager.speakEnglish(word.examples.get(exampleIndex).english,
@@ -105,8 +116,9 @@ public class WordDetailFragment extends Fragment {
         binding.viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
+                pagerAdapter.stopExampleAnimation();
                 viewModel.onPageChanged(position);
-                updateProgress(position, viewModel.getWordCount());
+                pagerAdapter.setCurrentPosition(position);
 
                 PlaybackMode mode = viewModel.playbackMode.getValue();
                 if (mode != null) {
@@ -125,9 +137,15 @@ public class WordDetailFragment extends Fragment {
         binding.toolbar.setNavigationOnClickListener(v ->
                 Navigation.findNavController(requireView()).navigateUp());
         binding.btnHideToggle.setOnClickListener(v -> cycleVisibilityMode());
-        binding.btnAutoPlay.setOnClickListener(v -> viewModel.toggleAutoAdvance());
-        binding.btnBookmark.setOnClickListener(v -> viewModel.toggleBookmark());
+        binding.btnAutoPlay.setOnClickListener(v -> {
+            long vocabBookId = getArguments() != null ? getArguments().getLong("vocabBookId", -1) : -1;
+            Bundle args = new Bundle();
+            args.putLong("vocabBookId", vocabBookId);
+            Navigation.findNavController(requireView())
+                    .navigate(R.id.action_wordDetail_to_playbackMode, args);
+        });
         binding.btnPlayWord.setOnClickListener(v -> {
+            pagerAdapter.stopExampleAnimation();
             List<Word> words = viewModel.allWords.getValue();
             Integer idx = viewModel.currentIndex.getValue();
             if (words != null && idx != null && idx < words.size()) {
@@ -137,9 +155,16 @@ public class WordDetailFragment extends Fragment {
         });
 
         binding.tapOverlay.setOnClickListener(v -> onTapOverlay());
+        binding.btnMute.setOnClickListener(v -> {
+            boolean nowMuted = !ttsManager.isMuted();
+            ttsManager.setMuted(nowMuted);
+            binding.btnMute.setColorFilter(nowMuted
+                    ? getResources().getColor(R.color.color_red_accent, null) : 0);
+        });
     }
 
     private void observeData() {
+        setupTtsProgressListener();
         viewModel.allWords.observe(getViewLifecycleOwner(), words -> {
             if (words == null || words.isEmpty()) return;
             pagerAdapter.setWords(words);
@@ -148,9 +173,9 @@ public class WordDetailFragment extends Fragment {
                 initialScrollDone = true;
                 int startIdx = viewModel.findStartIndex(words);
                 viewModel.currentIndex.setValue(startIdx);
+                pagerAdapter.setCurrentPosition(startIdx);
+                pagerAdapter.setCurrentBookmarked(words.get(startIdx).isBookmarked);
                 binding.viewPager.setCurrentItem(startIdx, false);
-                updateProgress(startIdx, words.size());
-                viewModel.isBookmarked.setValue(words.get(startIdx).isBookmarked);
 
                 PlaybackMode mode = viewModel.playbackMode.getValue();
                 if (mode != null) {
@@ -178,9 +203,7 @@ public class WordDetailFragment extends Fragment {
         });
 
         viewModel.isBookmarked.observe(getViewLifecycleOwner(), bookmarked ->
-                binding.btnBookmark.setImageResource(Boolean.TRUE.equals(bookmarked)
-                        ? android.R.drawable.btn_star_big_on
-                        : android.R.drawable.btn_star_big_off));
+                pagerAdapter.setCurrentBookmarked(Boolean.TRUE.equals(bookmarked)));
 
         viewModel.playbackMode.observe(getViewLifecycleOwner(), mode -> {
             if (mode == null) return;
@@ -197,6 +220,7 @@ public class WordDetailFragment extends Fragment {
             }
             binding.btnHideToggle.setVisibility(View.GONE);
             binding.btnAutoPlay.setVisibility(View.GONE);
+            binding.btnMute.setVisibility(View.GONE);
             setupTtsProgressListener();
         });
     }
@@ -231,7 +255,6 @@ public class WordDetailFragment extends Fragment {
                 ttsManager.speakEnglish(word.english, prefsManager.getAccent(), "page_en_" + word.id);
                 break;
             case STUDY_MODE:
-                // English first; Chinese queued after English TTS done via onTtsDone
                 ttsManager.speakEnglish(word.english, prefsManager.getAccent(), "study_en_" + word.id);
                 break;
         }
@@ -239,6 +262,10 @@ public class WordDetailFragment extends Fragment {
 
     private void onTtsDone(String utteranceId) {
         if (binding == null) return;
+        if (utteranceId.startsWith("ex_")) {
+            pagerAdapter.stopExampleAnimation();
+            return;
+        }
         PlaybackMode mode = viewModel.playbackMode.getValue();
         if (mode == null) return;
         List<Word> words = viewModel.allWords.getValue();
@@ -247,7 +274,6 @@ public class WordDetailFragment extends Fragment {
 
         if (mode == PlaybackMode.STUDY_MODE && utteranceId.startsWith("study_en_")) {
             long wordId = parseWordId(utteranceId);
-            // Only play Chinese if we're still on this word
             if (currentIdx < words.size() && words.get(currentIdx).id == wordId) {
                 Word word = words.get(currentIdx);
                 ttsManager.speakChinese(getChineseText(word), "study_cn_" + word.id);
@@ -358,10 +384,6 @@ public class WordDetailFragment extends Fragment {
         } catch (Exception e) {
             return -1;
         }
-    }
-
-    private void updateProgress(int position, int total) {
-        binding.tvProgress.setText(getString(R.string.word_progress_format, position + 1, total));
     }
 
     private void cycleVisibilityMode() {

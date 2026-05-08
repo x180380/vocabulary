@@ -1,52 +1,3514 @@
 [
-  {"english":"able","chineseDefinition":"adj. 有能力的；能干的","definitions":[{"partOfSpeech":"adj.","meaning":"有能力的；能干的"}],"phonetics":{"british":"/ˈeɪbl/","american":"/ˈeɪbl/"},"examples":[{"english":"She was able to solve the problem quickly.","chinese":"她能够迅速解决这个问题。"}]},
-  {"english":"absent","chineseDefinition":"adj. 缺席的；心不在焉的","definitions":[{"partOfSpeech":"adj.","meaning":"缺席的；心不在焉的"}],"phonetics":{"british":"/ˈæbsənt/","american":"/ˈæbsənt/"},"examples":[{"english":"He was absent from school yesterday.","chinese":"他昨天没来上学。"}]},
-  {"english":"accept","chineseDefinition":"v. 接受；认可","definitions":[{"partOfSpeech":"v.","meaning":"接受；认可"}],"phonetics":{"british":"/əkˈsept/","american":"/əkˈsept/"},"examples":[{"english":"Please accept my apology.","chinese":"请接受我的道歉。"}]},
-  {"english":"accident","chineseDefinition":"n. 事故；意外","definitions":[{"partOfSpeech":"n.","meaning":"事故；意外"}],"phonetics":{"british":"/ˈæksɪdənt/","american":"/ˈæksɪdənt/"},"examples":[{"english":"There was a traffic accident on the road.","chinese":"路上发生了交通事故。"}]},
-  {"english":"achieve","chineseDefinition":"v. 实现；达到；完成","definitions":[{"partOfSpeech":"v.","meaning":"实现；达到；完成"}],"phonetics":{"british":"/əˈtʃiːv/","american":"/əˈtʃiːv/"},"examples":[{"english":"Hard work helps you achieve your goals.","chinese":"努力工作帮助你实现目标。"}]},
-  {"english":"afraid","chineseDefinition":"adj. 害怕的；担心的","definitions":[{"partOfSpeech":"adj.","meaning":"害怕的；担心的"}],"phonetics":{"british":"/əˈfreɪd/","american":"/əˈfreɪd/"},"examples":[{"english":"The child was afraid of the dark.","chinese":"这个孩子害怕黑暗。"}]},
-  {"english":"agree","chineseDefinition":"v. 同意；赞成","definitions":[{"partOfSpeech":"v.","meaning":"同意；赞成"}],"phonetics":{"british":"/əˈɡriː/","american":"/əˈɡriː/"},"examples":[{"english":"I agree with your opinion.","chinese":"我同意你的意见。"}]},
-  {"english":"allow","chineseDefinition":"v. 允许；让","definitions":[{"partOfSpeech":"v.","meaning":"允许；让"}],"phonetics":{"british":"/əˈlaʊ/","american":"/əˈlaʊ/"},"examples":[{"english":"Students are not allowed to use phones in class.","chinese":"学生上课不允许使用手机。"}]},
-  {"english":"already","chineseDefinition":"adv. 已经","definitions":[{"partOfSpeech":"adv.","meaning":"已经"}],"phonetics":{"british":"/ɔːlˈredi/","american":"/ɔːlˈredi/"},"examples":[{"english":"She has already finished her homework.","chinese":"她已经完成了作业。"}]},
-  {"english":"animal","chineseDefinition":"n. 动物","definitions":[{"partOfSpeech":"n.","meaning":"动物"}],"phonetics":{"british":"/ˈænɪml/","american":"/ˈænɪml/"},"examples":[{"english":"The zoo has many kinds of animals.","chinese":"动物园里有很多种动物。"}]},
-  {"english":"answer","chineseDefinition":"n./v. 回答；答案","definitions":[{"partOfSpeech":"n.","meaning":"答案"},{"partOfSpeech":"v.","meaning":"回答"}],"phonetics":{"british":"/ˈɑːnsə/","american":"/ˈænsər/"},"examples":[{"english":"Please answer the question carefully.","chinese":"请仔细回答这个问题。"}]},
-  {"english":"appear","chineseDefinition":"v. 出现；似乎","definitions":[{"partOfSpeech":"v.","meaning":"出现；似乎"}],"phonetics":{"british":"/əˈpɪə/","american":"/əˈpɪr/"},"examples":[{"english":"Stars appear in the sky at night.","chinese":"夜晚天空中出现了星星。"}]},
-  {"english":"arrive","chineseDefinition":"v. 到达","definitions":[{"partOfSpeech":"v.","meaning":"到达"}],"phonetics":{"british":"/əˈraɪv/","american":"/əˈraɪv/"},"examples":[{"english":"The train arrived on time.","chinese":"火车准时到达了。"}]},
-  {"english":"ask","chineseDefinition":"v. 问；请求","definitions":[{"partOfSpeech":"v.","meaning":"问；请求"}],"phonetics":{"british":"/ɑːsk/","american":"/æsk/"},"examples":[{"english":"Don't be afraid to ask questions.","chinese":"不要害怕提问。"}]},
-  {"english":"attention","chineseDefinition":"n. 注意；关注","definitions":[{"partOfSpeech":"n.","meaning":"注意；关注"}],"phonetics":{"british":"/əˈtenʃn/","american":"/əˈtenʃn/"},"examples":[{"english":"Please pay attention to the teacher.","chinese":"请注意听老师讲课。"}]},
-  {"english":"beautiful","chineseDefinition":"adj. 美丽的；漂亮的","definitions":[{"partOfSpeech":"adj.","meaning":"美丽的；漂亮的"}],"phonetics":{"british":"/ˈbjuːtɪfl/","american":"/ˈbjuːtɪfl/"},"examples":[{"english":"The flowers in the garden are beautiful.","chinese":"花园里的花很漂亮。"}]},
-  {"english":"begin","chineseDefinition":"v. 开始","definitions":[{"partOfSpeech":"v.","meaning":"开始"}],"phonetics":{"british":"/bɪˈɡɪn/","american":"/bɪˈɡɪn/"},"examples":[{"english":"The class will begin at 8 o'clock.","chinese":"课程将在八点开始。"}]},
-  {"english":"believe","chineseDefinition":"v. 相信；认为","definitions":[{"partOfSpeech":"v.","meaning":"相信；认为"}],"phonetics":{"british":"/bɪˈliːv/","american":"/bɪˈliːv/"},"examples":[{"english":"I believe he is telling the truth.","chinese":"我相信他说的是实话。"}]},
-  {"english":"borrow","chineseDefinition":"v. 借；借用","definitions":[{"partOfSpeech":"v.","meaning":"借；借用"}],"phonetics":{"british":"/ˈbɒrəʊ/","american":"/ˈbɔːroʊ/"},"examples":[{"english":"Can I borrow your pen?","chinese":"我能借用你的钢笔吗？"}]},
-  {"english":"break","chineseDefinition":"v. 打破；折断 n. 休息","definitions":[{"partOfSpeech":"v.","meaning":"打破；折断"},{"partOfSpeech":"n.","meaning":"休息；中断"}],"phonetics":{"british":"/breɪk/","american":"/breɪk/"},"examples":[{"english":"Let's take a short break.","chinese":"让我们休息一会儿。"}]},
-  {"english":"bring","chineseDefinition":"v. 带来；拿来","definitions":[{"partOfSpeech":"v.","meaning":"带来；拿来"}],"phonetics":{"british":"/brɪŋ/","american":"/brɪŋ/"},"examples":[{"english":"Please bring your textbook tomorrow.","chinese":"请明天带上你的课本。"}]},
-  {"english":"busy","chineseDefinition":"adj. 忙碌的；繁忙的","definitions":[{"partOfSpeech":"adj.","meaning":"忙碌的；繁忙的"}],"phonetics":{"british":"/ˈbɪzi/","american":"/ˈbɪzi/"},"examples":[{"english":"I am very busy with my homework.","chinese":"我忙着做作业。"}]},
-  {"english":"carefully","chineseDefinition":"adv. 仔细地；小心地","definitions":[{"partOfSpeech":"adv.","meaning":"仔细地；小心地"}],"phonetics":{"british":"/ˈkeəfəli/","american":"/ˈkerfəli/"},"examples":[{"english":"Read the instructions carefully before starting.","chinese":"开始之前仔细阅读说明。"}]},
-  {"english":"carry","chineseDefinition":"v. 携带；运送","definitions":[{"partOfSpeech":"v.","meaning":"携带；运送"}],"phonetics":{"british":"/ˈkæri/","american":"/ˈkæri/"},"examples":[{"english":"She carried the heavy bag home.","chinese":"她把重包拎回了家。"}]},
-  {"english":"change","chineseDefinition":"v./n. 改变；变化","definitions":[{"partOfSpeech":"v.","meaning":"改变"},{"partOfSpeech":"n.","meaning":"变化；零钱"}],"phonetics":{"british":"/tʃeɪndʒ/","american":"/tʃeɪndʒ/"},"examples":[{"english":"The weather can change quickly in spring.","chinese":"春天天气变化很快。"}]},
-  {"english":"cheap","chineseDefinition":"adj. 便宜的；廉价的","definitions":[{"partOfSpeech":"adj.","meaning":"便宜的；廉价的"}],"phonetics":{"british":"/tʃiːp/","american":"/tʃiːp/"},"examples":[{"english":"This shirt is cheap but good quality.","chinese":"这件衬衫便宜但质量好。"}]},
-  {"english":"check","chineseDefinition":"v. 检查；核对","definitions":[{"partOfSpeech":"v.","meaning":"检查；核对"}],"phonetics":{"british":"/tʃek/","american":"/tʃek/"},"examples":[{"english":"Always check your answers before handing in.","chinese":"交卷前一定要检查答案。"}]},
-  {"english":"choose","chineseDefinition":"v. 选择；挑选","definitions":[{"partOfSpeech":"v.","meaning":"选择；挑选"}],"phonetics":{"british":"/tʃuːz/","american":"/tʃuːz/"},"examples":[{"english":"You must choose between the two options.","chinese":"你必须在两个选项中选择一个。"}]},
-  {"english":"clean","chineseDefinition":"adj. 干净的 v. 清洁","definitions":[{"partOfSpeech":"adj.","meaning":"干净的"},{"partOfSpeech":"v.","meaning":"清洁；打扫"}],"phonetics":{"british":"/kliːn/","american":"/kliːn/"},"examples":[{"english":"Keep your desk clean and tidy.","chinese":"保持桌面整洁干净。"}]},
-  {"english":"clever","chineseDefinition":"adj. 聪明的；机灵的","definitions":[{"partOfSpeech":"adj.","meaning":"聪明的；机灵的"}],"phonetics":{"british":"/ˈklevə/","american":"/ˈklevər/"},"examples":[{"english":"She is a clever student who learns fast.","chinese":"她是个聪明的学生，学得很快。"}]},
-  {"english":"close","chineseDefinition":"v. 关闭 adj. 近的；亲密的","definitions":[{"partOfSpeech":"v.","meaning":"关闭"},{"partOfSpeech":"adj.","meaning":"近的；亲密的"}],"phonetics":{"british":"/kləʊz/","american":"/kloʊz/"},"examples":[{"english":"Please close the window.","chinese":"请关上窗户。"}]},
-  {"english":"collect","chineseDefinition":"v. 收集；收藏","definitions":[{"partOfSpeech":"v.","meaning":"收集；收藏"}],"phonetics":{"british":"/kəˈlekt/","american":"/kəˈlekt/"},"examples":[{"english":"He likes to collect stamps.","chinese":"他喜欢收集邮票。"}]},
-  {"english":"common","chineseDefinition":"adj. 普通的；常见的；公共的","definitions":[{"partOfSpeech":"adj.","meaning":"普通的；常见的；公共的"}],"phonetics":{"british":"/ˈkɒmən/","american":"/ˈkɑːmən/"},"examples":[{"english":"The cold is a common illness in winter.","chinese":"感冒是冬天常见的疾病。"}]},
-  {"english":"compare","chineseDefinition":"v. 比较；对比","definitions":[{"partOfSpeech":"v.","meaning":"比较；对比"}],"phonetics":{"british":"/kəmˈpeə/","american":"/kəmˈper/"},"examples":[{"english":"Compare these two photos.","chinese":"比较这两张照片。"}]},
-  {"english":"complete","chineseDefinition":"v. 完成 adj. 完整的","definitions":[{"partOfSpeech":"v.","meaning":"完成"},{"partOfSpeech":"adj.","meaning":"完整的；完全的"}],"phonetics":{"british":"/kəmˈpliːt/","american":"/kəmˈpliːt/"},"examples":[{"english":"Please complete the exercise in your workbook.","chinese":"请完成练习册上的练习。"}]},
-  {"english":"connect","chineseDefinition":"v. 连接；联系","definitions":[{"partOfSpeech":"v.","meaning":"连接；联系"}],"phonetics":{"british":"/kəˈnekt/","american":"/kəˈnekt/"},"examples":[{"english":"Connect the cable to the computer.","chinese":"将电缆连接到电脑上。"}]},
-  {"english":"continue","chineseDefinition":"v. 继续；延续","definitions":[{"partOfSpeech":"v.","meaning":"继续；延续"}],"phonetics":{"british":"/kənˈtɪnjuː/","american":"/kənˈtɪnjuː/"},"examples":[{"english":"Please continue reading the next chapter.","chinese":"请继续阅读下一章。"}]},
-  {"english":"correct","chineseDefinition":"adj. 正确的 v. 纠正","definitions":[{"partOfSpeech":"adj.","meaning":"正确的"},{"partOfSpeech":"v.","meaning":"纠正；改正"}],"phonetics":{"british":"/kəˈrekt/","american":"/kəˈrekt/"},"examples":[{"english":"Is this answer correct?","chinese":"这个答案正确吗？"}]},
-  {"english":"country","chineseDefinition":"n. 国家；乡村","definitions":[{"partOfSpeech":"n.","meaning":"国家；乡村"}],"phonetics":{"british":"/ˈkʌntri/","american":"/ˈkʌntri/"},"examples":[{"english":"China is a large country with a long history.","chinese":"中国是一个历史悠久的大国。"}]},
-  {"english":"create","chineseDefinition":"v. 创造；创建","definitions":[{"partOfSpeech":"v.","meaning":"创造；创建"}],"phonetics":{"british":"/kriˈeɪt/","american":"/kriˈeɪt/"},"examples":[{"english":"The teacher created a fun game for the class.","chinese":"老师为全班设计了一个有趣的游戏。"}]},
-  {"english":"danger","chineseDefinition":"n. 危险","definitions":[{"partOfSpeech":"n.","meaning":"危险"}],"phonetics":{"british":"/ˈdeɪndʒə/","american":"/ˈdeɪndʒər/"},"examples":[{"english":"Playing near the river is in danger.","chinese":"在河边玩耍很危险。"}]},
-  {"english":"decide","chineseDefinition":"v. 决定","definitions":[{"partOfSpeech":"v.","meaning":"决定"}],"phonetics":{"british":"/dɪˈsaɪd/","american":"/dɪˈsaɪd/"},"examples":[{"english":"Have you decided what to study?","chinese":"你决定学什么了吗？"}]},
-  {"english":"describe","chineseDefinition":"v. 描述；描写","definitions":[{"partOfSpeech":"v.","meaning":"描述；描写"}],"phonetics":{"british":"/dɪˈskraɪb/","american":"/dɪˈskraɪb/"},"examples":[{"english":"Please describe what you saw.","chinese":"请描述你所看到的。"}]},
-  {"english":"develop","chineseDefinition":"v. 发展；开发","definitions":[{"partOfSpeech":"v.","meaning":"发展；开发"}],"phonetics":{"british":"/dɪˈveləp/","american":"/dɪˈveləp/"},"examples":[{"english":"China has developed very quickly.","chinese":"中国发展得很快。"}]},
-  {"english":"different","chineseDefinition":"adj. 不同的；各种各样的","definitions":[{"partOfSpeech":"adj.","meaning":"不同的；各种各样的"}],"phonetics":{"british":"/ˈdɪfrənt/","american":"/ˈdɪfrənt/"},"examples":[{"english":"People have different opinions on this topic.","chinese":"人们对这个话题有不同的看法。"}]},
-  {"english":"difficult","chineseDefinition":"adj. 困难的；难做的","definitions":[{"partOfSpeech":"adj.","meaning":"困难的；难做的"}],"phonetics":{"british":"/ˈdɪfɪkəlt/","american":"/ˈdɪfɪkəlt/"},"examples":[{"english":"This math problem is very difficult.","chinese":"这道数学题非常难。"}]},
-  {"english":"discuss","chineseDefinition":"v. 讨论；商量","definitions":[{"partOfSpeech":"v.","meaning":"讨论；商量"}],"phonetics":{"british":"/dɪˈskʌs/","american":"/dɪˈskʌs/"},"examples":[{"english":"We discussed the problem together.","chinese":"我们一起讨论了这个问题。"}]},
-  {"english":"dream","chineseDefinition":"n. 梦；梦想 v. 做梦","definitions":[{"partOfSpeech":"n.","meaning":"梦；梦想"},{"partOfSpeech":"v.","meaning":"做梦；梦想"}],"phonetics":{"british":"/driːm/","american":"/driːm/"},"examples":[{"english":"She has a dream of becoming a doctor.","chinese":"她梦想成为一名医生。"}]},
-  {"english":"drive","chineseDefinition":"v. 驾驶；驱使","definitions":[{"partOfSpeech":"v.","meaning":"驾驶；驱使"}],"phonetics":{"british":"/draɪv/","american":"/draɪv/"},"examples":[{"english":"He learned to drive last year.","chinese":"他去年学会了开车。"}]},
-  {"english":"during","chineseDefinition":"prep. 在…期间","definitions":[{"partOfSpeech":"prep.","meaning":"在…期间"}],"phonetics":{"british":"/ˈdjʊərɪŋ/","american":"/ˈdʊrɪŋ/"},"examples":[{"english":"During summer vacation, I visited Beijing.","chinese":"暑假期间，我去了北京。"}]}
+    {
+        "english": "ability",
+        "chineseDefinition": "n. 能力；才能",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "能力；才能"
+            }
+        ],
+        "phonetics": {
+            "british": "/əˈbɪlɪti/",
+            "american": "/əˈbɪlɪti/"
+        },
+        "examples": [
+            {
+                "english": "She has the ability to learn languages quickly.",
+                "chinese": "她有快速学习语言的能力。"
+            }
+        ]
+    },
+    {
+        "english": "abroad",
+        "chineseDefinition": "adv. 在国外；到国外",
+        "definitions": [
+            {
+                "partOfSpeech": "adv.",
+                "meaning": "在国外；到国外"
+            }
+        ],
+        "phonetics": {
+            "british": "/əˈbrɔːd/",
+            "american": "/əˈbrɔːd/"
+        },
+        "examples": [
+            {
+                "english": "He studied abroad for two years.",
+                "chinese": "他在国外学习了两年。"
+            }
+        ]
+    },
+    {
+        "english": "achieve",
+        "chineseDefinition": "v. 实现；达到",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "实现；达到；取得"
+            }
+        ],
+        "phonetics": {
+            "british": "/əˈtʃiːv/",
+            "american": "/əˈtʃiːv/"
+        },
+        "examples": [
+            {
+                "english": "You can achieve your goals with hard work.",
+                "chinese": "通过努力你可以实现目标。"
+            }
+        ]
+    },
+    {
+        "english": "active",
+        "chineseDefinition": "adj. 积极的；活跃的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "积极的；活跃的；主动的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈæktɪv/",
+            "american": "/ˈæktɪv/"
+        },
+        "examples": [
+            {
+                "english": "She is an active member of the club.",
+                "chinese": "她是俱乐部的活跃成员。"
+            }
+        ]
+    },
+    {
+        "english": "advice",
+        "chineseDefinition": "n. 建议；忠告",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "建议；忠告；劝告"
+            }
+        ],
+        "phonetics": {
+            "british": "/ədˈvaɪs/",
+            "american": "/ədˈvaɪs/"
+        },
+        "examples": [
+            {
+                "english": "My teacher gave me some good advice.",
+                "chinese": "我的老师给了我一些好建议。"
+            }
+        ]
+    },
+    {
+        "english": "agree",
+        "chineseDefinition": "v. 同意；赞同",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "同意；赞同；达成一致"
+            }
+        ],
+        "phonetics": {
+            "british": "/əˈɡriː/",
+            "american": "/əˈɡriː/"
+        },
+        "examples": [
+            {
+                "english": "I agree with your opinion.",
+                "chinese": "我同意你的看法。"
+            }
+        ]
+    },
+    {
+        "english": "allow",
+        "chineseDefinition": "v. 允许；准许",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "允许；准许；让"
+            }
+        ],
+        "phonetics": {
+            "british": "/əˈlaʊ/",
+            "american": "/əˈlaʊ/"
+        },
+        "examples": [
+            {
+                "english": "My parents allow me to stay up late on weekends.",
+                "chinese": "我父母允许我在周末熬夜。"
+            }
+        ]
+    },
+    {
+        "english": "although",
+        "chineseDefinition": "conj. 虽然；尽管",
+        "definitions": [
+            {
+                "partOfSpeech": "conj.",
+                "meaning": "虽然；尽管"
+            }
+        ],
+        "phonetics": {
+            "british": "/ɔːlˈðəʊ/",
+            "american": "/ɔːlˈðoʊ/"
+        },
+        "examples": [
+            {
+                "english": "Although it rained, we still went out.",
+                "chinese": "虽然下雨了，我们还是出去了。"
+            }
+        ]
+    },
+    {
+        "english": "always",
+        "chineseDefinition": "adv. 总是；一直",
+        "definitions": [
+            {
+                "partOfSpeech": "adv.",
+                "meaning": "总是；一直；永远"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈɔːlweɪz/",
+            "american": "/ˈɔːlweɪz/"
+        },
+        "examples": [
+            {
+                "english": "She always arrives on time.",
+                "chinese": "她总是准时到达。"
+            }
+        ]
+    },
+    {
+        "english": "angry",
+        "chineseDefinition": "adj. 生气的；愤怒的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "生气的；愤怒的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈæŋɡri/",
+            "american": "/ˈæŋɡri/"
+        },
+        "examples": [
+            {
+                "english": "He was angry when he heard the news.",
+                "chinese": "听到这个消息他很生气。"
+            }
+        ]
+    },
+    {
+        "english": "animal",
+        "chineseDefinition": "n. 动物",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "动物；兽"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈænɪməl/",
+            "american": "/ˈænɪməl/"
+        },
+        "examples": [
+            {
+                "english": "The zoo has many different animals.",
+                "chinese": "动物园里有许多不同的动物。"
+            }
+        ]
+    },
+    {
+        "english": "answer",
+        "chineseDefinition": "n./v. 回答；答案",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "回答；答案"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "回答；答复"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈɑːnsə/",
+            "american": "/ˈænsər/"
+        },
+        "examples": [
+            {
+                "english": "Please answer the question carefully.",
+                "chinese": "请仔细回答这个问题。"
+            }
+        ]
+    },
+    {
+        "english": "appear",
+        "chineseDefinition": "v. 出现；似乎",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "出现；显现；似乎"
+            }
+        ],
+        "phonetics": {
+            "british": "/əˈpɪə/",
+            "american": "/əˈpɪr/"
+        },
+        "examples": [
+            {
+                "english": "Stars appear in the sky at night.",
+                "chinese": "夜晚星星出现在天空中。"
+            }
+        ]
+    },
+    {
+        "english": "article",
+        "chineseDefinition": "n. 文章；物品",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "文章；物品；冠词"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈɑːtɪkl/",
+            "american": "/ˈɑːrtɪkl/"
+        },
+        "examples": [
+            {
+                "english": "She wrote an article about climate change.",
+                "chinese": "她写了一篇关于气候变化的文章。"
+            }
+        ]
+    },
+    {
+        "english": "attention",
+        "chineseDefinition": "n. 注意；关注",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "注意；关注；注意力"
+            }
+        ],
+        "phonetics": {
+            "british": "/əˈtenʃn/",
+            "american": "/əˈtenʃn/"
+        },
+        "examples": [
+            {
+                "english": "Please pay attention to the teacher.",
+                "chinese": "请注意听老师讲课。"
+            }
+        ]
+    },
+    {
+        "english": "beautiful",
+        "chineseDefinition": "adj. 美丽的；漂亮的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "美丽的；漂亮的；出色的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈbjuːtɪfl/",
+            "american": "/ˈbjuːtɪfl/"
+        },
+        "examples": [
+            {
+                "english": "The sunset was beautiful last night.",
+                "chinese": "昨晚的日落很美。"
+            }
+        ]
+    },
+    {
+        "english": "because",
+        "chineseDefinition": "conj. 因为",
+        "definitions": [
+            {
+                "partOfSpeech": "conj.",
+                "meaning": "因为；由于"
+            }
+        ],
+        "phonetics": {
+            "british": "/bɪˈkɒz/",
+            "american": "/bɪˈkɔːz/"
+        },
+        "examples": [
+            {
+                "english": "I stayed home because I was sick.",
+                "chinese": "我因为生病待在家里。"
+            }
+        ]
+    },
+    {
+        "english": "become",
+        "chineseDefinition": "v. 变成；成为",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "变成；成为；开始是"
+            }
+        ],
+        "phonetics": {
+            "british": "/bɪˈkʌm/",
+            "american": "/bɪˈkʌm/"
+        },
+        "examples": [
+            {
+                "english": "She wants to become a doctor.",
+                "chinese": "她想成为一名医生。"
+            }
+        ]
+    },
+    {
+        "english": "begin",
+        "chineseDefinition": "v. 开始；着手",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "开始；着手；起始"
+            }
+        ],
+        "phonetics": {
+            "british": "/bɪˈɡɪn/",
+            "american": "/bɪˈɡɪn/"
+        },
+        "examples": [
+            {
+                "english": "The class begins at eight o'clock.",
+                "chinese": "课程八点开始。"
+            }
+        ]
+    },
+    {
+        "english": "believe",
+        "chineseDefinition": "v. 相信；认为",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "相信；认为；信任"
+            }
+        ],
+        "phonetics": {
+            "british": "/bɪˈliːv/",
+            "american": "/bɪˈliːv/"
+        },
+        "examples": [
+            {
+                "english": "I believe you can do it.",
+                "chinese": "我相信你能做到。"
+            }
+        ]
+    },
+    {
+        "english": "borrow",
+        "chineseDefinition": "v. 借；借用",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "借；借用；借入"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈbɒrəʊ/",
+            "american": "/ˈbɑːroʊ/"
+        },
+        "examples": [
+            {
+                "english": "Can I borrow your pen?",
+                "chinese": "我可以借用你的钢笔吗？"
+            }
+        ]
+    },
+    {
+        "english": "brave",
+        "chineseDefinition": "adj. 勇敢的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "勇敢的；无畏的"
+            }
+        ],
+        "phonetics": {
+            "british": "/breɪv/",
+            "american": "/breɪv/"
+        },
+        "examples": [
+            {
+                "english": "The brave firefighter rescued the child.",
+                "chinese": "勇敢的消防员救出了那个孩子。"
+            }
+        ]
+    },
+    {
+        "english": "break",
+        "chineseDefinition": "v./n. 打破；休息",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "打破；折断"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "休息；间歇"
+            }
+        ],
+        "phonetics": {
+            "british": "/breɪk/",
+            "american": "/breɪk/"
+        },
+        "examples": [
+            {
+                "english": "Let's take a short break.",
+                "chinese": "让我们休息一下。"
+            }
+        ]
+    },
+    {
+        "english": "bright",
+        "chineseDefinition": "adj. 明亮的；聪明的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "明亮的；鲜艳的；聪明的"
+            }
+        ],
+        "phonetics": {
+            "british": "/braɪt/",
+            "american": "/braɪt/"
+        },
+        "examples": [
+            {
+                "english": "The sun is very bright today.",
+                "chinese": "今天阳光很明亮。"
+            }
+        ]
+    },
+    {
+        "english": "busy",
+        "chineseDefinition": "adj. 忙碌的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "忙碌的；繁忙的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈbɪzi/",
+            "american": "/ˈbɪzi/"
+        },
+        "examples": [
+            {
+                "english": "My mother is always busy in the kitchen.",
+                "chinese": "我妈妈总是在厨房里忙碌。"
+            }
+        ]
+    },
+    {
+        "english": "careful",
+        "chineseDefinition": "adj. 小心的；仔细的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "小心的；仔细的；谨慎的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈkeəfl/",
+            "american": "/ˈkerfl/"
+        },
+        "examples": [
+            {
+                "english": "Be careful when crossing the road.",
+                "chinese": "过马路时要小心。"
+            }
+        ]
+    },
+    {
+        "english": "carry",
+        "chineseDefinition": "v. 携带；运送",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "携带；搬运；运送"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈkæri/",
+            "american": "/ˈkæri/"
+        },
+        "examples": [
+            {
+                "english": "Can you carry this box for me?",
+                "chinese": "你能帮我搬这个箱子吗？"
+            }
+        ]
+    },
+    {
+        "english": "catch",
+        "chineseDefinition": "v. 抓住；赶上",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "抓住；接住；赶上"
+            }
+        ],
+        "phonetics": {
+            "british": "/kætʃ/",
+            "american": "/kætʃ/"
+        },
+        "examples": [
+            {
+                "english": "He tried to catch the ball but missed.",
+                "chinese": "他试图接住球但没接到。"
+            }
+        ]
+    },
+    {
+        "english": "celebrate",
+        "chineseDefinition": "v. 庆祝；庆贺",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "庆祝；庆贺；颂扬"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈselɪbreɪt/",
+            "american": "/ˈselɪbreɪt/"
+        },
+        "examples": [
+            {
+                "english": "We celebrate the New Year with fireworks.",
+                "chinese": "我们用烟火庆祝新年。"
+            }
+        ]
+    },
+    {
+        "english": "chance",
+        "chineseDefinition": "n. 机会；可能性",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "机会；可能性；运气"
+            }
+        ],
+        "phonetics": {
+            "british": "/tʃɑːns/",
+            "american": "/tʃæns/"
+        },
+        "examples": [
+            {
+                "english": "This is a great chance to improve your English.",
+                "chinese": "这是提高英语水平的好机会。"
+            }
+        ]
+    },
+    {
+        "english": "change",
+        "chineseDefinition": "v./n. 改变；变化",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "改变；更换"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "变化；改变"
+            }
+        ],
+        "phonetics": {
+            "british": "/tʃeɪndʒ/",
+            "american": "/tʃeɪndʒ/"
+        },
+        "examples": [
+            {
+                "english": "The weather can change quickly in spring.",
+                "chinese": "春天天气变化很快。"
+            }
+        ]
+    },
+    {
+        "english": "choose",
+        "chineseDefinition": "v. 选择；挑选",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "选择；挑选；决定"
+            }
+        ],
+        "phonetics": {
+            "british": "/tʃuːz/",
+            "american": "/tʃuːz/"
+        },
+        "examples": [
+            {
+                "english": "You need to choose between the two options.",
+                "chinese": "你需要在两个选项中做出选择。"
+            }
+        ]
+    },
+    {
+        "english": "clean",
+        "chineseDefinition": "adj./v. 干净的；清洁",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "干净的；清洁的"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "清洁；打扫"
+            }
+        ],
+        "phonetics": {
+            "british": "/kliːn/",
+            "american": "/kliːn/"
+        },
+        "examples": [
+            {
+                "english": "Please keep your room clean.",
+                "chinese": "请保持你的房间干净。"
+            }
+        ]
+    },
+    {
+        "english": "climb",
+        "chineseDefinition": "v. 爬；攀登",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "爬；攀登；攀爬"
+            }
+        ],
+        "phonetics": {
+            "british": "/klaɪm/",
+            "american": "/klaɪm/"
+        },
+        "examples": [
+            {
+                "english": "We climbed the mountain last summer.",
+                "chinese": "我们去年夏天爬了那座山。"
+            }
+        ]
+    },
+    {
+        "english": "collect",
+        "chineseDefinition": "v. 收集；收藏",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "收集；收藏；聚集"
+            }
+        ],
+        "phonetics": {
+            "british": "/kəˈlekt/",
+            "american": "/kəˈlekt/"
+        },
+        "examples": [
+            {
+                "english": "She likes to collect stamps from different countries.",
+                "chinese": "她喜欢收集来自不同国家的邮票。"
+            }
+        ]
+    },
+    {
+        "english": "comfortable",
+        "chineseDefinition": "adj. 舒适的；舒服的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "舒适的；安逸的；自在的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈkʌmftəbl/",
+            "american": "/ˈkʌmftərbl/"
+        },
+        "examples": [
+            {
+                "english": "This sofa is very comfortable.",
+                "chinese": "这张沙发非常舒适。"
+            }
+        ]
+    },
+    {
+        "english": "communicate",
+        "chineseDefinition": "v. 交流；沟通",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "交流；沟通；传达"
+            }
+        ],
+        "phonetics": {
+            "british": "/kəˈmjuːnɪkeɪt/",
+            "american": "/kəˈmjuːnɪkeɪt/"
+        },
+        "examples": [
+            {
+                "english": "It is important to communicate clearly.",
+                "chinese": "清晰地沟通非常重要。"
+            }
+        ]
+    },
+    {
+        "english": "compare",
+        "chineseDefinition": "v. 比较；对比",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "比较；对比；比喻"
+            }
+        ],
+        "phonetics": {
+            "british": "/kəmˈpeə/",
+            "american": "/kəmˈper/"
+        },
+        "examples": [
+            {
+                "english": "Compare the two pictures carefully.",
+                "chinese": "仔细比较这两张图片。"
+            }
+        ]
+    },
+    {
+        "english": "complete",
+        "chineseDefinition": "v./adj. 完成；完整的",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "完成；结束"
+            },
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "完整的；完全的"
+            }
+        ],
+        "phonetics": {
+            "british": "/kəmˈpliːt/",
+            "american": "/kəmˈpliːt/"
+        },
+        "examples": [
+            {
+                "english": "Please complete the exercise by tomorrow.",
+                "chinese": "请在明天之前完成练习。"
+            }
+        ]
+    },
+    {
+        "english": "consider",
+        "chineseDefinition": "v. 考虑；认为",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "考虑；认为；体谅"
+            }
+        ],
+        "phonetics": {
+            "british": "/kənˈsɪdə/",
+            "american": "/kənˈsɪdər/"
+        },
+        "examples": [
+            {
+                "english": "Consider all the options before deciding.",
+                "chinese": "在决定之前考虑所有选项。"
+            }
+        ]
+    },
+    {
+        "english": "continue",
+        "chineseDefinition": "v. 继续；持续",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "继续；持续；延伸"
+            }
+        ],
+        "phonetics": {
+            "british": "/kənˈtɪnjuː/",
+            "american": "/kənˈtɪnjuː/"
+        },
+        "examples": [
+            {
+                "english": "Please continue reading the story.",
+                "chinese": "请继续阅读这个故事。"
+            }
+        ]
+    },
+    {
+        "english": "cook",
+        "chineseDefinition": "v./n. 烹饪；厨师",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "烹饪；做饭"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "厨师；炊事员"
+            }
+        ],
+        "phonetics": {
+            "british": "/kʊk/",
+            "american": "/kʊk/"
+        },
+        "examples": [
+            {
+                "english": "My father cooks dinner every evening.",
+                "chinese": "我父亲每天晚上做晚饭。"
+            }
+        ]
+    },
+    {
+        "english": "correct",
+        "chineseDefinition": "adj./v. 正确的；纠正",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "正确的；准确的"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "纠正；改正"
+            }
+        ],
+        "phonetics": {
+            "british": "/kəˈrekt/",
+            "american": "/kəˈrekt/"
+        },
+        "examples": [
+            {
+                "english": "All your answers are correct.",
+                "chinese": "你所有的答案都是正确的。"
+            }
+        ]
+    },
+    {
+        "english": "create",
+        "chineseDefinition": "v. 创造；创建",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "创造；创建；引起"
+            }
+        ],
+        "phonetics": {
+            "british": "/kriˈeɪt/",
+            "american": "/kriˈeɪt/"
+        },
+        "examples": [
+            {
+                "english": "Artists create beautiful works of art.",
+                "chinese": "艺术家们创造出美丽的艺术作品。"
+            }
+        ]
+    },
+    {
+        "english": "culture",
+        "chineseDefinition": "n. 文化；文明",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "文化；文明；修养"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈkʌltʃə/",
+            "american": "/ˈkʌltʃər/"
+        },
+        "examples": [
+            {
+                "english": "China has a rich culture and long history.",
+                "chinese": "中国有丰富的文化和悠久的历史。"
+            }
+        ]
+    },
+    {
+        "english": "danger",
+        "chineseDefinition": "n. 危险；威胁",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "危险；威胁；危险事物"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈdeɪndʒə/",
+            "american": "/ˈdeɪndʒər/"
+        },
+        "examples": [
+            {
+                "english": "The soldiers were in great danger.",
+                "chinese": "士兵们处于极大的危险中。"
+            }
+        ]
+    },
+    {
+        "english": "decide",
+        "chineseDefinition": "v. 决定；决心",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "决定；决心；裁决"
+            }
+        ],
+        "phonetics": {
+            "british": "/dɪˈsaɪd/",
+            "american": "/dɪˈsaɪd/"
+        },
+        "examples": [
+            {
+                "english": "Have you decided where to go for the holiday?",
+                "chinese": "你决定假期去哪里了吗？"
+            }
+        ]
+    },
+    {
+        "english": "describe",
+        "chineseDefinition": "v. 描述；描写",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "描述；描写；形容"
+            }
+        ],
+        "phonetics": {
+            "british": "/dɪˈskraɪb/",
+            "american": "/dɪˈskraɪb/"
+        },
+        "examples": [
+            {
+                "english": "Can you describe what you saw?",
+                "chinese": "你能描述你看到的吗？"
+            }
+        ]
+    },
+    {
+        "english": "different",
+        "chineseDefinition": "adj. 不同的；各种的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "不同的；差异的；各种的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈdɪfrənt/",
+            "american": "/ˈdɪfrənt/"
+        },
+        "examples": [
+            {
+                "english": "People have different opinions on this topic.",
+                "chinese": "人们对这个话题有不同的看法。"
+            }
+        ]
+    },
+    {
+        "english": "difficult",
+        "chineseDefinition": "adj. 困难的；难的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "困难的；难的；不易相处的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈdɪfɪkəlt/",
+            "american": "/ˈdɪfɪkəlt/"
+        },
+        "examples": [
+            {
+                "english": "This math problem is very difficult.",
+                "chinese": "这道数学题非常难。"
+            }
+        ]
+    },
+    {
+        "english": "discover",
+        "chineseDefinition": "v. 发现；找到",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "发现；找到；察觉"
+            }
+        ],
+        "phonetics": {
+            "british": "/dɪˈskʌvə/",
+            "american": "/dɪˈskʌvər/"
+        },
+        "examples": [
+            {
+                "english": "Scientists discovered a new planet.",
+                "chinese": "科学家们发现了一颗新行星。"
+            }
+        ]
+    },
+    {
+        "english": "dream",
+        "chineseDefinition": "n./v. 梦；梦想",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "梦；梦想；理想"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "做梦；梦想"
+            }
+        ],
+        "phonetics": {
+            "british": "/driːm/",
+            "american": "/driːm/"
+        },
+        "examples": [
+            {
+                "english": "My dream is to travel around the world.",
+                "chinese": "我的梦想是环游世界。"
+            }
+        ]
+    },
+    {
+        "english": "during",
+        "chineseDefinition": "prep. 在……期间",
+        "definitions": [
+            {
+                "partOfSpeech": "prep.",
+                "meaning": "在……期间；在……的时候"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈdjʊərɪŋ/",
+            "american": "/ˈdʊrɪŋ/"
+        },
+        "examples": [
+            {
+                "english": "Please be quiet during the exam.",
+                "chinese": "考试期间请保持安静。"
+            }
+        ]
+    },
+    {
+        "english": "each",
+        "chineseDefinition": "adj./pron. 每个；各自",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "每个；各自的"
+            },
+            {
+                "partOfSpeech": "pron.",
+                "meaning": "各自；每个人"
+            }
+        ],
+        "phonetics": {
+            "british": "/iːtʃ/",
+            "american": "/iːtʃ/"
+        },
+        "examples": [
+            {
+                "english": "Each student must hand in the homework.",
+                "chinese": "每个学生都必须交作业。"
+            }
+        ]
+    },
+    {
+        "english": "effort",
+        "chineseDefinition": "n. 努力；尽力",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "努力；尽力；费力的事"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈefət/",
+            "american": "/ˈefərt/"
+        },
+        "examples": [
+            {
+                "english": "Success requires a lot of effort.",
+                "chinese": "成功需要付出很多努力。"
+            }
+        ]
+    },
+    {
+        "english": "enjoy",
+        "chineseDefinition": "v. 享受；喜爱",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "享受；喜爱；乐于"
+            }
+        ],
+        "phonetics": {
+            "british": "/ɪnˈdʒɔɪ/",
+            "american": "/ɪnˈdʒɔɪ/"
+        },
+        "examples": [
+            {
+                "english": "I enjoy reading books in my free time.",
+                "chinese": "我喜欢在空闲时间读书。"
+            }
+        ]
+    },
+    {
+        "english": "enough",
+        "chineseDefinition": "adj./adv. 足够的；充分地",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "足够的；充分的"
+            },
+            {
+                "partOfSpeech": "adv.",
+                "meaning": "足够地；充分地"
+            }
+        ],
+        "phonetics": {
+            "british": "/ɪˈnʌf/",
+            "american": "/ɪˈnʌf/"
+        },
+        "examples": [
+            {
+                "english": "We don't have enough time to finish.",
+                "chinese": "我们没有足够的时间完成。"
+            }
+        ]
+    },
+    {
+        "english": "environment",
+        "chineseDefinition": "n. 环境；自然环境",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "环境；自然环境；周围情况"
+            }
+        ],
+        "phonetics": {
+            "british": "/ɪnˈvaɪrənmənt/",
+            "american": "/ɪnˈvaɪrənmənt/"
+        },
+        "examples": [
+            {
+                "english": "We must protect the environment.",
+                "chinese": "我们必须保护环境。"
+            }
+        ]
+    },
+    {
+        "english": "example",
+        "chineseDefinition": "n. 例子；示例",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "例子；示例；榜样"
+            }
+        ],
+        "phonetics": {
+            "british": "/ɪɡˈzɑːmpl/",
+            "american": "/ɪɡˈzæmpl/"
+        },
+        "examples": [
+            {
+                "english": "Can you give me an example?",
+                "chinese": "你能给我举个例子吗？"
+            }
+        ]
+    },
+    {
+        "english": "excellent",
+        "chineseDefinition": "adj. 优秀的；极好的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "优秀的；极好的；杰出的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈeksələnt/",
+            "american": "/ˈeksələnt/"
+        },
+        "examples": [
+            {
+                "english": "She got excellent marks in all subjects.",
+                "chinese": "她所有科目都取得了优秀的成绩。"
+            }
+        ]
+    },
+    {
+        "english": "excited",
+        "chineseDefinition": "adj. 兴奋的；激动的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "兴奋的；激动的；激昂的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ɪkˈsaɪtɪd/",
+            "american": "/ɪkˈsaɪtɪd/"
+        },
+        "examples": [
+            {
+                "english": "The children were excited about the trip.",
+                "chinese": "孩子们对这次旅行感到兴奋。"
+            }
+        ]
+    },
+    {
+        "english": "expect",
+        "chineseDefinition": "v. 期待；预期",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "期待；预期；期望"
+            }
+        ],
+        "phonetics": {
+            "british": "/ɪkˈspekt/",
+            "american": "/ɪkˈspekt/"
+        },
+        "examples": [
+            {
+                "english": "I expect to finish the project by Friday.",
+                "chinese": "我期望在周五前完成这个项目。"
+            }
+        ]
+    },
+    {
+        "english": "experience",
+        "chineseDefinition": "n./v. 经历；经验",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "经历；经验；体验"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "经历；体验"
+            }
+        ],
+        "phonetics": {
+            "british": "/ɪkˈspɪəriəns/",
+            "american": "/ɪkˈspɪriəns/"
+        },
+        "examples": [
+            {
+                "english": "Living abroad is a great experience.",
+                "chinese": "在国外生活是一段很好的经历。"
+            }
+        ]
+    },
+    {
+        "english": "explain",
+        "chineseDefinition": "v. 解释；说明",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "解释；说明；阐明"
+            }
+        ],
+        "phonetics": {
+            "british": "/ɪkˈspleɪn/",
+            "american": "/ɪkˈspleɪn/"
+        },
+        "examples": [
+            {
+                "english": "The teacher explained the grammar rule clearly.",
+                "chinese": "老师清楚地解释了这个语法规则。"
+            }
+        ]
+    },
+    {
+        "english": "fail",
+        "chineseDefinition": "v. 失败；不及格",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "失败；不及格；使失望"
+            }
+        ],
+        "phonetics": {
+            "british": "/feɪl/",
+            "american": "/feɪl/"
+        },
+        "examples": [
+            {
+                "english": "Don't be afraid to fail; learn from mistakes.",
+                "chinese": "不要害怕失败，从错误中学习。"
+            }
+        ]
+    },
+    {
+        "english": "famous",
+        "chineseDefinition": "adj. 著名的；出名的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "著名的；出名的；驰名的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈfeɪməs/",
+            "american": "/ˈfeɪməs/"
+        },
+        "examples": [
+            {
+                "english": "The Great Wall is a famous landmark in China.",
+                "chinese": "长城是中国著名的地标。"
+            }
+        ]
+    },
+    {
+        "english": "feel",
+        "chineseDefinition": "v. 感觉；摸",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "感觉；感受；摸；触"
+            }
+        ],
+        "phonetics": {
+            "british": "/fiːl/",
+            "american": "/fiːl/"
+        },
+        "examples": [
+            {
+                "english": "I feel happy when I hear music.",
+                "chinese": "听到音乐我感到快乐。"
+            }
+        ]
+    },
+    {
+        "english": "finish",
+        "chineseDefinition": "v. 完成；结束",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "完成；结束；用完"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈfɪnɪʃ/",
+            "american": "/ˈfɪnɪʃ/"
+        },
+        "examples": [
+            {
+                "english": "Have you finished your homework?",
+                "chinese": "你完成作业了吗？"
+            }
+        ]
+    },
+    {
+        "english": "forget",
+        "chineseDefinition": "v. 忘记；忘掉",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "忘记；忘掉；遗忘"
+            }
+        ],
+        "phonetics": {
+            "british": "/fəˈɡet/",
+            "american": "/fərˈɡet/"
+        },
+        "examples": [
+            {
+                "english": "Don't forget to bring your textbook.",
+                "chinese": "不要忘记带课本。"
+            }
+        ]
+    },
+    {
+        "english": "friendly",
+        "chineseDefinition": "adj. 友好的；友善的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "友好的；友善的；亲切的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈfrendli/",
+            "american": "/ˈfrendli/"
+        },
+        "examples": [
+            {
+                "english": "Our new neighbor is very friendly.",
+                "chinese": "我们的新邻居非常友善。"
+            }
+        ]
+    },
+    {
+        "english": "future",
+        "chineseDefinition": "n. 未来；将来",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "未来；将来；前途"
+            },
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "未来的；将来的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈfjuːtʃə/",
+            "american": "/ˈfjuːtʃər/"
+        },
+        "examples": [
+            {
+                "english": "In the future, robots may do many jobs.",
+                "chinese": "在未来，机器人可能做很多工作。"
+            }
+        ]
+    },
+    {
+        "english": "government",
+        "chineseDefinition": "n. 政府；治理",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "政府；政体；治理"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈɡʌvənmənt/",
+            "american": "/ˈɡʌvərnmənt/"
+        },
+        "examples": [
+            {
+                "english": "The government built new schools in the area.",
+                "chinese": "政府在该地区建立了新学校。"
+            }
+        ]
+    },
+    {
+        "english": "great",
+        "chineseDefinition": "adj. 伟大的；极好的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "伟大的；极好的；重要的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ɡreɪt/",
+            "american": "/ɡreɪt/"
+        },
+        "examples": [
+            {
+                "english": "He is a great scientist.",
+                "chinese": "他是一位伟大的科学家。"
+            }
+        ]
+    },
+    {
+        "english": "grow",
+        "chineseDefinition": "v. 生长；成长",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "生长；成长；种植；增长"
+            }
+        ],
+        "phonetics": {
+            "british": "/ɡrəʊ/",
+            "american": "/ɡroʊ/"
+        },
+        "examples": [
+            {
+                "english": "Children grow very fast.",
+                "chinese": "孩子们长得很快。"
+            }
+        ]
+    },
+    {
+        "english": "guess",
+        "chineseDefinition": "v./n. 猜测；猜想",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "猜测；猜想；推测"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "猜测；推测"
+            }
+        ],
+        "phonetics": {
+            "british": "/ɡes/",
+            "american": "/ɡes/"
+        },
+        "examples": [
+            {
+                "english": "Can you guess how old I am?",
+                "chinese": "你能猜出我多大吗？"
+            }
+        ]
+    },
+    {
+        "english": "happen",
+        "chineseDefinition": "v. 发生；碰巧",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "发生；碰巧；出现"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈhæpən/",
+            "american": "/ˈhæpən/"
+        },
+        "examples": [
+            {
+                "english": "What happened to your bicycle?",
+                "chinese": "你的自行车怎么了？"
+            }
+        ]
+    },
+    {
+        "english": "healthy",
+        "chineseDefinition": "adj. 健康的；有益健康的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "健康的；有益健康的；健全的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈhelθi/",
+            "american": "/ˈhelθi/"
+        },
+        "examples": [
+            {
+                "english": "Eating vegetables keeps you healthy.",
+                "chinese": "吃蔬菜让你保持健康。"
+            }
+        ]
+    },
+    {
+        "english": "helpful",
+        "chineseDefinition": "adj. 有帮助的；有益的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "有帮助的；有益的；乐于助人的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈhelpfl/",
+            "american": "/ˈhelpfl/"
+        },
+        "examples": [
+            {
+                "english": "Your advice was very helpful.",
+                "chinese": "你的建议非常有帮助。"
+            }
+        ]
+    },
+    {
+        "english": "history",
+        "chineseDefinition": "n. 历史；历史学",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "历史；历史学；过去"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈhɪstri/",
+            "american": "/ˈhɪstri/"
+        },
+        "examples": [
+            {
+                "english": "China has a long and rich history.",
+                "chinese": "中国有着悠久而丰富的历史。"
+            }
+        ]
+    },
+    {
+        "english": "hobby",
+        "chineseDefinition": "n. 爱好；业余爱好",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "爱好；业余爱好"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈhɒbi/",
+            "american": "/ˈhɑːbi/"
+        },
+        "examples": [
+            {
+                "english": "My hobby is playing the guitar.",
+                "chinese": "我的爱好是弹吉他。"
+            }
+        ]
+    },
+    {
+        "english": "honest",
+        "chineseDefinition": "adj. 诚实的；坦诚的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "诚实的；坦诚的；正直的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈɒnɪst/",
+            "american": "/ˈɑːnɪst/"
+        },
+        "examples": [
+            {
+                "english": "Always be honest with your parents.",
+                "chinese": "对父母要始终诚实。"
+            }
+        ]
+    },
+    {
+        "english": "hope",
+        "chineseDefinition": "v./n. 希望；期望",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "希望；期望"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "希望；期望；愿望"
+            }
+        ],
+        "phonetics": {
+            "british": "/həʊp/",
+            "american": "/hoʊp/"
+        },
+        "examples": [
+            {
+                "english": "I hope you will feel better soon.",
+                "chinese": "我希望你很快会好起来。"
+            }
+        ]
+    },
+    {
+        "english": "huge",
+        "chineseDefinition": "adj. 巨大的；庞大的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "巨大的；庞大的；极大的"
+            }
+        ],
+        "phonetics": {
+            "british": "/hjuːdʒ/",
+            "american": "/hjuːdʒ/"
+        },
+        "examples": [
+            {
+                "english": "There is a huge difference between the two.",
+                "chinese": "两者之间有巨大的差异。"
+            }
+        ]
+    },
+    {
+        "english": "human",
+        "chineseDefinition": "adj./n. 人类的；人",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "人类的；人的"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "人；人类"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈhjuːmən/",
+            "american": "/ˈhjuːmən/"
+        },
+        "examples": [
+            {
+                "english": "Every human being deserves respect.",
+                "chinese": "每个人都应该受到尊重。"
+            }
+        ]
+    },
+    {
+        "english": "important",
+        "chineseDefinition": "adj. 重要的；重大的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "重要的；重大的；有地位的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ɪmˈpɔːtnt/",
+            "american": "/ɪmˈpɔːrtnt/"
+        },
+        "examples": [
+            {
+                "english": "It is important to study hard.",
+                "chinese": "努力学习很重要。"
+            }
+        ]
+    },
+    {
+        "english": "include",
+        "chineseDefinition": "v. 包括；包含",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "包括；包含；把……列入"
+            }
+        ],
+        "phonetics": {
+            "british": "/ɪnˈkluːd/",
+            "american": "/ɪnˈkluːd/"
+        },
+        "examples": [
+            {
+                "english": "The price includes breakfast.",
+                "chinese": "价格包括早餐。"
+            }
+        ]
+    },
+    {
+        "english": "increase",
+        "chineseDefinition": "v./n. 增加；增长",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "增加；增长"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "增加；增长；增进"
+            }
+        ],
+        "phonetics": {
+            "british": "/ɪnˈkriːs/",
+            "american": "/ɪnˈkriːs/"
+        },
+        "examples": [
+            {
+                "english": "The population has increased rapidly.",
+                "chinese": "人口迅速增加了。"
+            }
+        ]
+    },
+    {
+        "english": "interest",
+        "chineseDefinition": "n./v. 兴趣；使感兴趣",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "兴趣；爱好；利息"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "使感兴趣；吸引"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈɪntrəst/",
+            "american": "/ˈɪntrəst/"
+        },
+        "examples": [
+            {
+                "english": "I have a great interest in science.",
+                "chinese": "我对科学有很大的兴趣。"
+            }
+        ]
+    },
+    {
+        "english": "international",
+        "chineseDefinition": "adj. 国际的；国际性的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "国际的；国际性的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˌɪntəˈnæʃnəl/",
+            "american": "/ˌɪntərˈnæʃnəl/"
+        },
+        "examples": [
+            {
+                "english": "English is an international language.",
+                "chinese": "英语是一门国际语言。"
+            }
+        ]
+    },
+    {
+        "english": "introduce",
+        "chineseDefinition": "v. 介绍；引入",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "介绍；引入；推行"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˌɪntrəˈdjuːs/",
+            "american": "/ˌɪntrəˈduːs/"
+        },
+        "examples": [
+            {
+                "english": "Let me introduce my friend to you.",
+                "chinese": "让我把我的朋友介绍给你。"
+            }
+        ]
+    },
+    {
+        "english": "invite",
+        "chineseDefinition": "v. 邀请；招待",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "邀请；招待；招引"
+            }
+        ],
+        "phonetics": {
+            "british": "/ɪnˈvaɪt/",
+            "american": "/ɪnˈvaɪt/"
+        },
+        "examples": [
+            {
+                "english": "I was invited to her birthday party.",
+                "chinese": "我被邀请参加她的生日派对。"
+            }
+        ]
+    },
+    {
+        "english": "join",
+        "chineseDefinition": "v. 加入；参加",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "加入；参加；连接"
+            }
+        ],
+        "phonetics": {
+            "british": "/dʒɔɪn/",
+            "american": "/dʒɔɪn/"
+        },
+        "examples": [
+            {
+                "english": "Would you like to join our team?",
+                "chinese": "你愿意加入我们的团队吗？"
+            }
+        ]
+    },
+    {
+        "english": "keep",
+        "chineseDefinition": "v. 保持；保留",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "保持；保留；保存；继续"
+            }
+        ],
+        "phonetics": {
+            "british": "/kiːp/",
+            "american": "/kiːp/"
+        },
+        "examples": [
+            {
+                "english": "Keep your desk tidy and clean.",
+                "chinese": "保持桌子整洁干净。"
+            }
+        ]
+    },
+    {
+        "english": "kind",
+        "chineseDefinition": "adj./n. 善良的；种类",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "善良的；亲切的"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "种类；类型"
+            }
+        ],
+        "phonetics": {
+            "british": "/kaɪnd/",
+            "american": "/kaɪnd/"
+        },
+        "examples": [
+            {
+                "english": "She is kind to everyone around her.",
+                "chinese": "她对周围的每个人都很善良。"
+            }
+        ]
+    },
+    {
+        "english": "know",
+        "chineseDefinition": "v. 知道；了解",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "知道；了解；认识；懂得"
+            }
+        ],
+        "phonetics": {
+            "british": "/nəʊ/",
+            "american": "/noʊ/"
+        },
+        "examples": [
+            {
+                "english": "Do you know how to swim?",
+                "chinese": "你会游泳吗？"
+            }
+        ]
+    },
+    {
+        "english": "language",
+        "chineseDefinition": "n. 语言；语言文字",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "语言；语言文字；言语"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈlæŋɡwɪdʒ/",
+            "american": "/ˈlæŋɡwɪdʒ/"
+        },
+        "examples": [
+            {
+                "english": "Learning a new language takes time.",
+                "chinese": "学习一门新语言需要时间。"
+            }
+        ]
+    },
+    {
+        "english": "laugh",
+        "chineseDefinition": "v./n. 笑；大笑",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "笑；大笑；嘲笑"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "笑；笑声"
+            }
+        ],
+        "phonetics": {
+            "british": "/lɑːf/",
+            "american": "/læf/"
+        },
+        "examples": [
+            {
+                "english": "Everyone laughed at his funny joke.",
+                "chinese": "大家都被他有趣的笑话逗笑了。"
+            }
+        ]
+    },
+    {
+        "english": "lazy",
+        "chineseDefinition": "adj. 懒惰的；懒散的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "懒惰的；懒散的；慵懒的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈleɪzi/",
+            "american": "/ˈleɪzi/"
+        },
+        "examples": [
+            {
+                "english": "Don't be lazy; finish your work first.",
+                "chinese": "不要懒惰，先完成你的工作。"
+            }
+        ]
+    },
+    {
+        "english": "learn",
+        "chineseDefinition": "v. 学习；学会",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "学习；学会；了解"
+            }
+        ],
+        "phonetics": {
+            "british": "/lɜːn/",
+            "american": "/lɜːrn/"
+        },
+        "examples": [
+            {
+                "english": "You can learn a lot from reading books.",
+                "chinese": "你可以从读书中学到很多东西。"
+            }
+        ]
+    },
+    {
+        "english": "leave",
+        "chineseDefinition": "v. 离开；留下",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "离开；出发；留下；遗留"
+            }
+        ],
+        "phonetics": {
+            "british": "/liːv/",
+            "american": "/liːv/"
+        },
+        "examples": [
+            {
+                "english": "I will leave for Beijing tomorrow.",
+                "chinese": "我明天将前往北京。"
+            }
+        ]
+    },
+    {
+        "english": "lend",
+        "chineseDefinition": "v. 借出；出借",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "借出；出借；给予"
+            }
+        ],
+        "phonetics": {
+            "british": "/lend/",
+            "american": "/lend/"
+        },
+        "examples": [
+            {
+                "english": "Can you lend me your dictionary?",
+                "chinese": "你能把你的字典借给我吗？"
+            }
+        ]
+    },
+    {
+        "english": "listen",
+        "chineseDefinition": "v. 听；倾听",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "听；倾听；注意听"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈlɪsn/",
+            "american": "/ˈlɪsn/"
+        },
+        "examples": [
+            {
+                "english": "Please listen carefully to the instructions.",
+                "chinese": "请仔细听讲解。"
+            }
+        ]
+    },
+    {
+        "english": "local",
+        "chineseDefinition": "adj./n. 当地的；本地的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "当地的；本地的；地方的"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "当地人；本地人"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈləʊkl/",
+            "american": "/ˈloʊkl/"
+        },
+        "examples": [
+            {
+                "english": "We bought vegetables from the local market.",
+                "chinese": "我们从当地市场买了蔬菜。"
+            }
+        ]
+    },
+    {
+        "english": "lucky",
+        "chineseDefinition": "adj. 幸运的；吉利的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "幸运的；吉利的；带来好运的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈlʌki/",
+            "american": "/ˈlʌki/"
+        },
+        "examples": [
+            {
+                "english": "You are lucky to have such good friends.",
+                "chinese": "你有这么好的朋友，真幸运。"
+            }
+        ]
+    },
+    {
+        "english": "matter",
+        "chineseDefinition": "n./v. 事情；要紧",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "事情；问题；物质"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "要紧；有关系"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈmætə/",
+            "american": "/ˈmætər/"
+        },
+        "examples": [
+            {
+                "english": "It doesn't matter if you make mistakes.",
+                "chinese": "犯错误没关系。"
+            }
+        ]
+    },
+    {
+        "english": "memory",
+        "chineseDefinition": "n. 记忆；记忆力",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "记忆；记忆力；回忆"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈmeməri/",
+            "american": "/ˈmeməri/"
+        },
+        "examples": [
+            {
+                "english": "She has a very good memory for names.",
+                "chinese": "她记名字的记忆力很好。"
+            }
+        ]
+    },
+    {
+        "english": "message",
+        "chineseDefinition": "n. 信息；消息",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "信息；消息；电文；要旨"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈmesɪdʒ/",
+            "american": "/ˈmesɪdʒ/"
+        },
+        "examples": [
+            {
+                "english": "Please leave a message after the beep.",
+                "chinese": "请在嘀声后留言。"
+            }
+        ]
+    },
+    {
+        "english": "mind",
+        "chineseDefinition": "n./v. 头脑；介意",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "头脑；心智；意见"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "介意；注意；照看"
+            }
+        ],
+        "phonetics": {
+            "british": "/maɪnd/",
+            "american": "/maɪnd/"
+        },
+        "examples": [
+            {
+                "english": "Do you mind if I open the window?",
+                "chinese": "你介意我开窗吗？"
+            }
+        ]
+    },
+    {
+        "english": "mistake",
+        "chineseDefinition": "n./v. 错误；弄错",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "错误；过失；失误"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "弄错；误解"
+            }
+        ],
+        "phonetics": {
+            "british": "/mɪˈsteɪk/",
+            "american": "/mɪˈsteɪk/"
+        },
+        "examples": [
+            {
+                "english": "Everyone makes mistakes sometimes.",
+                "chinese": "每个人有时都会犯错误。"
+            }
+        ]
+    },
+    {
+        "english": "modern",
+        "chineseDefinition": "adj. 现代的；现代化的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "现代的；现代化的；时髦的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈmɒdən/",
+            "american": "/ˈmɑːdərn/"
+        },
+        "examples": [
+            {
+                "english": "Modern technology has changed our lives.",
+                "chinese": "现代技术改变了我们的生活。"
+            }
+        ]
+    },
+    {
+        "english": "natural",
+        "chineseDefinition": "adj. 自然的；天然的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "自然的；天然的；本能的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈnætʃrəl/",
+            "american": "/ˈnætʃrəl/"
+        },
+        "examples": [
+            {
+                "english": "We should protect natural resources.",
+                "chinese": "我们应该保护自然资源。"
+            }
+        ]
+    },
+    {
+        "english": "necessary",
+        "chineseDefinition": "adj. 必要的；必需的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "必要的；必需的；必然的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈnesəsəri/",
+            "american": "/ˈnesəseri/"
+        },
+        "examples": [
+            {
+                "english": "It is necessary to exercise regularly.",
+                "chinese": "定期锻炼是必要的。"
+            }
+        ]
+    },
+    {
+        "english": "notice",
+        "chineseDefinition": "v./n. 注意；通知",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "注意；注意到"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "注意；通知；告示"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈnəʊtɪs/",
+            "american": "/ˈnoʊtɪs/"
+        },
+        "examples": [
+            {
+                "english": "Did you notice the sign on the door?",
+                "chinese": "你注意到门上的标志了吗？"
+            }
+        ]
+    },
+    {
+        "english": "offer",
+        "chineseDefinition": "v./n. 提供；提议",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "提供；提议；出价"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "提议；提供；报价"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈɒfə/",
+            "american": "/ˈɔːfər/"
+        },
+        "examples": [
+            {
+                "english": "He offered to help carry the bags.",
+                "chinese": "他主动提出帮忙拎包。"
+            }
+        ]
+    },
+    {
+        "english": "often",
+        "chineseDefinition": "adv. 经常；常常",
+        "definitions": [
+            {
+                "partOfSpeech": "adv.",
+                "meaning": "经常；常常；频繁地"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈɒfn/",
+            "american": "/ˈɔːfn/"
+        },
+        "examples": [
+            {
+                "english": "I often go jogging in the morning.",
+                "chinese": "我经常早上去慢跑。"
+            }
+        ]
+    },
+    {
+        "english": "opinion",
+        "chineseDefinition": "n. 意见；看法",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "意见；看法；主张；舆论"
+            }
+        ],
+        "phonetics": {
+            "british": "/əˈpɪnjən/",
+            "american": "/əˈpɪnjən/"
+        },
+        "examples": [
+            {
+                "english": "In my opinion, reading is very important.",
+                "chinese": "在我看来，阅读非常重要。"
+            }
+        ]
+    },
+    {
+        "english": "opportunity",
+        "chineseDefinition": "n. 机会；时机",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "机会；时机；良机"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˌɒpəˈtjuːnɪti/",
+            "american": "/ˌɑːpərˈtuːnɪti/"
+        },
+        "examples": [
+            {
+                "english": "Don't miss the opportunity to improve.",
+                "chinese": "不要错过进步的机会。"
+            }
+        ]
+    },
+    {
+        "english": "organize",
+        "chineseDefinition": "v. 组织；安排",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "组织；安排；整理"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈɔːɡənaɪz/",
+            "american": "/ˈɔːrɡənaɪz/"
+        },
+        "examples": [
+            {
+                "english": "She organized a party for her classmates.",
+                "chinese": "她为同学组织了一个派对。"
+            }
+        ]
+    },
+    {
+        "english": "patient",
+        "chineseDefinition": "adj./n. 有耐心的；病人",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "有耐心的；耐心的"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "病人；患者"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈpeɪʃnt/",
+            "american": "/ˈpeɪʃnt/"
+        },
+        "examples": [
+            {
+                "english": "Be patient; success takes time.",
+                "chinese": "要有耐心，成功需要时间。"
+            }
+        ]
+    },
+    {
+        "english": "perform",
+        "chineseDefinition": "v. 表演；执行",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "表演；执行；完成；表现"
+            }
+        ],
+        "phonetics": {
+            "british": "/pəˈfɔːm/",
+            "american": "/pərˈfɔːrm/"
+        },
+        "examples": [
+            {
+                "english": "The students performed a play on stage.",
+                "chinese": "同学们在舞台上表演了一出戏。"
+            }
+        ]
+    },
+    {
+        "english": "plan",
+        "chineseDefinition": "n./v. 计划；打算",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "计划；方案；打算"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "计划；打算；规划"
+            }
+        ],
+        "phonetics": {
+            "british": "/plæn/",
+            "american": "/plæn/"
+        },
+        "examples": [
+            {
+                "english": "What are your plans for the summer?",
+                "chinese": "你夏天有什么计划？"
+            }
+        ]
+    },
+    {
+        "english": "polite",
+        "chineseDefinition": "adj. 礼貌的；有礼貌的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "礼貌的；有礼貌的；彬彬有礼的"
+            }
+        ],
+        "phonetics": {
+            "british": "/pəˈlaɪt/",
+            "american": "/pəˈlaɪt/"
+        },
+        "examples": [
+            {
+                "english": "It is polite to say thank you.",
+                "chinese": "说谢谢是有礼貌的。"
+            }
+        ]
+    },
+    {
+        "english": "popular",
+        "chineseDefinition": "adj. 受欢迎的；流行的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "受欢迎的；流行的；大众化的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈpɒpjələ/",
+            "american": "/ˈpɑːpjələr/"
+        },
+        "examples": [
+            {
+                "english": "Football is the most popular sport in the world.",
+                "chinese": "足球是世界上最受欢迎的运动。"
+            }
+        ]
+    },
+    {
+        "english": "practice",
+        "chineseDefinition": "n./v. 练习；实践",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "练习；实践；习惯"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "练习；实践；从事"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈpræktɪs/",
+            "american": "/ˈpræktɪs/"
+        },
+        "examples": [
+            {
+                "english": "Practice makes perfect.",
+                "chinese": "熟能生巧。"
+            }
+        ]
+    },
+    {
+        "english": "prepare",
+        "chineseDefinition": "v. 准备；预备",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "准备；预备；备好"
+            }
+        ],
+        "phonetics": {
+            "british": "/prɪˈpeə/",
+            "american": "/prɪˈper/"
+        },
+        "examples": [
+            {
+                "english": "We need to prepare for the exam.",
+                "chinese": "我们需要为考试做准备。"
+            }
+        ]
+    },
+    {
+        "english": "prevent",
+        "chineseDefinition": "v. 防止；预防",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "防止；预防；阻止"
+            }
+        ],
+        "phonetics": {
+            "british": "/prɪˈvent/",
+            "american": "/prɪˈvent/"
+        },
+        "examples": [
+            {
+                "english": "Washing hands can prevent illness.",
+                "chinese": "洗手可以预防疾病。"
+            }
+        ]
+    },
+    {
+        "english": "problem",
+        "chineseDefinition": "n. 问题；难题",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "问题；难题；困难"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈprɒbləm/",
+            "american": "/ˈprɑːbləm/"
+        },
+        "examples": [
+            {
+                "english": "We need to solve this problem together.",
+                "chinese": "我们需要一起解决这个问题。"
+            }
+        ]
+    },
+    {
+        "english": "produce",
+        "chineseDefinition": "v. 生产；产生",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "生产；制造；产生；出示"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "农产品；产品"
+            }
+        ],
+        "phonetics": {
+            "british": "/prəˈdjuːs/",
+            "american": "/prəˈduːs/"
+        },
+        "examples": [
+            {
+                "english": "This factory produces cars.",
+                "chinese": "这家工厂生产汽车。"
+            }
+        ]
+    },
+    {
+        "english": "protect",
+        "chineseDefinition": "v. 保护；防护",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "保护；防护；护卫"
+            }
+        ],
+        "phonetics": {
+            "british": "/prəˈtekt/",
+            "american": "/prəˈtekt/"
+        },
+        "examples": [
+            {
+                "english": "We should protect endangered animals.",
+                "chinese": "我们应该保护濒危动物。"
+            }
+        ]
+    },
+    {
+        "english": "proud",
+        "chineseDefinition": "adj. 自豪的；骄傲的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "自豪的；骄傲的；自负的"
+            }
+        ],
+        "phonetics": {
+            "british": "/praʊd/",
+            "american": "/praʊd/"
+        },
+        "examples": [
+            {
+                "english": "I am proud of my country.",
+                "chinese": "我为自己的国家感到自豪。"
+            }
+        ]
+    },
+    {
+        "english": "provide",
+        "chineseDefinition": "v. 提供；供给",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "提供；供给；规定"
+            }
+        ],
+        "phonetics": {
+            "british": "/prəˈvaɪd/",
+            "american": "/prəˈvaɪd/"
+        },
+        "examples": [
+            {
+                "english": "The school provides free meals for students.",
+                "chinese": "学校为学生提供免费餐食。"
+            }
+        ]
+    },
+    {
+        "english": "realize",
+        "chineseDefinition": "v. 认识到；实现",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "认识到；意识到；实现；了解"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈrɪəlaɪz/",
+            "american": "/ˈriːəlaɪz/"
+        },
+        "examples": [
+            {
+                "english": "I realized I had made a mistake.",
+                "chinese": "我意识到我犯了一个错误。"
+            }
+        ]
+    },
+    {
+        "english": "receive",
+        "chineseDefinition": "v. 收到；接受",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "收到；接受；接待；承受"
+            }
+        ],
+        "phonetics": {
+            "british": "/rɪˈsiːv/",
+            "american": "/rɪˈsiːv/"
+        },
+        "examples": [
+            {
+                "english": "Did you receive my letter?",
+                "chinese": "你收到我的信了吗？"
+            }
+        ]
+    },
+    {
+        "english": "reduce",
+        "chineseDefinition": "v. 减少；降低",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "减少；降低；缩小；化简"
+            }
+        ],
+        "phonetics": {
+            "british": "/rɪˈdjuːs/",
+            "american": "/rɪˈduːs/"
+        },
+        "examples": [
+            {
+                "english": "We should try to reduce waste.",
+                "chinese": "我们应该尽力减少浪费。"
+            }
+        ]
+    },
+    {
+        "english": "relax",
+        "chineseDefinition": "v. 放松；休息",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "放松；休息；松弛"
+            }
+        ],
+        "phonetics": {
+            "british": "/rɪˈlæks/",
+            "american": "/rɪˈlæks/"
+        },
+        "examples": [
+            {
+                "english": "Listening to music helps me relax.",
+                "chinese": "听音乐帮助我放松。"
+            }
+        ]
+    },
+    {
+        "english": "remember",
+        "chineseDefinition": "v. 记得；记住",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "记得；记住；纪念"
+            }
+        ],
+        "phonetics": {
+            "british": "/rɪˈmembə/",
+            "american": "/rɪˈmembər/"
+        },
+        "examples": [
+            {
+                "english": "Remember to call your mother today.",
+                "chinese": "记得今天给你妈妈打电话。"
+            }
+        ]
+    },
+    {
+        "english": "report",
+        "chineseDefinition": "n./v. 报告；报道",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "报告；报道；成绩单"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "报告；报道；报到"
+            }
+        ],
+        "phonetics": {
+            "british": "/rɪˈpɔːt/",
+            "american": "/rɪˈpɔːrt/"
+        },
+        "examples": [
+            {
+                "english": "She wrote a report about the experiment.",
+                "chinese": "她写了一份关于实验的报告。"
+            }
+        ]
+    },
+    {
+        "english": "respect",
+        "chineseDefinition": "n./v. 尊重；尊敬",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "尊重；敬意；方面"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "尊重；敬重"
+            }
+        ],
+        "phonetics": {
+            "british": "/rɪˈspekt/",
+            "american": "/rɪˈspekt/"
+        },
+        "examples": [
+            {
+                "english": "We should respect our elders.",
+                "chinese": "我们应该尊重长辈。"
+            }
+        ]
+    },
+    {
+        "english": "result",
+        "chineseDefinition": "n. 结果；成果",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "结果；成果；成绩"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "导致；结果是"
+            }
+        ],
+        "phonetics": {
+            "british": "/rɪˈzʌlt/",
+            "american": "/rɪˈzʌlt/"
+        },
+        "examples": [
+            {
+                "english": "Hard work always produces good results.",
+                "chinese": "努力工作总会产生好结果。"
+            }
+        ]
+    },
+    {
+        "english": "safe",
+        "chineseDefinition": "adj. 安全的；无危险的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "安全的；无危险的；谨慎的"
+            }
+        ],
+        "phonetics": {
+            "british": "/seɪf/",
+            "american": "/seɪf/"
+        },
+        "examples": [
+            {
+                "english": "It is safe to drink the tap water here.",
+                "chinese": "这里的自来水是安全的。"
+            }
+        ]
+    },
+    {
+        "english": "save",
+        "chineseDefinition": "v. 节省；拯救",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "节省；拯救；储存；存钱"
+            }
+        ],
+        "phonetics": {
+            "british": "/seɪv/",
+            "american": "/seɪv/"
+        },
+        "examples": [
+            {
+                "english": "Turn off the lights to save electricity.",
+                "chinese": "关灯节省电力。"
+            }
+        ]
+    },
+    {
+        "english": "share",
+        "chineseDefinition": "v./n. 分享；共享",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "分享；共享；分担"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "份额；股份；分担"
+            }
+        ],
+        "phonetics": {
+            "british": "/ʃeə/",
+            "american": "/ʃer/"
+        },
+        "examples": [
+            {
+                "english": "Share your food with your classmates.",
+                "chinese": "和同学分享你的食物。"
+            }
+        ]
+    },
+    {
+        "english": "similar",
+        "chineseDefinition": "adj. 相似的；类似的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "相似的；类似的；相仿的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈsɪmɪlə/",
+            "american": "/ˈsɪmɪlər/"
+        },
+        "examples": [
+            {
+                "english": "The two brothers look very similar.",
+                "chinese": "这两兄弟看起来非常相似。"
+            }
+        ]
+    },
+    {
+        "english": "simple",
+        "chineseDefinition": "adj. 简单的；简易的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "简单的；简易的；朴素的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈsɪmpl/",
+            "american": "/ˈsɪmpl/"
+        },
+        "examples": [
+            {
+                "english": "The instructions are simple and clear.",
+                "chinese": "说明简单清晰。"
+            }
+        ]
+    },
+    {
+        "english": "solve",
+        "chineseDefinition": "v. 解决；解答",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "解决；解答；破解"
+            }
+        ],
+        "phonetics": {
+            "british": "/sɒlv/",
+            "american": "/sɑːlv/"
+        },
+        "examples": [
+            {
+                "english": "We need to solve the problem quickly.",
+                "chinese": "我们需要迅速解决这个问题。"
+            }
+        ]
+    },
+    {
+        "english": "spend",
+        "chineseDefinition": "v. 花费；度过",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "花费；消耗；度过"
+            }
+        ],
+        "phonetics": {
+            "british": "/spend/",
+            "american": "/spend/"
+        },
+        "examples": [
+            {
+                "english": "I spend two hours reading every day.",
+                "chinese": "我每天花两个小时阅读。"
+            }
+        ]
+    },
+    {
+        "english": "spirit",
+        "chineseDefinition": "n. 精神；灵魂",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "精神；灵魂；心灵；勇气"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈspɪrɪt/",
+            "american": "/ˈspɪrɪt/"
+        },
+        "examples": [
+            {
+                "english": "The team showed great team spirit.",
+                "chinese": "团队展示了很强的团队精神。"
+            }
+        ]
+    },
+    {
+        "english": "strong",
+        "chineseDefinition": "adj. 强壮的；强大的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "强壮的；强大的；坚强的"
+            }
+        ],
+        "phonetics": {
+            "british": "/strɒŋ/",
+            "american": "/strɔːŋ/"
+        },
+        "examples": [
+            {
+                "english": "You need to be strong to carry this box.",
+                "chinese": "你需要有力气才能搬这个箱子。"
+            }
+        ]
+    },
+    {
+        "english": "study",
+        "chineseDefinition": "v./n. 学习；研究",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "学习；研究；仔细观察"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "学习；研究；书房"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈstʌdi/",
+            "american": "/ˈstʌdi/"
+        },
+        "examples": [
+            {
+                "english": "She studies very hard every day.",
+                "chinese": "她每天学习非常努力。"
+            }
+        ]
+    },
+    {
+        "english": "success",
+        "chineseDefinition": "n. 成功；成就",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "成功；成就；好结果"
+            }
+        ],
+        "phonetics": {
+            "british": "/səkˈses/",
+            "american": "/səkˈses/"
+        },
+        "examples": [
+            {
+                "english": "Hard work is the key to success.",
+                "chinese": "努力是成功的关键。"
+            }
+        ]
+    },
+    {
+        "english": "suggest",
+        "chineseDefinition": "v. 建议；暗示",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "建议；暗示；提议"
+            }
+        ],
+        "phonetics": {
+            "british": "/səˈdʒest/",
+            "american": "/səˈdʒest/"
+        },
+        "examples": [
+            {
+                "english": "I suggest you try again tomorrow.",
+                "chinese": "我建议你明天再试试。"
+            }
+        ]
+    },
+    {
+        "english": "support",
+        "chineseDefinition": "v./n. 支持；支撑",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "支持；支撑；供养"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "支持；帮助；支撑物"
+            }
+        ],
+        "phonetics": {
+            "british": "/səˈpɔːt/",
+            "american": "/səˈpɔːrt/"
+        },
+        "examples": [
+            {
+                "english": "My family always supports my decisions.",
+                "chinese": "我的家人总是支持我的决定。"
+            }
+        ]
+    },
+    {
+        "english": "surprise",
+        "chineseDefinition": "n./v. 惊喜；使惊讶",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "惊喜；意外"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "使惊讶；出其不意"
+            }
+        ],
+        "phonetics": {
+            "british": "/səˈpraɪz/",
+            "american": "/sərˈpraɪz/"
+        },
+        "examples": [
+            {
+                "english": "The gift was a big surprise for her.",
+                "chinese": "这份礼物让她大吃一惊。"
+            }
+        ]
+    },
+    {
+        "english": "talent",
+        "chineseDefinition": "n. 才能；天赋",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "才能；天赋；才华"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈtælənt/",
+            "american": "/ˈtælənt/"
+        },
+        "examples": [
+            {
+                "english": "She has a talent for painting.",
+                "chinese": "她有绘画天赋。"
+            }
+        ]
+    },
+    {
+        "english": "technology",
+        "chineseDefinition": "n. 技术；科技",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "技术；科技；工艺学"
+            }
+        ],
+        "phonetics": {
+            "british": "/tekˈnɒlədʒi/",
+            "american": "/tekˈnɑːlədʒi/"
+        },
+        "examples": [
+            {
+                "english": "Technology is changing the world rapidly.",
+                "chinese": "技术正在迅速改变世界。"
+            }
+        ]
+    },
+    {
+        "english": "think",
+        "chineseDefinition": "v. 思考；认为",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "思考；认为；想；考虑"
+            }
+        ],
+        "phonetics": {
+            "british": "/θɪŋk/",
+            "american": "/θɪŋk/"
+        },
+        "examples": [
+            {
+                "english": "Think before you speak.",
+                "chinese": "说话前先思考。"
+            }
+        ]
+    },
+    {
+        "english": "travel",
+        "chineseDefinition": "v./n. 旅行；旅游",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "旅行；旅游；行进"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "旅行；旅游"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈtrævl/",
+            "american": "/ˈtrævl/"
+        },
+        "examples": [
+            {
+                "english": "I love to travel to new places.",
+                "chinese": "我喜欢去新地方旅行。"
+            }
+        ]
+    },
+    {
+        "english": "true",
+        "chineseDefinition": "adj. 真实的；真正的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "真实的；真正的；忠诚的"
+            }
+        ],
+        "phonetics": {
+            "british": "/truː/",
+            "american": "/truː/"
+        },
+        "examples": [
+            {
+                "english": "Is it true that you won the competition?",
+                "chinese": "你赢得了比赛，是真的吗？"
+            }
+        ]
+    },
+    {
+        "english": "understand",
+        "chineseDefinition": "v. 理解；明白",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "理解；明白；了解"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˌʌndəˈstænd/",
+            "american": "/ˌʌndərˈstænd/"
+        },
+        "examples": [
+            {
+                "english": "Do you understand the question?",
+                "chinese": "你理解这个问题吗？"
+            }
+        ]
+    },
+    {
+        "english": "useful",
+        "chineseDefinition": "adj. 有用的；实用的",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "有用的；实用的；有益的"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈjuːsfl/",
+            "american": "/ˈjuːsfl/"
+        },
+        "examples": [
+            {
+                "english": "This tool is very useful in the kitchen.",
+                "chinese": "这个工具在厨房里非常有用。"
+            }
+        ]
+    },
+    {
+        "english": "visit",
+        "chineseDefinition": "v./n. 参观；拜访",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "参观；拜访；游览"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "参观；拜访；逗留"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈvɪzɪt/",
+            "american": "/ˈvɪzɪt/"
+        },
+        "examples": [
+            {
+                "english": "We visited the museum last weekend.",
+                "chinese": "我们上周末参观了博物馆。"
+            }
+        ]
+    },
+    {
+        "english": "volunteer",
+        "chineseDefinition": "n./v. 志愿者；自愿",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "志愿者；义工"
+            },
+            {
+                "partOfSpeech": "v.",
+                "meaning": "自愿做；义务做"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˌvɒlənˈtɪə/",
+            "american": "/ˌvɑːlənˈtɪr/"
+        },
+        "examples": [
+            {
+                "english": "Many students volunteer to help the community.",
+                "chinese": "许多学生自愿帮助社区。"
+            }
+        ]
+    },
+    {
+        "english": "weather",
+        "chineseDefinition": "n. 天气；气候",
+        "definitions": [
+            {
+                "partOfSpeech": "n.",
+                "meaning": "天气；气候"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈweðə/",
+            "american": "/ˈweðər/"
+        },
+        "examples": [
+            {
+                "english": "The weather is nice today.",
+                "chinese": "今天天气很好。"
+            }
+        ]
+    },
+    {
+        "english": "whole",
+        "chineseDefinition": "adj./n. 整个的；全部",
+        "definitions": [
+            {
+                "partOfSpeech": "adj.",
+                "meaning": "整个的；全部的；完整的"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "全部；整体"
+            }
+        ],
+        "phonetics": {
+            "british": "/həʊl/",
+            "american": "/hoʊl/"
+        },
+        "examples": [
+            {
+                "english": "I spent the whole day studying.",
+                "chinese": "我花了一整天学习。"
+            }
+        ]
+    },
+    {
+        "english": "wish",
+        "chineseDefinition": "v./n. 希望；祝愿",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "希望；祝愿；想要"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "希望；愿望；祝愿"
+            }
+        ],
+        "phonetics": {
+            "british": "/wɪʃ/",
+            "american": "/wɪʃ/"
+        },
+        "examples": [
+            {
+                "english": "I wish you a happy birthday.",
+                "chinese": "我祝你生日快乐。"
+            }
+        ]
+    },
+    {
+        "english": "wonder",
+        "chineseDefinition": "v./n. 想知道；奇迹",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "想知道；对……感到疑惑"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "奇迹；惊奇；惊叹"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈwʌndə/",
+            "american": "/ˈwʌndər/"
+        },
+        "examples": [
+            {
+                "english": "I wonder what the weather will be like tomorrow.",
+                "chinese": "我想知道明天天气会怎样。"
+            }
+        ]
+    },
+    {
+        "english": "worry",
+        "chineseDefinition": "v./n. 担心；烦恼",
+        "definitions": [
+            {
+                "partOfSpeech": "v.",
+                "meaning": "担心；烦恼；使忧虑"
+            },
+            {
+                "partOfSpeech": "n.",
+                "meaning": "担心；烦恼；忧虑"
+            }
+        ],
+        "phonetics": {
+            "british": "/ˈwʌri/",
+            "american": "/ˈwɜːri/"
+        },
+        "examples": [
+            {
+                "english": "Don't worry about the exam results.",
+                "chinese": "不要担心考试成绩。"
+            }
+        ]
+    }
 ]

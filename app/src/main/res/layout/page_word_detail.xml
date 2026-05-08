@@ -3,106 +3,203 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/color_background">
 
-    <LinearLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp">
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/color_surface">
 
-        <!-- English word or tap-to-reveal -->
-        <TextView
-            android:id="@+id/tvTapToReveal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tap_to_reveal"
-            android:textSize="16sp"
-            android:textColor="@color/color_text_secondary"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/bg_tap_to_reveal"
-            android:padding="12dp"
-            android:layout_marginBottom="8dp" />
-
-        <TextView
-            android:id="@+id/tvEnglish"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="32sp"
-            android:textColor="@color/color_on_surface"
-            android:fontFamily="serif"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="4dp" />
-
-        <!-- Phonetics + action buttons -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="16dp">
+            android:orientation="vertical"
+            android:padding="20dp">
 
+            <!-- Top row: progress + bookmark -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/tvProgress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="13sp"
+                    android:textColor="@color/color_text_secondary" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBookmark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:text="@string/bookmark"
+                    android:textSize="12sp"
+                    android:minWidth="0dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    app:iconSize="14dp"
+                    app:iconPadding="4dp" />
+
+            </LinearLayout>
+
+            <!-- Tap-to-reveal placeholder -->
             <TextView
-                android:id="@+id/tvPhoneticBritish"
+                android:id="@+id/tvTapToReveal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="13sp"
+                android:text="@string/tap_to_reveal"
+                android:textSize="16sp"
                 android:textColor="@color/color_text_secondary"
-                android:layout_marginEnd="12dp" />
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bg_tap_to_reveal"
+                android:padding="12dp"
+                android:layout_marginBottom="8dp" />
 
+            <!-- English word -->
             <TextView
-                android:id="@+id/tvPhoneticAmerican"
-                android:layout_width="0dp"
+                android:id="@+id/tvEnglish"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="13sp"
-                android:textColor="@color/color_text_secondary" />
+                android:textSize="36sp"
+                android:textColor="@color/color_on_surface"
+                android:fontFamily="serif"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp" />
 
-            <ImageButton
-                android:id="@+id/btnPlayWord"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@android:drawable/ic_media_play"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="@string/play_word"
-                android:layout_marginStart="8dp" />
+            <!-- Phonetics -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="20dp">
 
-            <ImageButton
-                android:id="@+id/btnBookmark"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@android:drawable/btn_star_big_off"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="@string/bookmark_word"
-                android:layout_marginStart="4dp" />
+                <!-- British pill -->
+                <LinearLayout
+                    android:id="@+id/llPhoneticBritish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_phonetic_pill"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="4dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:layout_marginEnd="10dp">
+
+                    <TextView
+                        android:id="@+id/tvPhoneticBritish"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:textColor="@color/color_text_secondary" />
+
+                    <ImageButton
+                        android:id="@+id/btnPlayBritish"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_sound_wave"
+                        android:background="@android:color/transparent"
+                        android:padding="4dp"
+                        android:layout_marginStart="2dp"
+                        android:contentDescription="@string/play_british" />
+
+                </LinearLayout>
+
+                <!-- American pill -->
+                <LinearLayout
+                    android:id="@+id/llPhoneticAmerican"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/bg_phonetic_pill"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="4dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/tvPhoneticAmerican"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:textColor="@color/color_text_secondary" />
+
+                    <ImageButton
+                        android:id="@+id/btnPlayAmerican"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_sound_wave"
+                        android:background="@android:color/transparent"
+                        android:padding="4dp"
+                        android:layout_marginStart="2dp"
+                        android:contentDescription="@string/play_american" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_divider"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Definitions (rows added dynamically) -->
+            <LinearLayout
+                android:id="@+id/llDefinitions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Examples header -->
+            <LinearLayout
+                android:id="@+id/llExamplesHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone">
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:background="@drawable/bg_dot_red" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/example_header"
+                    android:textSize="14sp"
+                    android:textColor="@color/color_on_surface"
+                    android:textStyle="bold"
+                    android:layout_marginStart="6dp" />
+
+            </LinearLayout>
+
+            <!-- Examples (rows added dynamically) -->
+            <LinearLayout
+                android:id="@+id/llExamples"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
 
         </LinearLayout>
 
-        <!-- Divider -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/color_divider"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Definitions -->
-        <TextView
-            android:id="@+id/tvDefinitions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="@color/color_on_surface"
-            android:lineSpacingMultiplier="1.4"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Examples -->
-        <LinearLayout
-            android:id="@+id/llExamples"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-
-    </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </ScrollView>

@@ -63,6 +63,10 @@
             android:name="playbackMode"
             app:argType="string"
             android:defaultValue="" />
+
+        <action
+            android:id="@+id/action_wordDetail_to_playbackMode"
+            app:destination="@id/playbackModeFragment" />
     </fragment>
 
     <fragment

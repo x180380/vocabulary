@@ -14,6 +14,7 @@ public class TtsManager {
 
     private final TextToSpeech tts;
     private boolean isReady = false;
+    private boolean muted = false;
 
     public TtsManager(@ApplicationContext Context context) {
         tts = new TextToSpeech(context.getApplicationContext(), status -> {
@@ -21,15 +22,24 @@ public class TtsManager {
         });
     }
 
+    public void setMuted(boolean muted) {
+        this.muted = muted;
+        if (muted) stop();
+    }
+
+    public boolean isMuted() {
+        return muted;
+    }
+
     public void speakEnglish(String text, PronunciationAccent accent, String utteranceId) {
-        if (!isReady || text == null || text.isEmpty()) return;
+        if (!isReady || muted || text == null || text.isEmpty()) return;
         Locale locale = accent == PronunciationAccent.BRITISH ? Locale.UK : Locale.US;
         tts.setLanguage(locale);
         tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, utteranceId);
     }
 
     public void speakChinese(String text, String utteranceId) {
-        if (!isReady || text == null || text.isEmpty()) return;
+        if (!isReady || muted || text == null || text.isEmpty()) return;
         tts.setLanguage(Locale.SIMPLIFIED_CHINESE);
         tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, utteranceId);
     }

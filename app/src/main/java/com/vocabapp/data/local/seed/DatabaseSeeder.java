@@ -22,7 +22,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext;
 public class DatabaseSeeder {
 
     private static final String PREF_NAME = "vocab_app_prefs";
-    private static final String KEY_DB_SEEDED = "db_seeded";
+    private static final String KEY_DB_SEEDED = "seed_v2";
 
     private final Context context;
     private final VocabBookDao vocabBookDao;

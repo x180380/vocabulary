@@ -66,4 +66,9 @@
     <string name="word_progress_format">%d/%d</string>
     <string name="play_word">Play pronunciation</string>
     <string name="bookmark_word">Bookmark word</string>
+    <string name="bookmark">标记</string>
+    <string name="example_header">例句</string>
+    <string name="mute">静音</string>
+    <string name="play_british">播放英式发音</string>
+    <string name="play_american">播放美式发音</string>
 </resources>

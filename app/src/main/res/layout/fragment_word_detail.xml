@@ -13,26 +13,7 @@
         android:background="@color/color_surface"
         android:elevation="4dp"
         app:navigationIcon="@drawable/ic_back"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/tvProgress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="16sp"
-            android:textColor="@color/color_on_surface" />
-
-        <ImageButton
-            android:id="@+id/btnBookmark"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="end"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@android:drawable/btn_star_big_off"
-            android:contentDescription="收藏" />
-
-    </androidx.appcompat.widget.Toolbar>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
@@ -65,35 +46,49 @@
         android:orientation="horizontal"
         android:background="@color/color_surface"
         android:elevation="8dp"
-        android:padding="8dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:gravity="center_vertical"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnHideToggle"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="40dp"
             android:text="@string/hide_word"
-            android:textSize="12sp"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+            android:textSize="13sp"
+            style="@style/Widget.MaterialComponents.Button.TextButton" />
 
         <ImageButton
             android:id="@+id/btnPlayWord"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:src="@drawable/ic_play"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@android:drawable/ic_media_play"
-            android:contentDescription="播放单词"
-            android:layout_marginStart="8dp" />
+            android:contentDescription="@string/play_word"
+            android:padding="12dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
 
         <ImageButton
             android:id="@+id/btnAutoPlay"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_repeat"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@android:drawable/ic_media_next"
-            android:contentDescription="自动播放"
-            android:layout_marginStart="4dp" />
+            android:contentDescription="@string/auto_play"
+            android:layout_marginEnd="8dp" />
+
+        <ImageButton
+            android:id="@+id/btnMute"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_volume_mute"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/mute" />
 
     </LinearLayout>
 
