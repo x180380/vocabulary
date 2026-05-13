@@ -2,21 +2,16 @@ package com.vocabapp.domain.model;
 
 public class VocabBook {
     public final long id;
-    public final String title;
-    public final String description;
-    public final int colorIndex;
-    public final boolean isFavorite;
-    public final long createdAt;
+    public final String bookName;
+    public final String assetFile;
     public final int wordCount;
+    public final int colorIndex;
 
-    public VocabBook(long id, String title, String description, int colorIndex,
-                     boolean isFavorite, long createdAt, int wordCount) {
+    public VocabBook(long id, String bookName, String assetFile, int wordCount, int colorIndex) {
         this.id = id;
-        this.title = title;
-        this.description = description;
-        this.colorIndex = colorIndex;
-        this.isFavorite = isFavorite;
-        this.createdAt = createdAt;
+        this.bookName = bookName;
+        this.assetFile = assetFile;
         this.wordCount = wordCount;
+        this.colorIndex = colorIndex;
     }
 }

@@ -37,7 +37,7 @@ public class VocabBookAdapter extends ListAdapter<VocabBook, VocabBookAdapter.Vi
 
                 @Override
                 public boolean areContentsTheSame(@NonNull VocabBook oldItem, @NonNull VocabBook newItem) {
-                    return oldItem.title.equals(newItem.title)
+                    return oldItem.bookName.equals(newItem.bookName)
                             && oldItem.wordCount == newItem.wordCount
                             && oldItem.colorIndex == newItem.colorIndex;
                 }
@@ -65,7 +65,7 @@ public class VocabBookAdapter extends ListAdapter<VocabBook, VocabBookAdapter.Vi
         }
 
         void bind(VocabBook book) {
-            binding.tvTitle.setText(book.title);
+            binding.tvTitle.setText(book.bookName);
             binding.tvWordCount.setText(binding.getRoot().getContext()
                     .getString(R.string.word_count_format, book.wordCount));
             binding.cardRoot.setCardBackgroundColor(

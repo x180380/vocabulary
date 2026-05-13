@@ -17,29 +17,17 @@ import dagger.hilt.android.lifecycle.HiltViewModel;
 public class VocabListViewModel extends ViewModel {
 
     private final VocabBookRepository repository;
-    public final LiveData<List<VocabBook>> favoriteBooks;
+    public final LiveData<List<VocabBook>> allBooks;
     public final MutableLiveData<Boolean> isEditMode = new MutableLiveData<>(false);
 
     @Inject
     public VocabListViewModel(VocabBookRepository repository) {
         this.repository = repository;
-        this.favoriteBooks = repository.getFavoriteVocabBooks();
-    }
-
-    public void toggleFavorite(long vocabBookId, boolean currentFavorite) {
-        repository.setFavorite(vocabBookId, !currentFavorite);
+        this.allBooks = repository.getAllVocabBooks();
     }
 
     public void toggleEditMode() {
         Boolean current = isEditMode.getValue();
         isEditMode.setValue(current == null ? true : !current);
-    }
-
-    public void createVocabBook(String title, int colorIndex) {
-        repository.createVocabBook(title, "", colorIndex, true);
-    }
-
-    public void deleteVocabBook(long id) {
-        repository.deleteVocabBook(id);
     }
 }

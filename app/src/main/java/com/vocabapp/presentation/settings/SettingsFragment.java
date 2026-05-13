@@ -48,6 +48,7 @@ public class SettingsFragment extends Fragment {
         binding.rowDisplayMode.setOnClickListener(v -> showVisibilityModeDialog());
         binding.rowAccent.setOnClickListener(v -> showAccentDialog());
         binding.rowAutoAdvance.setOnClickListener(v -> showAutoAdvanceDialog());
+        binding.rowGroupSize.setOnClickListener(v -> showGroupSizeDialog());
     }
 
     private void observeData() {
@@ -68,6 +69,9 @@ public class SettingsFragment extends Fragment {
 
         viewModel.autoAdvanceSeconds.observe(getViewLifecycleOwner(), seconds ->
                 binding.tvAutoAdvanceValue.setText(getString(R.string.seconds_format, seconds)));
+
+        viewModel.groupSize.observe(getViewLifecycleOwner(), size ->
+                binding.tvGroupSizeValue.setText(getString(R.string.group_size_format, size)));
     }
 
     private void showVisibilityModeDialog() {
@@ -98,11 +102,20 @@ public class SettingsFragment extends Fragment {
     }
 
     private void showAutoAdvanceDialog() {
-        int[] options = {3, 5, 7, 10, 15};
-        String[] labels = {"3秒", "5秒", "7秒", "10秒", "15秒"};
+        int[] options = {0, 1, 3, 5, 7, 10, 15};
+        String[] labels = {"0秒", "1秒", "3秒", "5秒", "7秒", "10秒", "15秒"};
         new android.app.AlertDialog.Builder(requireContext())
                 .setTitle(getString(R.string.setting_auto_advance))
                 .setItems(labels, (dialog, which) -> viewModel.setAutoAdvanceSeconds(options[which]))
+                .show();
+    }
+
+    private void showGroupSizeDialog() {
+        int[] options = {20, 50, 100, 200};
+        String[] labels = {"20个", "50个", "100个", "200个"};
+        new android.app.AlertDialog.Builder(requireContext())
+                .setTitle(getString(R.string.setting_group_size))
+                .setItems(labels, (dialog, which) -> viewModel.setGroupSize(options[which]))
                 .show();
     }
 

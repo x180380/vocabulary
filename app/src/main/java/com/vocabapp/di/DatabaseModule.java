@@ -5,9 +5,9 @@ import android.content.Context;
 import androidx.room.Room;
 
 import com.vocabapp.data.local.database.VocabDatabase;
-import com.vocabapp.data.local.database.daos.TagDao;
+import com.vocabapp.data.local.database.daos.BookWordDao;
 import com.vocabapp.data.local.database.daos.VocabBookDao;
-import com.vocabapp.data.local.database.daos.WordDao;
+import com.vocabapp.data.local.database.daos.WordDefinitionDao;
 
 import javax.inject.Singleton;
 
@@ -25,6 +25,7 @@ public class DatabaseModule {
     @Singleton
     public VocabDatabase provideDatabase(@ApplicationContext Context context) {
         return Room.databaseBuilder(context, VocabDatabase.class, "vocab_database")
+                .fallbackToDestructiveMigration()
                 .build();
     }
 
@@ -36,13 +37,13 @@ public class DatabaseModule {
 
     @Provides
     @Singleton
-    public WordDao provideWordDao(VocabDatabase db) {
-        return db.wordDao();
+    public WordDefinitionDao provideWordDefinitionDao(VocabDatabase db) {
+        return db.wordDefinitionDao();
     }
 
     @Provides
     @Singleton
-    public TagDao provideTagDao(VocabDatabase db) {
-        return db.tagDao();
+    public BookWordDao provideBookWordDao(VocabDatabase db) {
+        return db.bookWordDao();
     }
 }

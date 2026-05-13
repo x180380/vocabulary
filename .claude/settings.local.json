@@ -16,7 +16,13 @@
       "Bash(adb devices *)",
       "Bash(~/Library/Android/sdk/platform-tools/adb devices *)",
       "Bash(./gradlew installDebug *)",
-      "Bash(xargs cat)"
+      "Bash(xargs cat)",
+      "Bash(./gradlew assembleDebug *)",
+      "Bash(adb install *)",
+      "Bash(python3 -c \"import json; data=json.load\\(open\\('/Users/lixinlong/project/vocabulary/app/src/main/assets/seed/cet4_words.json'\\)\\); print\\('CET4 count:', len\\(data\\), 'IDs:', data[0]['id'], '-', data[-1]['id']\\)\")",
+      "Bash(python3 *)",
+      "Bash(pip3 install *)",
+      "Bash(env)"
     ]
   }
 }

@@ -3,15 +3,12 @@ package com.vocabapp.presentation.wordlist;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.Transformations;
 import androidx.lifecycle.ViewModel;
 
-import com.vocabapp.data.repository.TagRepository;
 import com.vocabapp.data.repository.VocabBookRepository;
 import com.vocabapp.data.repository.WordRepository;
 import com.vocabapp.domain.enums.SortOrder;
 import com.vocabapp.domain.enums.VisibilityMode;
-import com.vocabapp.domain.model.Tag;
 import com.vocabapp.domain.model.VocabBook;
 import com.vocabapp.domain.model.Word;
 
@@ -28,30 +25,22 @@ import dagger.hilt.android.lifecycle.HiltViewModel;
 public class WordListViewModel extends ViewModel {
 
     private final WordRepository wordRepository;
-    private final TagRepository tagRepository;
     private final VocabBookRepository vocabBookRepository;
 
     public final MutableLiveData<Long> vocabBookId = new MutableLiveData<>();
-    public final MutableLiveData<SortOrder> sortOrder = new MutableLiveData<>(SortOrder.BY_TIME_DESC);
+    public final MutableLiveData<SortOrder> sortOrder = new MutableLiveData<>(SortOrder.BY_ALPHABET_ASC);
     public final MutableLiveData<Boolean> isBatchMode = new MutableLiveData<>(false);
     public final MutableLiveData<Set<Long>> selectedWordIds = new MutableLiveData<>(new HashSet<>());
     public final MutableLiveData<VisibilityMode> visibilityMode = new MutableLiveData<>(VisibilityMode.SHOW_BOTH);
-    public final MutableLiveData<Set<Long>> activeTagFilters = new MutableLiveData<>(new HashSet<>());
 
-    public final LiveData<List<Tag>> allTags;
     public final LiveData<List<VocabBook>> allVocabBooks;
-
-    // Words switch based on sortOrder + vocabBookId
     public final LiveData<List<Word>> words;
 
     @Inject
-    public WordListViewModel(WordRepository wordRepository, TagRepository tagRepository,
-                             VocabBookRepository vocabBookRepository) {
+    public WordListViewModel(WordRepository wordRepository, VocabBookRepository vocabBookRepository) {
         this.wordRepository = wordRepository;
-        this.tagRepository = tagRepository;
         this.vocabBookRepository = vocabBookRepository;
 
-        allTags = tagRepository.getAllTags();
         allVocabBooks = vocabBookRepository.getAllVocabBooks();
 
         MediatorLiveData<List<Word>> mediator = new MediatorLiveData<>();
@@ -67,7 +56,7 @@ public class WordListViewModel extends ViewModel {
         SortOrder order = sortOrder.getValue();
         if (id == null) return;
         if (currentWordSource != null) mediator.removeSource(currentWordSource);
-        currentWordSource = wordRepository.getWordsByVocab(id, order != null ? order : SortOrder.BY_TIME_DESC);
+        currentWordSource = wordRepository.getWordsByVocab(id, order != null ? order : SortOrder.BY_ALPHABET_ASC);
         mediator.addSource(currentWordSource, mediator::setValue);
     }
 

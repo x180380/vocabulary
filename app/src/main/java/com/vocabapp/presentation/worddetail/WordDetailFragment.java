@@ -42,6 +42,7 @@ public class WordDetailFragment extends Fragment {
     private Runnable autoAdvanceRunnable;
     private boolean initialScrollDone = false;
     private boolean tapOverlayEnabled = false;
+    private boolean readyToAdvance = false;
 
     @Inject TtsManager ttsManager;
     @Inject UserPreferencesManager prefsManager;
@@ -61,7 +62,8 @@ public class WordDetailFragment extends Fragment {
 
         long vocabBookId = getArguments() != null ? getArguments().getLong("vocabBookId", -1) : -1;
         long startWordId = getArguments() != null ? getArguments().getLong("startWordId", -1) : -1;
-        viewModel.init(vocabBookId, startWordId);
+        int groupCount = getArguments() != null ? getArguments().getInt("groupCount", -1) : -1;
+        viewModel.init(vocabBookId, startWordId, groupCount);
 
         String playbackModeStr = getArguments() != null ? getArguments().getString("playbackMode", "") : "";
         if (!playbackModeStr.isEmpty()) {
@@ -108,7 +110,7 @@ public class WordDetailFragment extends Fragment {
 
             @Override
             public void onToggleBookmark(Word word) {
-                viewModel.toggleBookmark();
+                // bookmark feature removed
             }
         });
 
@@ -139,27 +141,21 @@ public class WordDetailFragment extends Fragment {
         binding.btnHideToggle.setOnClickListener(v -> cycleVisibilityMode());
         binding.btnAutoPlay.setOnClickListener(v -> {
             long vocabBookId = getArguments() != null ? getArguments().getLong("vocabBookId", -1) : -1;
+            List<Word> words = viewModel.allWords.getValue();
+            Integer idx = viewModel.currentIndex.getValue();
+            long currentWordId = (words != null && idx != null && idx < words.size())
+                    ? words.get(idx).id : -1;
             Bundle args = new Bundle();
             args.putLong("vocabBookId", vocabBookId);
+            args.putLong("startWordId", currentWordId);
             Navigation.findNavController(requireView())
                     .navigate(R.id.action_wordDetail_to_playbackMode, args);
         });
-        binding.btnPlayWord.setOnClickListener(v -> {
-            pagerAdapter.stopExampleAnimation();
-            List<Word> words = viewModel.allWords.getValue();
-            Integer idx = viewModel.currentIndex.getValue();
-            if (words != null && idx != null && idx < words.size()) {
-                ttsManager.speakEnglish(words.get(idx).english, prefsManager.getAccent(),
-                        "word_" + words.get(idx).id);
-            }
-        });
-
-        binding.tapOverlay.setOnClickListener(v -> onTapOverlay());
+binding.tapOverlay.setOnClickListener(v -> onTapOverlay());
         binding.btnMute.setOnClickListener(v -> {
             boolean nowMuted = !ttsManager.isMuted();
             ttsManager.setMuted(nowMuted);
-            binding.btnMute.setColorFilter(nowMuted
-                    ? getResources().getColor(R.color.color_red_accent, null) : 0);
+            binding.btnMute.setImageResource(nowMuted ? R.drawable.ic_volume_mute : R.drawable.ic_volume_up);
         });
     }
 
@@ -174,7 +170,6 @@ public class WordDetailFragment extends Fragment {
                 int startIdx = viewModel.findStartIndex(words);
                 viewModel.currentIndex.setValue(startIdx);
                 pagerAdapter.setCurrentPosition(startIdx);
-                pagerAdapter.setCurrentBookmarked(words.get(startIdx).isBookmarked);
                 binding.viewPager.setCurrentItem(startIdx, false);
 
                 PlaybackMode mode = viewModel.playbackMode.getValue();
@@ -202,11 +197,11 @@ public class WordDetailFragment extends Fragment {
             else cancelPending();
         });
 
-        viewModel.isBookmarked.observe(getViewLifecycleOwner(), bookmarked ->
-                pagerAdapter.setCurrentBookmarked(Boolean.TRUE.equals(bookmarked)));
+        viewModel.currentIndex.observe(getViewLifecycleOwner(), idx -> updatePrevWordToolbar());
 
         viewModel.playbackMode.observe(getViewLifecycleOwner(), mode -> {
             if (mode == null) return;
+            pagerAdapter.setPlaybackMode(mode);
             switch (mode) {
                 case CHINESE_RECALL_ENGLISH:
                     viewModel.setVisibilityMode(VisibilityMode.HIDE_ENGLISH);
@@ -216,6 +211,9 @@ public class WordDetailFragment extends Fragment {
                     break;
                 case STUDY_MODE:
                     viewModel.setVisibilityMode(VisibilityMode.SHOW_BOTH);
+                    break;
+                case MEMORIZE_EXAMPLE:
+                    viewModel.setVisibilityMode(VisibilityMode.HIDE_ENGLISH);
                     break;
             }
             binding.btnHideToggle.setVisibility(View.GONE);
@@ -257,6 +255,12 @@ public class WordDetailFragment extends Fragment {
             case STUDY_MODE:
                 ttsManager.speakEnglish(word.english, prefsManager.getAccent(), "study_en_" + word.id);
                 break;
+            case MEMORIZE_EXAMPLE:
+                String exChinese = (word.examples != null && !word.examples.isEmpty()
+                        && word.examples.get(0).chinese != null)
+                        ? word.examples.get(0).chinese : getChineseText(word);
+                ttsManager.speakChinese(exChinese, "page_cn_" + word.id);
+                break;
         }
     }
 
@@ -272,6 +276,8 @@ public class WordDetailFragment extends Fragment {
         Integer currentIdx = viewModel.currentIndex.getValue();
         if (words == null || currentIdx == null) return;
 
+        long pauseMs = prefsManager.getAutoAdvanceSeconds() * 1000L;
+
         if (mode == PlaybackMode.STUDY_MODE && utteranceId.startsWith("study_en_")) {
             long wordId = parseWordId(utteranceId);
             if (currentIdx < words.size() && words.get(currentIdx).id == wordId) {
@@ -282,14 +288,25 @@ public class WordDetailFragment extends Fragment {
         } else if (mode == PlaybackMode.STUDY_MODE && utteranceId.startsWith("study_cn_")) {
             long wordId = parseWordId(utteranceId);
             if (currentIdx < words.size() && words.get(currentIdx).id == wordId) {
-                handler.postDelayed(this::advanceToNextCard, 2000);
+                readyToAdvance = true;
+                enableTapOverlay();
+                handler.postDelayed(this::advanceToNextCard, pauseMs);
             }
 
         } else if (mode == PlaybackMode.CHINESE_RECALL_ENGLISH && utteranceId.startsWith("tap_en_")) {
-            handler.postDelayed(this::advanceToNextCard, 500);
+            readyToAdvance = true;
+            enableTapOverlay();
+            handler.postDelayed(this::advanceToNextCard, pauseMs);
 
         } else if (mode == PlaybackMode.ENGLISH_RECALL_CHINESE && utteranceId.startsWith("tap_cn_")) {
-            handler.postDelayed(this::advanceToNextCard, 500);
+            readyToAdvance = true;
+            enableTapOverlay();
+            handler.postDelayed(this::advanceToNextCard, pauseMs);
+
+        } else if (mode == PlaybackMode.MEMORIZE_EXAMPLE && utteranceId.startsWith("tap_ex_")) {
+            readyToAdvance = true;
+            enableTapOverlay();
+            handler.postDelayed(this::advanceToNextCard, pauseMs);
         }
     }
 
@@ -297,6 +314,13 @@ public class WordDetailFragment extends Fragment {
         if (!tapOverlayEnabled) return;
         PlaybackMode mode = viewModel.playbackMode.getValue();
         if (mode == null) return;
+
+        if (readyToAdvance) {
+            disableTapOverlay();
+            cancelPending();
+            advanceToNextCard();
+            return;
+        }
 
         disableTapOverlay();
         cancelPending();
@@ -311,6 +335,16 @@ public class WordDetailFragment extends Fragment {
             ttsManager.speakEnglish(word.english, prefsManager.getAccent(), "tap_en_" + word.id);
         } else if (mode == PlaybackMode.ENGLISH_RECALL_CHINESE) {
             ttsManager.speakChinese(getChineseText(word), "tap_cn_" + word.id);
+        } else if (mode == PlaybackMode.MEMORIZE_EXAMPLE) {
+            viewModel.revealEnglish();
+            if (word.examples != null && !word.examples.isEmpty()) {
+                ttsManager.speakEnglish(word.examples.get(0).english, prefsManager.getAccent(), "tap_ex_" + word.id);
+            } else {
+                long pauseMs = prefsManager.getAutoAdvanceSeconds() * 1000L;
+                readyToAdvance = true;
+                enableTapOverlay();
+                handler.postDelayed(this::advanceToNextCard, pauseMs);
+            }
         }
     }
 
@@ -333,6 +367,7 @@ public class WordDetailFragment extends Fragment {
 
     private void disableTapOverlay() {
         tapOverlayEnabled = false;
+        readyToAdvance = false;
         if (binding != null) binding.tapOverlay.setVisibility(View.GONE);
     }
 
@@ -365,6 +400,19 @@ public class WordDetailFragment extends Fragment {
     }
 
     // ── Helpers ──────────────────────────────────────────────────────────────
+
+    private void updatePrevWordToolbar() {
+        List<Word> words = viewModel.allWords.getValue();
+        Integer idx = viewModel.currentIndex.getValue();
+        if (words == null || idx == null || idx <= 0) {
+            binding.toolbarWordEnglish.setText("");
+            binding.toolbarWordChinese.setText("");
+            return;
+        }
+        Word prev = words.get(idx - 1);
+        binding.toolbarWordEnglish.setText(prev.english);
+        binding.toolbarWordChinese.setText(getChineseText(prev));
+    }
 
     private String getChineseText(Word word) {
         if (word.definitions == null || word.definitions.isEmpty()) return "";

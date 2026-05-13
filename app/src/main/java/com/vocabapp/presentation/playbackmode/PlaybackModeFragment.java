@@ -42,13 +42,18 @@ public class PlaybackModeFragment extends Fragment {
                 navigateToWordDetail(PlaybackMode.ENGLISH_RECALL_CHINESE));
         binding.btnModeStudy.setOnClickListener(v ->
                 navigateToWordDetail(PlaybackMode.STUDY_MODE));
+        binding.btnModeMemorizeExample.setOnClickListener(v ->
+                navigateToWordDetail(PlaybackMode.MEMORIZE_EXAMPLE));
     }
 
     private void navigateToWordDetail(PlaybackMode mode) {
         long vocabBookId = getArguments() != null ? getArguments().getLong("vocabBookId", -1) : -1;
+        long startWordId = getArguments() != null ? getArguments().getLong("startWordId", -1) : -1;
+        int groupCount = getArguments() != null ? getArguments().getInt("groupCount", -1) : -1;
         Bundle args = new Bundle();
         args.putLong("vocabBookId", vocabBookId);
-        args.putLong("startWordId", -1);
+        args.putLong("startWordId", startWordId);
+        args.putInt("groupCount", groupCount);
         args.putString("playbackMode", mode.name());
         Navigation.findNavController(requireView())
                 .navigate(R.id.action_playbackMode_to_wordDetail, args);

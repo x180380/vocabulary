@@ -47,8 +47,7 @@ public class WordListAdapter extends ListAdapter<Word, WordListAdapter.ViewHolde
 
                 @Override
                 public boolean areContentsTheSame(@NonNull Word oldItem, @NonNull Word newItem) {
-                    return oldItem.english.equals(newItem.english)
-                            && oldItem.isBookmarked == newItem.isBookmarked;
+                    return oldItem.english.equals(newItem.english);
                 }
             };
 

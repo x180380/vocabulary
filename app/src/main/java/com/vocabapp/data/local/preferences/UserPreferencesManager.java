@@ -14,6 +14,7 @@ public class UserPreferencesManager {
     private static final String KEY_VISIBILITY_MODE = "visibility_mode";
     private static final String KEY_ACCENT = "accent";
     private static final String KEY_AUTO_ADVANCE_SECONDS = "auto_advance_seconds";
+    private static final String KEY_GROUP_SIZE = "group_size";
 
     private final SharedPreferences prefs;
 
@@ -46,5 +47,13 @@ public class UserPreferencesManager {
 
     public void setAutoAdvanceSeconds(int seconds) {
         prefs.edit().putInt(KEY_AUTO_ADVANCE_SECONDS, seconds).apply();
+    }
+
+    public int getGroupSize() {
+        return prefs.getInt(KEY_GROUP_SIZE, 100);
+    }
+
+    public void setGroupSize(int size) {
+        prefs.edit().putInt(KEY_GROUP_SIZE, size).apply();
     }
 }

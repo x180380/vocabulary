@@ -3,8 +3,9 @@ package com.vocabapp.di;
 import android.content.Context;
 
 import com.google.gson.Gson;
+import com.vocabapp.data.local.database.daos.BookWordDao;
 import com.vocabapp.data.local.database.daos.VocabBookDao;
-import com.vocabapp.data.local.database.daos.WordDao;
+import com.vocabapp.data.local.database.daos.WordDefinitionDao;
 import com.vocabapp.data.local.preferences.UserPreferencesManager;
 import com.vocabapp.data.local.seed.DatabaseSeeder;
 import com.vocabapp.presentation.common.AppExecutors;
@@ -42,7 +43,9 @@ public class AppModule {
     @Provides
     @Singleton
     public DatabaseSeeder provideDatabaseSeeder(@ApplicationContext Context context,
-                                                VocabBookDao vocabBookDao, WordDao wordDao) {
-        return new DatabaseSeeder(context, vocabBookDao, wordDao);
+                                                VocabBookDao vocabBookDao,
+                                                WordDefinitionDao wordDefinitionDao,
+                                                BookWordDao bookWordDao) {
+        return new DatabaseSeeder(context, vocabBookDao, wordDefinitionDao, bookWordDao);
     }
 }

@@ -19,6 +19,7 @@ public class SettingsViewModel extends ViewModel {
     public final MutableLiveData<VisibilityMode> visibilityMode;
     public final MutableLiveData<PronunciationAccent> accent;
     public final MutableLiveData<Integer> autoAdvanceSeconds;
+    public final MutableLiveData<Integer> groupSize;
 
     @Inject
     public SettingsViewModel(UserPreferencesManager prefsManager) {
@@ -26,6 +27,7 @@ public class SettingsViewModel extends ViewModel {
         this.visibilityMode = new MutableLiveData<>(prefsManager.getVisibilityMode());
         this.accent = new MutableLiveData<>(prefsManager.getAccent());
         this.autoAdvanceSeconds = new MutableLiveData<>(prefsManager.getAutoAdvanceSeconds());
+        this.groupSize = new MutableLiveData<>(prefsManager.getGroupSize());
     }
 
     public void setVisibilityMode(VisibilityMode mode) {
@@ -41,5 +43,10 @@ public class SettingsViewModel extends ViewModel {
     public void setAutoAdvanceSeconds(int seconds) {
         autoAdvanceSeconds.setValue(seconds);
         prefsManager.setAutoAdvanceSeconds(seconds);
+    }
+
+    public void setGroupSize(int size) {
+        groupSize.setValue(size);
+        prefsManager.setGroupSize(size);
     }
 }

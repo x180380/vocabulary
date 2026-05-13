@@ -1,24 +1,20 @@
 package com.vocabapp.data.repository;
 
+import androidx.annotation.Nullable;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Transformations;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.vocabapp.data.local.database.daos.VocabBookDao;
-import com.vocabapp.data.local.database.daos.WordDao;
-import com.vocabapp.data.local.database.entities.TagEntity;
-import com.vocabapp.data.local.database.entities.WordEntity;
-import com.vocabapp.data.local.database.entities.WordWithTags;
+import com.vocabapp.data.local.database.daos.BookWordDao;
+import com.vocabapp.data.local.database.entities.BookWordWithDefinition;
+import com.vocabapp.data.local.database.entities.WordDefinitionEntity;
 import com.vocabapp.domain.enums.SortOrder;
 import com.vocabapp.domain.model.Definition;
 import com.vocabapp.domain.model.Example;
 import com.vocabapp.domain.model.Phonetics;
-import com.vocabapp.domain.model.Tag;
 import com.vocabapp.domain.model.Word;
 import com.vocabapp.presentation.common.AppExecutors;
-
-import androidx.annotation.Nullable;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -30,86 +26,42 @@ import javax.inject.Singleton;
 @Singleton
 public class WordRepository {
 
-    private final WordDao wordDao;
-    private final VocabBookDao vocabBookDao;
+    private final BookWordDao bookWordDao;
     private final AppExecutors executors;
     private final Gson gson;
 
     @Inject
-    public WordRepository(WordDao wordDao, VocabBookDao vocabBookDao,
-                          AppExecutors executors, Gson gson) {
-        this.wordDao = wordDao;
-        this.vocabBookDao = vocabBookDao;
+    public WordRepository(BookWordDao bookWordDao, AppExecutors executors, Gson gson) {
+        this.bookWordDao = bookWordDao;
         this.executors = executors;
         this.gson = gson;
     }
 
     public LiveData<List<Word>> getWordsByVocab(long vocabBookId, SortOrder sortOrder) {
-        LiveData<List<WordWithTags>> source;
-        switch (sortOrder) {
-            case BY_TIME_ASC:
-                source = wordDao.getWordsByVocabTimeAsc(vocabBookId);
-                break;
-            case BY_ALPHABET_ASC:
-                source = wordDao.getWordsByVocabAlpha(vocabBookId);
-                break;
-            default:
-                source = wordDao.getWordsByVocabTimeDesc(vocabBookId);
-        }
-        return Transformations.map(source, this::toWords);
-    }
-
-    public LiveData<List<Word>> getWordsByTag(long vocabBookId, List<Long> tagIds) {
-        return Transformations.map(wordDao.getWordsByTag(vocabBookId, tagIds), this::toWords);
+        return Transformations.map(bookWordDao.getWordsByBook(vocabBookId), this::toWords);
     }
 
     public LiveData<Word> getWordById(long wordId) {
-        return Transformations.map(wordDao.getWordWithTagsById(wordId), this::toWord);
+        return Transformations.map(bookWordDao.getById(wordId), bwd -> toWord(bwd));
     }
 
     public void deleteWords(List<Long> wordIds) {
         executors.diskIO().execute(() -> {
             if (wordIds == null || wordIds.isEmpty()) return;
-            // Get unique vocabBookIds affected before deleting
-            List<Long> vocabBookIds = new ArrayList<>();
-            for (Long wordId : wordIds) {
-                WordEntity entity = wordDao.getWordByIdSync(wordId);
-                if (entity != null && !vocabBookIds.contains(entity.vocabBookId)) {
-                    vocabBookIds.add(entity.vocabBookId);
-                }
-            }
-            wordDao.deleteWordsByIds(wordIds);
-            for (Long bookId : vocabBookIds) {
-                vocabBookDao.refreshWordCount(bookId);
-            }
+            bookWordDao.deleteByIds(wordIds);
         });
     }
 
     public void moveWords(List<Long> wordIds, long targetVocabBookId) {
         executors.diskIO().execute(() -> {
             if (wordIds == null || wordIds.isEmpty()) return;
-            List<Long> sourceBookIds = new ArrayList<>();
-            for (Long wordId : wordIds) {
-                WordEntity entity = wordDao.getWordByIdSync(wordId);
-                if (entity != null && !sourceBookIds.contains(entity.vocabBookId)) {
-                    sourceBookIds.add(entity.vocabBookId);
-                }
-            }
-            wordDao.moveWordsToVocab(wordIds, targetVocabBookId);
-            for (Long bookId : sourceBookIds) vocabBookDao.refreshWordCount(bookId);
-            vocabBookDao.refreshWordCount(targetVocabBookId);
+            bookWordDao.moveToBook(wordIds, targetVocabBookId);
         });
-    }
-
-    public void setBookmark(long wordId, boolean isBookmarked) {
-        executors.diskIO().execute(() -> wordDao.setBookmark(wordId, isBookmarked));
     }
 
     public void getWordIdsAsync(long vocabBookId, @Nullable SortOrder sortOrder, WordIdsCallback callback) {
         executors.diskIO().execute(() -> {
-            List<Long> ids = sortOrder == SortOrder.BY_ALPHABET_ASC
-                    ? wordDao.getWordIdsByVocabAlpha(vocabBookId)
-                    : wordDao.getWordIdsByVocab(vocabBookId);
+            List<Long> ids = bookWordDao.getWordIdsByBook(vocabBookId);
             executors.mainThread().execute(() -> callback.onResult(ids));
         });
     }
@@ -118,23 +70,39 @@ public class WordRepository {
         void onResult(List<Long> wordIds);
     }
 
-    private List<Word> toWords(List<WordWithTags> entities) {
-        if (entities == null) return new ArrayList<>();
+    private List<Word> toWords(List<BookWordWithDefinition> items) {
+        if (items == null) return new ArrayList<>();
         List<Word> result = new ArrayList<>();
-        for (WordWithTags wt : entities) result.add(toWord(wt));
+        for (BookWordWithDefinition bwd : items) {
+            Word word = toWord(bwd);
+            if (word != null) result.add(word);
+        }
         return result;
     }
 
-    private Word toWord(WordWithTags wt) {
-        if (wt == null) return null;
-        WordEntity e = wt.word;
+    private Word toWord(BookWordWithDefinition bwd) {
+        if (bwd == null || bwd.bookWord == null) return null;
+        WordDefinitionEntity def = (bwd.definitions != null && !bwd.definitions.isEmpty())
+                ? bwd.definitions.get(0) : null;
+
+        List<Definition> definitions = def != null ? parseDefinitions(def.definitions) : new ArrayList<>();
+        String chineseDefinition = definitions.isEmpty() ? "" : definitions.get(0).meaning;
+        Phonetics phonetics = new Phonetics(
+                def != null && def.phoneticsBritish != null ? def.phoneticsBritish : "",
+                def != null && def.phoneticsAmerican != null ? def.phoneticsAmerican : ""
+        );
+        List<Example> examples = def != null
+                ? buildExamples(def.exampleEnglish, def.exampleChinese)
+                : new ArrayList<>();
+
         return new Word(
-                e.id, e.vocabBookId, e.english, e.chineseDefinition,
-                parseDefinitions(e.definitions),
-                parsePhonetics(e.phonetics),
-                parseExamples(e.examples),
-                e.isBookmarked, e.addedAt,
-                toTags(wt.tags)
+                bwd.bookWord.id,
+                bwd.bookWord.bookId,
+                bwd.bookWord.word,
+                chineseDefinition,
+                definitions,
+                phonetics,
+                examples
         );
     }
 
@@ -143,32 +111,23 @@ public class WordRepository {
         Type t = new TypeToken<List<DefinitionDto>>() {}.getType();
         List<DefinitionDto> dtos = gson.fromJson(json, t);
         List<Definition> result = new ArrayList<>();
-        if (dtos != null) for (DefinitionDto d : dtos) result.add(new Definition(d.partOfSpeech, d.meaning));
+        if (dtos != null) {
+            for (DefinitionDto d : dtos) result.add(new Definition(d.partOfSpeech, d.meaning));
+        }
         return result;
     }
 
-    private Phonetics parsePhonetics(String json) {
-        if (json == null || json.isEmpty()) return new Phonetics("", "");
-        PhoneticsDto dto = gson.fromJson(json, PhoneticsDto.class);
-        return new Phonetics(dto.british != null ? dto.british : "", dto.american != null ? dto.american : "");
-    }
-
-    private List<Example> parseExamples(String json) {
-        if (json == null || json.isEmpty()) return new ArrayList<>();
-        Type t = new TypeToken<List<ExampleDto>>() {}.getType();
-        List<ExampleDto> dtos = gson.fromJson(json, t);
+    private List<Example> buildExamples(String englishEx, String chineseEx) {
+        if ((englishEx == null || englishEx.isEmpty()) && (chineseEx == null || chineseEx.isEmpty())) {
+            return new ArrayList<>();
+        }
         List<Example> result = new ArrayList<>();
-        if (dtos != null) for (ExampleDto d : dtos) result.add(new Example(d.english, d.chinese));
+        result.add(new Example(englishEx, chineseEx));
         return result;
     }
 
-    private List<Tag> toTags(List<TagEntity> entities) {
-        List<Tag> result = new ArrayList<>();
-        if (entities != null) for (TagEntity e : entities) result.add(new Tag(e.id, e.name, e.colorHex));
-        return result;
+    private static class DefinitionDto {
+        String partOfSpeech;
+        String meaning;
     }
-
-    private static class DefinitionDto { String partOfSpeech; String meaning; }
-    private static class PhoneticsDto { String british; String american; }
-    private static class ExampleDto { String english; String chinese; }
 }

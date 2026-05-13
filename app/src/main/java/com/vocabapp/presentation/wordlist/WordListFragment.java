@@ -16,24 +16,38 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.vocabapp.R;
+import com.vocabapp.data.local.preferences.UserPreferencesManager;
 import com.vocabapp.databinding.BottomSheetMoveToBinding;
 import com.vocabapp.databinding.FragmentWordListBinding;
 import com.vocabapp.domain.enums.SortOrder;
 import com.vocabapp.domain.enums.VisibilityMode;
 import com.vocabapp.domain.model.VocabBook;
 import com.vocabapp.domain.model.Word;
+import com.vocabapp.presentation.common.adapters.WordGroupAdapter;
 import com.vocabapp.presentation.common.adapters.WordListAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
 public class WordListFragment extends Fragment {
 
+    private static final int VIEW_LIST = 0;
+    private static final int VIEW_GROUP = 1;
+    private static final int VIEW_GROUP_DETAIL = 2;
+
     private FragmentWordListBinding binding;
     private WordListViewModel viewModel;
     private WordListAdapter adapter;
+    private WordGroupAdapter groupAdapter;
+    private int viewMode = VIEW_LIST;
+    private int selectedGroupIndex = -1;
+
+    @Inject UserPreferencesManager prefsManager;
 
     @Nullable
     @Override
@@ -63,6 +77,9 @@ public class WordListFragment extends Fragment {
                 word -> navigateToWordDetail(word),
                 wordId -> viewModel.toggleWordSelection(wordId)
         );
+        groupAdapter = new WordGroupAdapter();
+        groupAdapter.setOnGroupClickListener(this::openGroupDetail);
+        groupAdapter.setOnGroupPlayListener(this::navigateToPlaybackModeForGroup);
         binding.rvWords.setLayoutManager(new LinearLayoutManager(requireContext()));
         binding.rvWords.setAdapter(adapter);
     }
@@ -71,6 +88,7 @@ public class WordListFragment extends Fragment {
         binding.toolbar.setNavigationOnClickListener(v ->
                 Navigation.findNavController(requireView()).navigateUp());
 
+        binding.btnToggleView.setOnClickListener(v -> toggleViewMode());
         binding.btnSort.setOnClickListener(v -> showSortMenu());
         binding.btnEdit.setOnClickListener(v -> viewModel.toggleBatchMode());
         binding.btnListenWords.setOnClickListener(v -> navigateToPlaybackMode());
@@ -96,7 +114,12 @@ public class WordListFragment extends Fragment {
             } else {
                 binding.rvWords.setVisibility(View.VISIBLE);
                 binding.tvEmpty.setVisibility(View.GONE);
-                adapter.submitList(words);
+                groupAdapter.setWords(words, prefsManager.getGroupSize());
+                if (viewMode == VIEW_GROUP_DETAIL) {
+                    adapter.submitList(getGroupWords(words));
+                } else {
+                    adapter.submitList(words);
+                }
             }
         });
 
@@ -177,7 +200,7 @@ public class WordListFragment extends Fragment {
                 BottomSheetMoveToBinding.inflate(getLayoutInflater());
         dialog.setContentView(dialogBinding.getRoot());
 
-        String[] bookTitles = books.stream().map(b -> b.title).toArray(String[]::new);
+        String[] bookTitles = books.stream().map(b -> b.bookName).toArray(String[]::new);
         ArrayAdapter<String> bookAdapter = new ArrayAdapter<>(requireContext(),
                 android.R.layout.simple_list_item_1, bookTitles);
         dialogBinding.lvVocabBooks.setAdapter(bookAdapter);
@@ -197,11 +220,101 @@ public class WordListFragment extends Fragment {
                 .navigate(R.id.action_wordList_to_wordDetail, args);
     }
 
+    private void toggleViewMode() {
+        if (viewMode == VIEW_GROUP_DETAIL) {
+            // Back to group view
+            viewMode = VIEW_GROUP;
+            selectedGroupIndex = -1;
+            binding.rvWords.setAdapter(groupAdapter);
+            binding.btnToggleView.setText(R.string.view_list);
+            binding.btnSort.setVisibility(View.GONE);
+            binding.btnEdit.setVisibility(View.GONE);
+        } else if (viewMode == VIEW_GROUP) {
+            // Back to list view
+            viewMode = VIEW_LIST;
+            List<Word> words = viewModel.words.getValue();
+            adapter.submitList(words);
+            binding.rvWords.setAdapter(adapter);
+            binding.btnToggleView.setText(R.string.view_group);
+            binding.btnSort.setVisibility(View.VISIBLE);
+            binding.btnEdit.setVisibility(View.VISIBLE);
+        } else {
+            // To group view
+            viewMode = VIEW_GROUP;
+            List<Word> words = viewModel.words.getValue();
+            groupAdapter.setWords(words, prefsManager.getGroupSize());
+            binding.rvWords.setAdapter(groupAdapter);
+            binding.btnToggleView.setText(R.string.view_list);
+            binding.btnSort.setVisibility(View.GONE);
+            binding.btnEdit.setVisibility(View.GONE);
+        }
+    }
+
+    private void openGroupDetail(int groupIndex) {
+        List<Word> words = viewModel.words.getValue();
+        if (words == null) return;
+        viewMode = VIEW_GROUP_DETAIL;
+        selectedGroupIndex = groupIndex;
+        adapter.submitList(getGroupWords(words));
+        binding.rvWords.setAdapter(adapter);
+        binding.btnToggleView.setText(R.string.back_to_groups);
+        binding.btnSort.setVisibility(View.GONE);
+        binding.btnEdit.setVisibility(View.GONE);
+    }
+
+    private List<Word> getGroupWords(List<Word> allWords) {
+        if (allWords == null || selectedGroupIndex < 0) return allWords;
+        int groupSize = prefsManager.getGroupSize();
+        int startIdx = selectedGroupIndex * groupSize;
+        int endIdx = Math.min(startIdx + groupSize, allWords.size());
+        return new ArrayList<>(allWords.subList(startIdx, endIdx));
+    }
+
+    private void navigateToPlaybackModeForGroup(int groupIndex) {
+        Long bookId = viewModel.vocabBookId.getValue();
+        List<Word> words = viewModel.words.getValue();
+        if (bookId == null || words == null) return;
+        int groupSize = prefsManager.getGroupSize();
+        int startIdx = groupIndex * groupSize;
+        if (startIdx >= words.size()) return;
+        Bundle args = new Bundle();
+        args.putLong("vocabBookId", bookId);
+        args.putLong("startWordId", words.get(startIdx).id);
+        args.putInt("groupCount", groupSize);
+        Navigation.findNavController(requireView())
+                .navigate(R.id.action_wordList_to_playbackMode, args);
+    }
+
     private void navigateToPlaybackMode() {
         Long bookId = viewModel.vocabBookId.getValue();
         if (bookId == null) return;
+
         Bundle args = new Bundle();
         args.putLong("vocabBookId", bookId);
+
+        List<Word> allWords = viewModel.words.getValue();
+        LinearLayoutManager lm = (LinearLayoutManager) binding.rvWords.getLayoutManager();
+
+        if (viewMode == VIEW_GROUP_DETAIL && allWords != null && selectedGroupIndex >= 0) {
+            int groupSize = prefsManager.getGroupSize();
+            int startIdx = selectedGroupIndex * groupSize;
+            args.putLong("startWordId", startIdx < allWords.size() ? allWords.get(startIdx).id : -1);
+            args.putInt("groupCount", groupSize);
+        } else if (viewMode == VIEW_GROUP && lm != null) {
+            int firstVisibleGroup = lm.findFirstVisibleItemPosition();
+            Word firstWord = groupAdapter.getFirstWordOfGroup(firstVisibleGroup);
+            args.putLong("startWordId", firstWord != null ? firstWord.id : -1);
+        } else {
+            long startWordId = -1;
+            if (lm != null && allWords != null) {
+                int firstVisible = lm.findFirstVisibleItemPosition();
+                if (firstVisible >= 0 && firstVisible < allWords.size()) {
+                    startWordId = allWords.get(firstVisible).id;
+                }
+            }
+            args.putLong("startWordId", startWordId);
+        }
+
         Navigation.findNavController(requireView())
                 .navigate(R.id.action_wordList_to_playbackMode, args);
     }

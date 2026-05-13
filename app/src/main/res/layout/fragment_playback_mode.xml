@@ -48,6 +48,15 @@
             android:layout_height="80dp"
             android:text="@string/mode_study"
             android:textSize="16sp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_marginBottom="16dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnModeMemorizeExample"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="@string/mode_memorize_example"
+            android:textSize="16sp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
     </LinearLayout>

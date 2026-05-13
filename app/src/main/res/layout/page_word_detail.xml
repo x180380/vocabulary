@@ -4,11 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_background">
+    android:background="@color/color_background"
+    android:fillViewport="true">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_margin="16dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
@@ -36,18 +37,21 @@
                     android:textSize="13sp"
                     android:textColor="@color/color_text_secondary" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnBookmark"
+                <TextView
+                    android:id="@+id/tvBookmark"
                     android:layout_width="wrap_content"
                     android:layout_height="32dp"
                     android:text="@string/bookmark"
                     android:textSize="12sp"
-                    android:minWidth="0dp"
+                    android:textColor="@color/color_text_secondary"
+                    android:gravity="center_vertical"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    app:iconSize="14dp"
-                    app:iconPadding="4dp" />
+                    android:drawableStart="@drawable/ic_bookmark_outline"
+                    android:drawablePadding="4dp"
+                    android:background="@drawable/bg_bookmark_chip"
+                    android:clickable="true"
+                    android:focusable="true" />
 
             </LinearLayout>
 
@@ -60,7 +64,6 @@
                 android:textSize="16sp"
                 android:textColor="@color/color_text_secondary"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/bg_tap_to_reveal"
                 android:padding="12dp"
                 android:layout_marginBottom="8dp" />
 

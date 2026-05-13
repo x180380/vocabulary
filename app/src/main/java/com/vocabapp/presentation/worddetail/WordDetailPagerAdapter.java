@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.vocabapp.R;
 import com.vocabapp.databinding.PageWordDetailBinding;
+import com.vocabapp.domain.enums.PlaybackMode;
 import com.vocabapp.domain.enums.VisibilityMode;
 import com.vocabapp.domain.model.Definition;
 import com.vocabapp.domain.model.Example;
@@ -45,6 +46,7 @@ public class WordDetailPagerAdapter extends RecyclerView.Adapter<WordDetailPager
 
     private List<Word> words = new ArrayList<>();
     private VisibilityMode visibilityMode = VisibilityMode.HIDE_ENGLISH;
+    private PlaybackMode playbackMode = null;
     private boolean isRevealed = false;
     private OnPlayClickListener playClickListener;
     private int currentPosition = 0;
@@ -95,6 +97,11 @@ public class WordDetailPagerAdapter extends RecyclerView.Adapter<WordDetailPager
         postNotify(this::notifyDataSetChanged);
     }
 
+    public void setPlaybackMode(PlaybackMode mode) {
+        this.playbackMode = mode;
+        postNotify(this::notifyDataSetChanged);
+    }
+
     public void setRevealed(boolean revealed) {
         this.isRevealed = revealed;
         postNotify(this::notifyDataSetChanged);
@@ -124,7 +131,7 @@ public class WordDetailPagerAdapter extends RecyclerView.Adapter<WordDetailPager
 
     @Override
     public void onBindViewHolder(@NonNull PageViewHolder holder, int position) {
-        boolean bookmarked = (position == currentPosition) ? currentBookmarked : words.get(position).isBookmarked;
+        boolean bookmarked = (position == currentPosition) && currentBookmarked;
         holder.bind(words.get(position), position, words.size(), bookmarked);
     }
 
@@ -145,7 +152,10 @@ public class WordDetailPagerAdapter extends RecyclerView.Adapter<WordDetailPager
             binding.tvProgress.setText(
                     binding.getRoot().getContext().getString(R.string.word_progress_format, position + 1, total));
 
-            boolean showEnglish = visibilityMode != VisibilityMode.HIDE_ENGLISH || isRevealed;
+            boolean isMemorizeExample = (playbackMode == PlaybackMode.MEMORIZE_EXAMPLE);
+            boolean showEnglish = (visibilityMode != VisibilityMode.HIDE_ENGLISH || isRevealed)
+                    && !(isMemorizeExample && !isRevealed);
+            boolean showExampleSection = !isMemorizeExample || isRevealed;
             if (showEnglish) {
                 binding.tvEnglish.setText(word.english);
                 binding.tvTapToReveal.setVisibility(View.GONE);
@@ -172,19 +182,38 @@ public class WordDetailPagerAdapter extends RecyclerView.Adapter<WordDetailPager
                 if (playClickListener != null) playClickListener.onPlayAmerican(word);
             });
 
-            // Bookmark button
-            int bookmarkIcon = bookmarked
-                    ? android.R.drawable.btn_star_big_on
-                    : android.R.drawable.btn_star_big_off;
-            binding.btnBookmark.setIcon(ContextCompat.getDrawable(binding.getRoot().getContext(), bookmarkIcon));
-            binding.btnBookmark.setOnClickListener(v -> {
+            // Bookmark chip
+            android.content.Context ctx = binding.getRoot().getContext();
+            if (bookmarked) {
+                binding.tvBookmark.setText(R.string.bookmarked);
+                binding.tvBookmark.setTextColor(ContextCompat.getColor(ctx, R.color.color_on_surface));
+                binding.tvBookmark.setBackground(ContextCompat.getDrawable(ctx, R.drawable.bg_bookmark_chip_active));
+                binding.tvBookmark.setCompoundDrawablesWithIntrinsicBounds(
+                        ContextCompat.getDrawable(ctx, R.drawable.ic_bookmark_filled), null, null, null);
+            } else {
+                binding.tvBookmark.setText(R.string.bookmark);
+                binding.tvBookmark.setTextColor(ContextCompat.getColor(ctx, R.color.color_text_secondary));
+                binding.tvBookmark.setBackground(ContextCompat.getDrawable(ctx, R.drawable.bg_bookmark_chip));
+                binding.tvBookmark.setCompoundDrawablesWithIntrinsicBounds(
+                        ContextCompat.getDrawable(ctx, R.drawable.ic_bookmark_outline), null, null, null);
+            }
+            binding.tvBookmark.setOnClickListener(v -> {
                 if (playClickListener != null) playClickListener.onToggleBookmark(word);
             });
 
             // Definitions
             boolean showChinese = visibilityMode != VisibilityMode.HIDE_CHINESE;
             binding.llDefinitions.removeAllViews();
-            if (showChinese && word.definitions != null && !word.definitions.isEmpty()) {
+            boolean hasExampleChinese = word.examples != null && !word.examples.isEmpty()
+                    && word.examples.get(0).chinese != null;
+            if (isMemorizeExample && !isRevealed) {
+                if (hasExampleChinese) {
+                    binding.llDefinitions.addView(buildExampleChinesePrompt(word.examples.get(0).chinese));
+                } else if (showChinese && word.definitions != null) {
+                    for (Definition def : word.definitions)
+                        binding.llDefinitions.addView(buildDefinitionRow(def));
+                }
+            } else if (showChinese && word.definitions != null && !word.definitions.isEmpty()) {
                 for (Definition def : word.definitions) {
                     binding.llDefinitions.addView(buildDefinitionRow(def));
                 }
@@ -193,13 +222,27 @@ public class WordDetailPagerAdapter extends RecyclerView.Adapter<WordDetailPager
             // Examples
             binding.llExamples.removeAllViews();
             boolean hasExamples = word.examples != null && !word.examples.isEmpty();
-            binding.llExamplesHeader.setVisibility(hasExamples ? View.VISIBLE : View.GONE);
-            if (hasExamples) {
+            binding.llExamplesHeader.setVisibility(hasExamples && showExampleSection ? View.VISIBLE : View.GONE);
+            if (hasExamples && showExampleSection) {
                 int maxExamples = Math.min(word.examples.size(), 2);
                 for (int i = 0; i < maxExamples; i++) {
                     binding.llExamples.addView(buildExampleRow(word, i, showEnglish, showChinese));
                 }
             }
+        }
+
+        private View buildExampleChinesePrompt(String chinese) {
+            android.content.Context ctx = binding.getRoot().getContext();
+            float density = ctx.getResources().getDisplayMetrics().density;
+            TextView tv = new TextView(ctx);
+            tv.setText(chinese);
+            tv.setTextSize(18f);
+            tv.setTextColor(ContextCompat.getColor(ctx, R.color.color_on_surface));
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            params.bottomMargin = (int) (8 * density);
+            tv.setLayoutParams(params);
+            return tv;
         }
 
         private View buildDefinitionRow(Definition def) {

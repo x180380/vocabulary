@@ -8,34 +8,19 @@ import androidx.room.PrimaryKey;
 public class VocabBookEntity {
 
     @PrimaryKey(autoGenerate = true)
-    public long id;
+    @ColumnInfo(name = "book_id")
+    public long bookId;
 
-    @ColumnInfo(name = "title")
-    public String title;
+    @ColumnInfo(name = "book_name")
+    public String bookName;
 
-    @ColumnInfo(name = "description")
-    public String description;
-
-    @ColumnInfo(name = "color_index")
-    public int colorIndex;
-
-    @ColumnInfo(name = "is_favorite")
-    public boolean isFavorite;
-
-    @ColumnInfo(name = "created_at")
-    public long createdAt;
-
-    @ColumnInfo(name = "word_count")
-    public int wordCount;
+    @ColumnInfo(name = "asset_file")
+    public String assetFile;
 
     public VocabBookEntity() {}
 
-    public VocabBookEntity(String title, String description, int colorIndex, boolean isFavorite) {
-        this.title = title;
-        this.description = description;
-        this.colorIndex = colorIndex;
-        this.isFavorite = isFavorite;
-        this.createdAt = System.currentTimeMillis();
-        this.wordCount = 0;
+    public VocabBookEntity(String bookName, String assetFile) {
+        this.bookName = bookName;
+        this.assetFile = assetFile;
     }
 }
