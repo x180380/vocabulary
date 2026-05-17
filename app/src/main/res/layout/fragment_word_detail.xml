@@ -98,6 +98,19 @@
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <ImageButton
+            android:id="@+id/btnPrev"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@drawable/ic_skip_previous"
+            android:background="@drawable/bg_btn_play_card"
+            android:contentDescription="Previous"
+            android:visibility="gone"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageButton
             android:id="@+id/btnAutoPlay"
             android:layout_width="64dp"
             android:layout_height="40dp"
@@ -106,6 +119,19 @@
             android:contentDescription="@string/auto_play"
             android:elevation="2dp"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnNext"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:src="@drawable/ic_skip_next"
+            android:background="@drawable/bg_btn_play_card"
+            android:contentDescription="Next"
+            android:visibility="gone"
+            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />

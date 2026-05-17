@@ -179,6 +179,8 @@ public class WordDetailFragment extends Fragment {
                     .navigate(R.id.action_wordDetail_to_playbackMode, args);
         });
         binding.tapOverlay.setOnClickListener(v -> onTapOverlay());
+        binding.btnPrev.setOnClickListener(v -> navigateToPreviousWord());
+        binding.btnNext.setOnClickListener(v -> navigateToNextWord());
         binding.btnMute.setOnClickListener(v -> {
             boolean nowMuted = !ttsManager.isMuted();
             ttsManager.setMuted(nowMuted);
@@ -232,6 +234,8 @@ public class WordDetailFragment extends Fragment {
                 binding.btnHideToggle.setVisibility(View.VISIBLE);
                 binding.btnAutoPlay.setImageResource(R.drawable.ic_play);
                 binding.btnMute.setVisibility(View.VISIBLE);
+                binding.btnPrev.setVisibility(View.GONE);
+                binding.btnNext.setVisibility(View.GONE);
                 viewModel.setVisibilityMode(VisibilityMode.SHOW_BOTH);
                 return;
             }
@@ -254,6 +258,8 @@ public class WordDetailFragment extends Fragment {
             binding.btnAutoPlay.setImageResource(R.drawable.ic_stop);
             binding.btnAutoPlay.setVisibility(View.VISIBLE);
             binding.btnMute.setVisibility(View.GONE);
+            binding.btnPrev.setVisibility(View.VISIBLE);
+            binding.btnNext.setVisibility(View.VISIBLE);
             setupTtsProgressListener();
         });
     }
@@ -401,6 +407,21 @@ public class WordDetailFragment extends Fragment {
                 scheduleAutoAdvanceAfterTts(pauseMs);
             }
         }
+    }
+
+    private void navigateToPreviousWord() {
+        int total = viewModel.getWordCount();
+        Integer current = viewModel.currentIndex.getValue();
+        if (current == null || total <= 1) return;
+        cancelPending();
+        disableTapOverlay();
+        binding.viewPager.setCurrentItem((current - 1 + total) % total, true);
+    }
+
+    private void navigateToNextWord() {
+        cancelPending();
+        disableTapOverlay();
+        advanceToNextCard();
     }
 
     private void advanceToNextCard() {
