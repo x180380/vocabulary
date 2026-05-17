@@ -37,7 +37,7 @@ public class SettingsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         viewModel = new ViewModelProvider(this).get(SettingsViewModel.class);
 
-        binding.toolbar.setNavigationOnClickListener(v ->
+        binding.btnBack.setOnClickListener(v ->
                 Navigation.findNavController(requireView()).navigateUp());
 
         setupClickListeners();

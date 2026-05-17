@@ -259,7 +259,7 @@ public class WordDetailPagerAdapter extends RecyclerView.Adapter<WordDetailPager
 
             TextView pos = new TextView(ctx);
             pos.setText(def.partOfSpeech != null ? def.partOfSpeech : "");
-            pos.setTextColor(ContextCompat.getColor(ctx, R.color.color_red_accent));
+            pos.setTextColor(ContextCompat.getColor(ctx, R.color.color_text_secondary));
             pos.setTextSize(14f);
             pos.setTypeface(null, Typeface.BOLD);
             LinearLayout.LayoutParams posParams = new LinearLayout.LayoutParams(

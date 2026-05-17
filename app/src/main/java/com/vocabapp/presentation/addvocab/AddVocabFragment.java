@@ -34,7 +34,7 @@ public class AddVocabFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         viewModel = new ViewModelProvider(this).get(AddVocabViewModel.class);
 
-        binding.toolbar.setNavigationOnClickListener(v ->
+        binding.btnBack.setOnClickListener(v ->
                 Navigation.findNavController(requireView()).navigateUp());
 
         binding.btnNewVocabBook.setVisibility(android.view.View.GONE);

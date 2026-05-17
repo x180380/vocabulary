@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.vocabapp.R;
 import com.vocabapp.databinding.FragmentPlaybackModeBinding;
 import com.vocabapp.domain.enums.PlaybackMode;
@@ -17,7 +17,7 @@ import com.vocabapp.domain.enums.PlaybackMode;
 import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
-public class PlaybackModeFragment extends Fragment {
+public class PlaybackModeFragment extends BottomSheetDialogFragment {
 
     private FragmentPlaybackModeBinding binding;
 
@@ -33,9 +33,6 @@ public class PlaybackModeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.toolbar.setNavigationOnClickListener(v ->
-                Navigation.findNavController(requireView()).navigateUp());
-
         binding.btnModeChineseRecall.setOnClickListener(v ->
                 navigateToWordDetail(PlaybackMode.CHINESE_RECALL_ENGLISH));
         binding.btnModeEnglishRecall.setOnClickListener(v ->
@@ -50,12 +47,14 @@ public class PlaybackModeFragment extends Fragment {
         long vocabBookId = getArguments() != null ? getArguments().getLong("vocabBookId", -1) : -1;
         long startWordId = getArguments() != null ? getArguments().getLong("startWordId", -1) : -1;
         int groupCount = getArguments() != null ? getArguments().getInt("groupCount", -1) : -1;
+        long initialWordId = getArguments() != null ? getArguments().getLong("initialWordId", -1) : -1;
         Bundle args = new Bundle();
         args.putLong("vocabBookId", vocabBookId);
         args.putLong("startWordId", startWordId);
         args.putInt("groupCount", groupCount);
+        args.putLong("initialWordId", initialWordId);
         args.putString("playbackMode", mode.name());
-        Navigation.findNavController(requireView())
+        Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
                 .navigate(R.id.action_playbackMode_to_wordDetail, args);
     }
 

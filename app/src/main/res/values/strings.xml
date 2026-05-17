@@ -39,10 +39,14 @@
     <string name="auto_play">自动播放</string>
 
     <!-- Playback modes -->
-    <string name="mode_chinese_recall_english">听中文回忆单词</string>
-    <string name="mode_english_recall_chinese">听单词回忆中文</string>
-    <string name="mode_study">学习模式</string>
+    <string name="mode_chinese_recall_english">背单词</string>
+    <string name="mode_chinese_recall_english_desc">听释义，回忆单词</string>
+    <string name="mode_english_recall_chinese">背释义</string>
+    <string name="mode_english_recall_chinese_desc">听单词，回忆释义</string>
+    <string name="mode_study">沉浸刷词</string>
+    <string name="mode_study_desc">自动播放单词和释义</string>
     <string name="mode_memorize_example">背例句</string>
+    <string name="mode_memorize_example_desc">听例句翻译，回忆例句</string>
 
     <!-- Settings -->
     <string name="setting_default_display">卡片默认展示</string>

@@ -77,7 +77,7 @@ public class VocabListFragment extends Fragment {
         args.putLong("vocabBookId", book.id);
         args.putString("vocabBookTitle", book.bookName);
         Navigation.findNavController(requireView())
-                .navigate(R.id.action_vocabList_to_wordList, args);
+                .navigate(R.id.action_vocabList_to_wordGroupList, args);
     }
 
     private void navigateToPlaybackMode(long vocabBookId) {

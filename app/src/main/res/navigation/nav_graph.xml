@@ -12,8 +12,8 @@
         tools:layout="@layout/fragment_vocab_list">
 
         <action
-            android:id="@+id/action_vocabList_to_wordList"
-            app:destination="@id/wordListFragment" />
+            android:id="@+id/action_vocabList_to_wordGroupList"
+            app:destination="@id/wordGroupListFragment" />
         <action
             android:id="@+id/action_vocabList_to_addVocab"
             app:destination="@id/addVocabFragment" />
@@ -22,6 +22,28 @@
             app:destination="@id/settingsFragment" />
         <action
             android:id="@+id/action_vocabList_to_playbackMode"
+            app:destination="@id/playbackModeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/wordGroupListFragment"
+        android:name="com.vocabapp.presentation.wordlist.WordGroupListFragment"
+        android:label=""
+        tools:layout="@layout/fragment_word_group_list">
+
+        <argument
+            android:name="vocabBookId"
+            app:argType="long" />
+        <argument
+            android:name="vocabBookTitle"
+            app:argType="string"
+            android:defaultValue="" />
+
+        <action
+            android:id="@+id/action_wordGroupList_to_wordList"
+            app:destination="@id/wordListFragment" />
+        <action
+            android:id="@+id/action_wordGroupList_to_playbackMode"
             app:destination="@id/playbackModeFragment" />
     </fragment>
 
@@ -35,9 +57,13 @@
             android:name="vocabBookId"
             app:argType="long" />
         <argument
-            android:name="vocabBookTitle"
-            app:argType="string"
-            android:defaultValue="" />
+            android:name="startWordId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+        <argument
+            android:name="groupCount"
+            app:argType="integer"
+            android:defaultValue="-1" />
 
         <action
             android:id="@+id/action_wordList_to_wordDetail"
@@ -67,6 +93,9 @@
         <action
             android:id="@+id/action_wordDetail_to_playbackMode"
             app:destination="@id/playbackModeFragment" />
+        <action
+            android:id="@+id/action_wordDetail_to_settings"
+            app:destination="@id/settingsFragment" />
     </fragment>
 
     <fragment
@@ -75,7 +104,7 @@
         android:label="@string/title_add_vocab"
         tools:layout="@layout/fragment_add_vocab" />
 
-    <fragment
+    <dialog
         android:id="@+id/playbackModeFragment"
         android:name="com.vocabapp.presentation.playbackmode.PlaybackModeFragment"
         android:label="@string/title_playback_mode"
@@ -88,7 +117,7 @@
         <action
             android:id="@+id/action_playbackMode_to_wordDetail"
             app:destination="@id/wordDetailFragment" />
-    </fragment>
+    </dialog>
 
     <fragment
         android:id="@+id/settingsFragment"

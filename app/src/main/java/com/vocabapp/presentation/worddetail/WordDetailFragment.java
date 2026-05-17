@@ -15,9 +15,11 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.vocabapp.R;
 import com.vocabapp.audio.TtsManager;
 import com.vocabapp.data.local.preferences.UserPreferencesManager;
+import com.vocabapp.databinding.BottomSheetVisibilityModeBinding;
 import com.vocabapp.databinding.FragmentWordDetailBinding;
 import com.vocabapp.domain.enums.PlaybackMode;
 import com.vocabapp.domain.enums.PronunciationAccent;
@@ -40,6 +42,9 @@ public class WordDetailFragment extends Fragment {
     private WordDetailPagerAdapter pagerAdapter;
     private final Handler handler = new Handler(Looper.getMainLooper());
     private Runnable autoAdvanceRunnable;
+    private Runnable playAudioRunnable;
+    private Runnable enableOverlayRunnable;
+    private Runnable autoAdvanceAfterTtsRunnable;
     private boolean initialScrollDone = false;
     private boolean tapOverlayEnabled = false;
     private boolean readyToAdvance = false;
@@ -63,7 +68,8 @@ public class WordDetailFragment extends Fragment {
         long vocabBookId = getArguments() != null ? getArguments().getLong("vocabBookId", -1) : -1;
         long startWordId = getArguments() != null ? getArguments().getLong("startWordId", -1) : -1;
         int groupCount = getArguments() != null ? getArguments().getInt("groupCount", -1) : -1;
-        viewModel.init(vocabBookId, startWordId, groupCount);
+        long initialWordId = getArguments() != null ? getArguments().getLong("initialWordId", -1) : -1;
+        viewModel.init(vocabBookId, startWordId, groupCount, initialWordId);
 
         String playbackModeStr = getArguments() != null ? getArguments().getString("playbackMode", "") : "";
         if (!playbackModeStr.isEmpty()) {
@@ -126,9 +132,11 @@ public class WordDetailFragment extends Fragment {
                 if (mode != null) {
                     cancelPending();
                     disableTapOverlay();
-                    handler.postDelayed(() -> playPageAudio(position), 300);
+                    playAudioRunnable = () -> playPageAudio(position);
+                    handler.postDelayed(playAudioRunnable, 300);
                     if (mode != PlaybackMode.STUDY_MODE) {
-                        handler.postDelayed(() -> enableTapOverlay(), 900);
+                        enableOverlayRunnable = WordDetailFragment.this::enableTapOverlay;
+                        handler.postDelayed(enableOverlayRunnable, 900);
                     }
                 }
             }
@@ -136,22 +144,41 @@ public class WordDetailFragment extends Fragment {
     }
 
     private void setupClickListeners() {
-        binding.toolbar.setNavigationOnClickListener(v ->
+        binding.btnBack.setOnClickListener(v ->
                 Navigation.findNavController(requireView()).navigateUp());
-        binding.btnHideToggle.setOnClickListener(v -> cycleVisibilityMode());
+        binding.btnSettings.setOnClickListener(v ->
+                Navigation.findNavController(requireView()).navigate(R.id.action_wordDetail_to_settings));
+        binding.btnHideToggle.setOnClickListener(v -> showVisibilityModeSheet());
         binding.btnAutoPlay.setOnClickListener(v -> {
+            if (viewModel.playbackMode.getValue() != null) {
+                stopPlayingMode();
+                return;
+            }
+            PlaybackMode lastMode = viewModel.getLastPlaybackMode();
+            if (lastMode != null) {
+                resumePlayingMode(lastMode);
+                return;
+            }
             long vocabBookId = getArguments() != null ? getArguments().getLong("vocabBookId", -1) : -1;
+            int groupCount = getArguments() != null ? getArguments().getInt("groupCount", -1) : -1;
             List<Word> words = viewModel.allWords.getValue();
             Integer idx = viewModel.currentIndex.getValue();
             long currentWordId = (words != null && idx != null && idx < words.size())
                     ? words.get(idx).id : -1;
             Bundle args = new Bundle();
             args.putLong("vocabBookId", vocabBookId);
-            args.putLong("startWordId", currentWordId);
+            if (groupCount > 0) {
+                long groupStartWordId = getArguments() != null ? getArguments().getLong("startWordId", -1) : -1;
+                args.putLong("startWordId", groupStartWordId);
+                args.putInt("groupCount", groupCount);
+                args.putLong("initialWordId", currentWordId);
+            } else {
+                args.putLong("startWordId", currentWordId);
+            }
             Navigation.findNavController(requireView())
                     .navigate(R.id.action_wordDetail_to_playbackMode, args);
         });
-binding.tapOverlay.setOnClickListener(v -> onTapOverlay());
+        binding.tapOverlay.setOnClickListener(v -> onTapOverlay());
         binding.btnMute.setOnClickListener(v -> {
             boolean nowMuted = !ttsManager.isMuted();
             ttsManager.setMuted(nowMuted);
@@ -174,9 +201,11 @@ binding.tapOverlay.setOnClickListener(v -> onTapOverlay());
 
                 PlaybackMode mode = viewModel.playbackMode.getValue();
                 if (mode != null) {
-                    handler.postDelayed(() -> playPageAudio(startIdx), 500);
+                    playAudioRunnable = () -> playPageAudio(startIdx);
+                    handler.postDelayed(playAudioRunnable, 500);
                     if (mode != PlaybackMode.STUDY_MODE) {
-                        handler.postDelayed(() -> enableTapOverlay(), 1100);
+                        enableOverlayRunnable = this::enableTapOverlay;
+                        handler.postDelayed(enableOverlayRunnable, 1100);
                     }
                 }
             }
@@ -197,10 +226,15 @@ binding.tapOverlay.setOnClickListener(v -> onTapOverlay());
             else cancelPending();
         });
 
-        viewModel.currentIndex.observe(getViewLifecycleOwner(), idx -> updatePrevWordToolbar());
 
         viewModel.playbackMode.observe(getViewLifecycleOwner(), mode -> {
-            if (mode == null) return;
+            if (mode == null) {
+                binding.btnHideToggle.setVisibility(View.VISIBLE);
+                binding.btnAutoPlay.setImageResource(R.drawable.ic_play);
+                binding.btnMute.setVisibility(View.VISIBLE);
+                viewModel.setVisibilityMode(VisibilityMode.SHOW_BOTH);
+                return;
+            }
             pagerAdapter.setPlaybackMode(mode);
             switch (mode) {
                 case CHINESE_RECALL_ENGLISH:
@@ -217,13 +251,34 @@ binding.tapOverlay.setOnClickListener(v -> onTapOverlay());
                     break;
             }
             binding.btnHideToggle.setVisibility(View.GONE);
-            binding.btnAutoPlay.setVisibility(View.GONE);
+            binding.btnAutoPlay.setImageResource(R.drawable.ic_stop);
+            binding.btnAutoPlay.setVisibility(View.VISIBLE);
             binding.btnMute.setVisibility(View.GONE);
             setupTtsProgressListener();
         });
     }
 
     // ── Playback mode audio ──────────────────────────────────────────────────
+
+    private void stopPlayingMode() {
+        ttsManager.stop();
+        cancelPending();
+        disableTapOverlay();
+        viewModel.setPlaybackMode(null);
+    }
+
+    private void resumePlayingMode(PlaybackMode mode) {
+        viewModel.setPlaybackMode(mode);
+        Integer idx = viewModel.currentIndex.getValue();
+        if (idx != null) {
+            playAudioRunnable = () -> playPageAudio(idx);
+            handler.postDelayed(playAudioRunnable, 300);
+            if (mode != PlaybackMode.STUDY_MODE) {
+                enableOverlayRunnable = this::enableTapOverlay;
+                handler.postDelayed(enableOverlayRunnable, 900);
+            }
+        }
+    }
 
     private void setupTtsProgressListener() {
         ttsManager.setProgressListener(new UtteranceProgressListener() {
@@ -290,23 +345,23 @@ binding.tapOverlay.setOnClickListener(v -> onTapOverlay());
             if (currentIdx < words.size() && words.get(currentIdx).id == wordId) {
                 readyToAdvance = true;
                 enableTapOverlay();
-                handler.postDelayed(this::advanceToNextCard, pauseMs);
+                scheduleAutoAdvanceAfterTts(pauseMs);
             }
 
         } else if (mode == PlaybackMode.CHINESE_RECALL_ENGLISH && utteranceId.startsWith("tap_en_")) {
             readyToAdvance = true;
             enableTapOverlay();
-            handler.postDelayed(this::advanceToNextCard, pauseMs);
+            scheduleAutoAdvanceAfterTts(pauseMs);
 
         } else if (mode == PlaybackMode.ENGLISH_RECALL_CHINESE && utteranceId.startsWith("tap_cn_")) {
             readyToAdvance = true;
             enableTapOverlay();
-            handler.postDelayed(this::advanceToNextCard, pauseMs);
+            scheduleAutoAdvanceAfterTts(pauseMs);
 
         } else if (mode == PlaybackMode.MEMORIZE_EXAMPLE && utteranceId.startsWith("tap_ex_")) {
             readyToAdvance = true;
             enableTapOverlay();
-            handler.postDelayed(this::advanceToNextCard, pauseMs);
+            scheduleAutoAdvanceAfterTts(pauseMs);
         }
     }
 
@@ -343,7 +398,7 @@ binding.tapOverlay.setOnClickListener(v -> onTapOverlay());
                 long pauseMs = prefsManager.getAutoAdvanceSeconds() * 1000L;
                 readyToAdvance = true;
                 enableTapOverlay();
-                handler.postDelayed(this::advanceToNextCard, pauseMs);
+                scheduleAutoAdvanceAfterTts(pauseMs);
             }
         }
     }
@@ -353,8 +408,21 @@ binding.tapOverlay.setOnClickListener(v -> onTapOverlay());
         int total = viewModel.getWordCount();
         Integer current = viewModel.currentIndex.getValue();
         if (current == null || total == 0) return;
-        int next = current + 1;
-        if (next < total) {
+        int next = WordDetailViewModel.computeNextIndex(current, total);
+        if (next == current) {
+            // single-word list: ViewPager won't fire onPageSelected, replay manually
+            PlaybackMode mode = viewModel.playbackMode.getValue();
+            if (mode != null) {
+                cancelPending();
+                disableTapOverlay();
+                playAudioRunnable = () -> playPageAudio(next);
+                handler.postDelayed(playAudioRunnable, 300);
+                if (mode != PlaybackMode.STUDY_MODE) {
+                    enableOverlayRunnable = this::enableTapOverlay;
+                    handler.postDelayed(enableOverlayRunnable, 900);
+                }
+            }
+        } else {
             binding.viewPager.setCurrentItem(next, true);
         }
     }
@@ -380,15 +448,16 @@ binding.tapOverlay.setOnClickListener(v -> onTapOverlay());
             int total = viewModel.getWordCount();
             if (total == 0) return;
             Integer current = viewModel.currentIndex.getValue();
-            int next = (current != null ? current : 0) + 1;
-            if (next < total) {
-                binding.viewPager.setCurrentItem(next, true);
-                scheduleAutoAdvance();
-            } else {
-                viewModel.toggleAutoAdvance();
-            }
+            int next = WordDetailViewModel.computeNextIndex(current != null ? current : 0, total);
+            binding.viewPager.setCurrentItem(next, true);
+            scheduleAutoAdvance();
         };
         handler.postDelayed(autoAdvanceRunnable, delay);
+    }
+
+    private void scheduleAutoAdvanceAfterTts(long delayMs) {
+        autoAdvanceAfterTtsRunnable = this::advanceToNextCard;
+        handler.postDelayed(autoAdvanceAfterTtsRunnable, delayMs);
     }
 
     private void cancelPending() {
@@ -396,23 +465,21 @@ binding.tapOverlay.setOnClickListener(v -> onTapOverlay());
             handler.removeCallbacks(autoAdvanceRunnable);
             autoAdvanceRunnable = null;
         }
-        handler.removeCallbacksAndMessages(null);
+        if (playAudioRunnable != null) {
+            handler.removeCallbacks(playAudioRunnable);
+            playAudioRunnable = null;
+        }
+        if (enableOverlayRunnable != null) {
+            handler.removeCallbacks(enableOverlayRunnable);
+            enableOverlayRunnable = null;
+        }
+        if (autoAdvanceAfterTtsRunnable != null) {
+            handler.removeCallbacks(autoAdvanceAfterTtsRunnable);
+            autoAdvanceAfterTtsRunnable = null;
+        }
     }
 
     // ── Helpers ──────────────────────────────────────────────────────────────
-
-    private void updatePrevWordToolbar() {
-        List<Word> words = viewModel.allWords.getValue();
-        Integer idx = viewModel.currentIndex.getValue();
-        if (words == null || idx == null || idx <= 0) {
-            binding.toolbarWordEnglish.setText("");
-            binding.toolbarWordChinese.setText("");
-            return;
-        }
-        Word prev = words.get(idx - 1);
-        binding.toolbarWordEnglish.setText(prev.english);
-        binding.toolbarWordChinese.setText(getChineseText(prev));
-    }
 
     private String getChineseText(Word word) {
         if (word.definitions == null || word.definitions.isEmpty()) return "";
@@ -434,21 +501,32 @@ binding.tapOverlay.setOnClickListener(v -> onTapOverlay());
         }
     }
 
-    private void cycleVisibilityMode() {
-        VisibilityMode current = viewModel.visibilityMode.getValue();
-        if (current == null) current = VisibilityMode.HIDE_ENGLISH;
-        switch (current) {
-            case HIDE_ENGLISH: viewModel.setVisibilityMode(VisibilityMode.HIDE_CHINESE); break;
-            case HIDE_CHINESE: viewModel.setVisibilityMode(VisibilityMode.SHOW_BOTH); break;
-            case SHOW_BOTH: viewModel.setVisibilityMode(VisibilityMode.HIDE_ENGLISH); break;
-        }
+    private void showVisibilityModeSheet() {
+        BottomSheetDialog dialog = new BottomSheetDialog(requireContext());
+        BottomSheetVisibilityModeBinding sheet =
+                BottomSheetVisibilityModeBinding.inflate(getLayoutInflater());
+        dialog.setContentView(sheet.getRoot());
+        sheet.optHideChinese.setOnClickListener(v -> {
+            viewModel.setVisibilityMode(VisibilityMode.HIDE_CHINESE);
+            dialog.dismiss();
+        });
+        sheet.optHideEnglish.setOnClickListener(v -> {
+            viewModel.setVisibilityMode(VisibilityMode.HIDE_ENGLISH);
+            dialog.dismiss();
+        });
+        sheet.optShowBoth.setOnClickListener(v -> {
+            viewModel.setVisibilityMode(VisibilityMode.SHOW_BOTH);
+            dialog.dismiss();
+        });
+        sheet.optCancel.setOnClickListener(v -> dialog.dismiss());
+        dialog.show();
     }
 
     private void updateHideToggleText(VisibilityMode mode) {
         if (mode == null) return;
         switch (mode) {
             case HIDE_ENGLISH: binding.btnHideToggle.setText(R.string.hide_word); break;
-            case HIDE_CHINESE: binding.btnHideToggle.setText(R.string.hide_chinese); break;
+            case HIDE_CHINESE: binding.btnHideToggle.setText(R.string.hide_definition); break;
             case SHOW_BOTH: binding.btnHideToggle.setText(R.string.show_both); break;
         }
     }
@@ -457,7 +535,6 @@ binding.tapOverlay.setOnClickListener(v -> onTapOverlay());
     public void onDestroyView() {
         super.onDestroyView();
         cancelPending();
-        ttsManager.setProgressListener(null);
         ttsManager.stop();
         binding = null;
     }

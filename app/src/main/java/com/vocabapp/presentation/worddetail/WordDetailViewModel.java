@@ -38,6 +38,7 @@ public class WordDetailViewModel extends ViewModel {
 
     private long startWordId = -1;
     private int groupCount = -1;
+    private long initialWordId = -1;
 
     @Inject
     public WordDetailViewModel(WordRepository wordRepository, UserPreferencesManager prefsManager) {
@@ -58,8 +59,13 @@ public class WordDetailViewModel extends ViewModel {
     }
 
     public void init(long vocabBookId, long startWordId, int groupCount) {
+        init(vocabBookId, startWordId, groupCount, -1);
+    }
+
+    public void init(long vocabBookId, long startWordId, int groupCount, long initialWordId) {
         this.startWordId = startWordId;
         this.groupCount = groupCount;
+        this.initialWordId = initialWordId;
         vocabBookIdLive.setValue(vocabBookId);
     }
 
@@ -73,9 +79,11 @@ public class WordDetailViewModel extends ViewModel {
     }
 
     public int findStartIndex(List<Word> words) {
-        if (words == null || startWordId < 0 || groupCount > 0) return 0;
+        if (words == null) return 0;
+        long lookupId = (groupCount > 0 && initialWordId >= 0) ? initialWordId : startWordId;
+        if (lookupId < 0) return 0;
         for (int i = 0; i < words.size(); i++) {
-            if (words.get(i).id == startWordId) return i;
+            if (words.get(i).id == lookupId) return i;
         }
         return 0;
     }
@@ -89,8 +97,15 @@ public class WordDetailViewModel extends ViewModel {
         isEnglishRevealed.setValue(true);
     }
 
+    private PlaybackMode lastPlaybackMode = null;
+
     public void setPlaybackMode(PlaybackMode mode) {
+        if (mode != null) lastPlaybackMode = mode;
         playbackMode.setValue(mode);
+    }
+
+    public PlaybackMode getLastPlaybackMode() {
+        return lastPlaybackMode;
     }
 
     public void setVisibilityMode(VisibilityMode mode) {
@@ -113,5 +128,10 @@ public class WordDetailViewModel extends ViewModel {
     public int getWordCount() {
         List<Word> words = allWords.getValue();
         return words != null ? words.size() : 0;
+    }
+
+    static int computeNextIndex(int current, int total) {
+        if (total == 0) return 0;
+        return (current + 1) % total;
     }
 }
