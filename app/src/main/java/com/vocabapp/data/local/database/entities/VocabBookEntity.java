@@ -17,10 +17,14 @@ public class VocabBookEntity {
     @ColumnInfo(name = "asset_file")
     public String assetFile;
 
+    @ColumnInfo(name = "is_mine", defaultValue = "0")
+    public boolean isMine;
+
     public VocabBookEntity() {}
 
     public VocabBookEntity(String bookName, String assetFile) {
         this.bookName = bookName;
         this.assetFile = assetFile;
+        this.isMine = false;
     }
 }

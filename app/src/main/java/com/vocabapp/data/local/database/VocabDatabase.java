@@ -19,7 +19,7 @@ import com.vocabapp.data.local.database.entities.WordDefinitionEntity;
         BookWordEntity.class,
         BookmarkEntity.class
     },
-    version = 3,
+    version = 4,
     exportSchema = false
 )
 public abstract class VocabDatabase extends RoomDatabase {

@@ -29,7 +29,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext;
 public class DatabaseSeeder {
 
     private static final String PREF_NAME = "vocab_app_prefs";
-    private static final String KEY_DB_SEEDED = "seed_v3";
+    private static final String KEY_DB_SEEDED = "seed_v4";
     private static final int BATCH_SIZE = 500;
     private static final Pattern POS_PATTERN = Pattern.compile("^([a-z]{1,7})\\.");
 

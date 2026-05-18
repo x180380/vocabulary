@@ -4,15 +4,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.vocabapp.databinding.FragmentAddVocabBinding;
+import com.vocabapp.presentation.common.adapters.LibraryVocabAdapter;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
@@ -21,6 +22,7 @@ public class AddVocabFragment extends Fragment {
 
     private FragmentAddVocabBinding binding;
     private AddVocabViewModel viewModel;
+    private LibraryVocabAdapter adapter;
 
     @Nullable
     @Override
@@ -35,34 +37,23 @@ public class AddVocabFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         viewModel = new ViewModelProvider(this).get(AddVocabViewModel.class);
 
+        adapter = new LibraryVocabAdapter(book -> viewModel.addToMyVocab(book.id));
+        binding.rvLibrary.setLayoutManager(new LinearLayoutManager(requireContext()));
+        binding.rvLibrary.setAdapter(adapter);
+
         binding.btnBack.setOnClickListener(v ->
                 Navigation.findNavController(requireView()).navigateUp());
 
-        binding.btnCreate.setOnClickListener(v -> submit());
-
-        binding.etVocabName.setOnEditorActionListener((v, actionId, event) -> {
-            if (actionId == EditorInfo.IME_ACTION_DONE) {
-                submit();
-                return true;
-            }
-            return false;
-        });
-
-        viewModel.createSuccess.observe(getViewLifecycleOwner(), success -> {
-            if (Boolean.TRUE.equals(success)) {
-                Navigation.findNavController(requireView()).navigateUp();
+        viewModel.availableBooks.observe(getViewLifecycleOwner(), books -> {
+            if (books == null || books.isEmpty()) {
+                binding.rvLibrary.setVisibility(View.GONE);
+                binding.tvEmpty.setVisibility(View.VISIBLE);
+            } else {
+                binding.rvLibrary.setVisibility(View.VISIBLE);
+                binding.tvEmpty.setVisibility(View.GONE);
+                adapter.submitList(books);
             }
         });
-    }
-
-    private void submit() {
-        String name = binding.etVocabName.getText() != null
-                ? binding.etVocabName.getText().toString() : "";
-        if (name.trim().isEmpty()) {
-            binding.etVocabName.setError("请输入单词本名称");
-            return;
-        }
-        viewModel.createVocabBook(name);
     }
 
     @Override

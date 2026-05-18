@@ -26,19 +26,16 @@ public class VocabBookRepository {
         this.executors = executors;
     }
 
-    public void deleteVocabBook(long bookId) {
-        executors.diskIO().execute(() -> dao.deleteById(bookId));
+    public LiveData<List<VocabBook>> getAvailableBooks() {
+        return Transformations.map(dao.getLibraryBooksWithCount(), this::toModels);
     }
 
-    public void createVocabBook(String name, Runnable onSuccess) {
-        executors.diskIO().execute(() -> {
-            com.vocabapp.data.local.database.entities.VocabBookEntity entity =
-                    new com.vocabapp.data.local.database.entities.VocabBookEntity();
-            entity.bookName = name;
-            entity.assetFile = null;
-            dao.insertVocabBook(entity);
-            executors.mainThread().execute(onSuccess);
-        });
+    public void addToMyVocab(long bookId) {
+        executors.diskIO().execute(() -> dao.markAsMine(bookId));
+    }
+
+    public void deleteVocabBook(long bookId) {
+        executors.diskIO().execute(() -> dao.deleteById(bookId));
     }
 
     public LiveData<List<VocabBook>> getAllVocabBooks() {
