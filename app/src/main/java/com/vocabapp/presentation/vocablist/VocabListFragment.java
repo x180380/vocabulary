@@ -49,6 +49,8 @@ public class VocabListFragment extends Fragment {
                 book -> navigateToWordList(book),
                 book -> navigateToPlaybackMode(book.id)
         );
+        adapter.setOnDeleteClick(book -> viewModel.deleteVocabBook(book.id));
+        adapter.setOnAddClick(this::navigateToAddVocab);
         binding.rvVocabBooks.setLayoutManager(new GridLayoutManager(requireContext(), 3));
         binding.rvVocabBooks.setAdapter(adapter);
     }
@@ -57,6 +59,7 @@ public class VocabListFragment extends Fragment {
         binding.fabAdd.setVisibility(View.GONE);
         binding.btnSettings.setOnClickListener(v ->
                 Navigation.findNavController(v).navigate(R.id.action_vocabList_to_settings));
+        binding.btnEdit.setOnClickListener(v -> viewModel.toggleEditMode());
     }
 
     private void observeData() {
@@ -70,6 +73,11 @@ public class VocabListFragment extends Fragment {
                 adapter.submitList(books);
             }
         });
+
+        viewModel.isEditMode.observe(getViewLifecycleOwner(), isEdit -> {
+            adapter.setEditMode(Boolean.TRUE.equals(isEdit));
+            binding.btnEdit.setText(Boolean.TRUE.equals(isEdit) ? "完成" : "编辑");
+        });
     }
 
     private void navigateToWordList(VocabBook book) {
@@ -78,6 +86,11 @@ public class VocabListFragment extends Fragment {
         args.putString("vocabBookTitle", book.bookName);
         Navigation.findNavController(requireView())
                 .navigate(R.id.action_vocabList_to_wordGroupList, args);
+    }
+
+    private void navigateToAddVocab() {
+        Navigation.findNavController(requireView())
+                .navigate(R.id.action_vocabList_to_addVocab);
     }
 
     private void navigateToPlaybackMode(long vocabBookId) {

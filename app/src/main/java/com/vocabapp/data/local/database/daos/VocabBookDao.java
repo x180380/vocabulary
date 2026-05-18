@@ -25,4 +25,7 @@ public interface VocabBookDao {
 
     @Query("SELECT COUNT(*) FROM vocab_books")
     int getCount();
+
+    @Query("DELETE FROM vocab_books WHERE book_id = :id")
+    void deleteById(long id);
 }

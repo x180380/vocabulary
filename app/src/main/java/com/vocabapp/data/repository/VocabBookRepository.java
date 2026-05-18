@@ -6,6 +6,7 @@ import androidx.lifecycle.Transformations;
 import com.vocabapp.data.local.database.daos.VocabBookDao;
 import com.vocabapp.data.local.database.entities.VocabBookWithCount;
 import com.vocabapp.domain.model.VocabBook;
+import com.vocabapp.presentation.common.AppExecutors;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,10 +18,27 @@ import javax.inject.Singleton;
 public class VocabBookRepository {
 
     private final VocabBookDao dao;
+    private final AppExecutors executors;
 
     @Inject
-    public VocabBookRepository(VocabBookDao dao) {
+    public VocabBookRepository(VocabBookDao dao, AppExecutors executors) {
         this.dao = dao;
+        this.executors = executors;
+    }
+
+    public void deleteVocabBook(long bookId) {
+        executors.diskIO().execute(() -> dao.deleteById(bookId));
+    }
+
+    public void createVocabBook(String name, Runnable onSuccess) {
+        executors.diskIO().execute(() -> {
+            com.vocabapp.data.local.database.entities.VocabBookEntity entity =
+                    new com.vocabapp.data.local.database.entities.VocabBookEntity();
+            entity.bookName = name;
+            entity.assetFile = null;
+            dao.insertVocabBook(entity);
+            executors.mainThread().execute(onSuccess);
+        });
     }
 
     public LiveData<List<VocabBook>> getAllVocabBooks() {

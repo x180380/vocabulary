@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -37,7 +38,31 @@ public class AddVocabFragment extends Fragment {
         binding.btnBack.setOnClickListener(v ->
                 Navigation.findNavController(requireView()).navigateUp());
 
-        binding.btnNewVocabBook.setVisibility(android.view.View.GONE);
+        binding.btnCreate.setOnClickListener(v -> submit());
+
+        binding.etVocabName.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                submit();
+                return true;
+            }
+            return false;
+        });
+
+        viewModel.createSuccess.observe(getViewLifecycleOwner(), success -> {
+            if (Boolean.TRUE.equals(success)) {
+                Navigation.findNavController(requireView()).navigateUp();
+            }
+        });
+    }
+
+    private void submit() {
+        String name = binding.etVocabName.getText() != null
+                ? binding.etVocabName.getText().toString() : "";
+        if (name.trim().isEmpty()) {
+            binding.etVocabName.setError("请输入单词本名称");
+            return;
+        }
+        viewModel.createVocabBook(name);
     }
 
     @Override

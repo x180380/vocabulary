@@ -30,4 +30,8 @@ public class VocabListViewModel extends ViewModel {
         Boolean current = isEditMode.getValue();
         isEditMode.setValue(current == null ? true : !current);
     }
+
+    public void deleteVocabBook(long bookId) {
+        repository.deleteVocabBook(bookId);
+    }
 }

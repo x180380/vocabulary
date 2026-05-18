@@ -52,4 +52,24 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- Delete overlay shown in edit mode -->
+    <View
+        android:id="@+id/deleteOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/btnDelete"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_close"
+        android:tint="#FFFFFF"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="删除" />
+
 </androidx.cardview.widget.CardView>
