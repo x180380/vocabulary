@@ -5,6 +5,7 @@ import android.content.Context;
 import androidx.room.Room;
 
 import com.vocabapp.data.local.database.VocabDatabase;
+import com.vocabapp.data.local.database.daos.BookmarkDao;
 import com.vocabapp.data.local.database.daos.BookWordDao;
 import com.vocabapp.data.local.database.daos.VocabBookDao;
 import com.vocabapp.data.local.database.daos.WordDefinitionDao;
@@ -45,5 +46,11 @@ public class DatabaseModule {
     @Singleton
     public BookWordDao provideBookWordDao(VocabDatabase db) {
         return db.bookWordDao();
+    }
+
+    @Provides
+    @Singleton
+    public BookmarkDao provideBookmarkDao(VocabDatabase db) {
+        return db.bookmarkDao();
     }
 }

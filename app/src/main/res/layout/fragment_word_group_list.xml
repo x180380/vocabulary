@@ -16,23 +16,20 @@
         android:paddingEnd="8dp"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Back"
-            android:src="@drawable/ic_back"
-            android:tint="@color/toolbar_icon" />
-
-        <ImageButton
+        <TextView
             android:id="@+id/btnListView"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="List view"
-            android:src="@drawable/ic_view_list"
-            android:tint="@color/toolbar_icon" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="显示列表"
+            android:textSize="14sp"
+            android:textColor="@color/toolbar_icon"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true" />
 
     </LinearLayout>
 

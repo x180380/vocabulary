@@ -19,8 +19,16 @@ public interface BookWordDao {
     void insertAll(List<BookWordEntity> bookWords);
 
     @Transaction
+    @Query("SELECT * FROM book_words WHERE book_id = :bookId ORDER BY id ASC")
+    LiveData<List<BookWordWithDefinition>> getWordsByBookOriginal(long bookId);
+
+    @Transaction
     @Query("SELECT * FROM book_words WHERE book_id = :bookId ORDER BY word ASC")
     LiveData<List<BookWordWithDefinition>> getWordsByBook(long bookId);
+
+    @Transaction
+    @Query("SELECT * FROM book_words WHERE book_id = :bookId ORDER BY RANDOM()")
+    LiveData<List<BookWordWithDefinition>> getWordsByBookRandom(long bookId);
 
     @Transaction
     @Query("SELECT * FROM book_words WHERE id = :id")

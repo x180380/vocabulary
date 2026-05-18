@@ -35,6 +35,8 @@ public class WordDetailViewModel extends ViewModel {
     public final MutableLiveData<Boolean> isAutoAdvance = new MutableLiveData<>(false);
     public final MutableLiveData<Boolean> isEnglishRevealed = new MutableLiveData<>(false);
     public final MutableLiveData<PlaybackMode> playbackMode = new MutableLiveData<>(null);
+    public final MediatorLiveData<Boolean> isBookmarked = new MediatorLiveData<>();
+    private LiveData<Boolean> bookmarkSource = null;
 
     private long startWordId = -1;
     private int groupCount = -1;
@@ -91,6 +93,25 @@ public class WordDetailViewModel extends ViewModel {
     public void onPageChanged(int newIndex) {
         currentIndex.setValue(newIndex);
         isEnglishRevealed.setValue(false);
+        List<Word> words = allWords.getValue();
+        if (words != null && newIndex < words.size()) {
+            observeBookmark(words.get(newIndex).id);
+        }
+    }
+
+    private void observeBookmark(long wordId) {
+        if (bookmarkSource != null) isBookmarked.removeSource(bookmarkSource);
+        bookmarkSource = wordRepository.isBookmarked(wordId);
+        isBookmarked.addSource(bookmarkSource, v -> isBookmarked.setValue(v != null && v));
+    }
+
+    public void toggleBookmark() {
+        List<Word> words = allWords.getValue();
+        Integer idx = currentIndex.getValue();
+        if (words == null || idx == null || idx >= words.size()) return;
+        long wordId = words.get(idx).id;
+        boolean current = Boolean.TRUE.equals(isBookmarked.getValue());
+        wordRepository.toggleBookmark(wordId, current);
     }
 
     public void revealEnglish() {

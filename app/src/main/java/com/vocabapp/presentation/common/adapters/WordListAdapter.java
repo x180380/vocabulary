@@ -47,7 +47,8 @@ public class WordListAdapter extends ListAdapter<Word, WordListAdapter.ViewHolde
 
                 @Override
                 public boolean areContentsTheSame(@NonNull Word oldItem, @NonNull Word newItem) {
-                    return oldItem.english.equals(newItem.english);
+                    return oldItem.english.equals(newItem.english)
+                            && oldItem.isBookmarked == newItem.isBookmarked;
                 }
             };
 
@@ -111,6 +112,8 @@ public class WordListAdapter extends ListAdapter<Word, WordListAdapter.ViewHolde
             } else {
                 binding.checkbox.setVisibility(View.GONE);
             }
+
+            binding.ivBookmark.setVisibility(word.isBookmarked ? View.VISIBLE : View.GONE);
 
             binding.getRoot().setOnClickListener(v -> {
                 if (isBatchMode) onWordSelect.onWordSelect(word.id);

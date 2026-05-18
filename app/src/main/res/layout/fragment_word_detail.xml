@@ -99,11 +99,12 @@
 
         <ImageButton
             android:id="@+id/btnPrev"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:src="@drawable/ic_skip_previous"
+            android:layout_width="64dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_arrow_left"
             android:background="@drawable/bg_btn_play_card"
             android:contentDescription="Previous"
+            android:elevation="2dp"
             android:visibility="gone"
             android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -125,11 +126,12 @@
 
         <ImageButton
             android:id="@+id/btnNext"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:src="@drawable/ic_skip_next"
+            android:layout_width="64dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_arrow_right"
             android:background="@drawable/bg_btn_play_card"
             android:contentDescription="Next"
+            android:elevation="2dp"
             android:visibility="gone"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"

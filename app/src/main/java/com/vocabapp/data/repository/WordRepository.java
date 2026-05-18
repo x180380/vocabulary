@@ -2,11 +2,14 @@ package com.vocabapp.data.repository;
 
 import androidx.annotation.Nullable;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.Transformations;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.vocabapp.data.local.database.daos.BookmarkDao;
 import com.vocabapp.data.local.database.daos.BookWordDao;
+import com.vocabapp.data.local.database.entities.BookmarkEntity;
 import com.vocabapp.data.local.database.entities.BookWordWithDefinition;
 import com.vocabapp.data.local.database.entities.WordDefinitionEntity;
 import com.vocabapp.domain.enums.SortOrder;
@@ -18,7 +21,9 @@ import com.vocabapp.presentation.common.AppExecutors;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -27,18 +32,40 @@ import javax.inject.Singleton;
 public class WordRepository {
 
     private final BookWordDao bookWordDao;
+    private final BookmarkDao bookmarkDao;
     private final AppExecutors executors;
     private final Gson gson;
 
     @Inject
-    public WordRepository(BookWordDao bookWordDao, AppExecutors executors, Gson gson) {
+    public WordRepository(BookWordDao bookWordDao, BookmarkDao bookmarkDao,
+                          AppExecutors executors, Gson gson) {
         this.bookWordDao = bookWordDao;
+        this.bookmarkDao = bookmarkDao;
         this.executors = executors;
         this.gson = gson;
     }
 
     public LiveData<List<Word>> getWordsByVocab(long vocabBookId, SortOrder sortOrder) {
-        return Transformations.map(bookWordDao.getWordsByBook(vocabBookId), this::toWords);
+        LiveData<List<BookWordWithDefinition>> wordsSource;
+        if (sortOrder == SortOrder.RANDOM) {
+            wordsSource = bookWordDao.getWordsByBookRandom(vocabBookId);
+        } else if (sortOrder == SortOrder.BY_TIME_DESC) {
+            wordsSource = bookWordDao.getWordsByBookOriginal(vocabBookId);
+        } else {
+            wordsSource = bookWordDao.getWordsByBook(vocabBookId);
+        }
+        LiveData<List<Long>> bookmarkSource = bookmarkDao.getAllBookmarkedWordIds();
+
+        MediatorLiveData<List<Word>> result = new MediatorLiveData<>();
+        result.addSource(wordsSource, items -> {
+            List<Long> bookmarked = bookmarkSource.getValue();
+            result.setValue(toWordsWithBookmarks(items, bookmarked));
+        });
+        result.addSource(bookmarkSource, bookmarked -> {
+            List<BookWordWithDefinition> items = wordsSource.getValue();
+            result.setValue(toWordsWithBookmarks(items, bookmarked));
+        });
+        return result;
     }
 
     public LiveData<Word> getWordById(long wordId) {
@@ -66,21 +93,41 @@ public class WordRepository {
         });
     }
 
+    public LiveData<Boolean> isBookmarked(long wordId) {
+        return bookmarkDao.isBookmarked(wordId);
+    }
+
+    public void toggleBookmark(long wordId, boolean currentlyBookmarked) {
+        executors.diskIO().execute(() -> {
+            if (currentlyBookmarked) {
+                bookmarkDao.delete(wordId);
+            } else {
+                bookmarkDao.insert(new BookmarkEntity(wordId));
+            }
+        });
+    }
+
     public interface WordIdsCallback {
         void onResult(List<Long> wordIds);
     }
 
-    private List<Word> toWords(List<BookWordWithDefinition> items) {
+    private List<Word> toWordsWithBookmarks(List<BookWordWithDefinition> items, List<Long> bookmarkedIds) {
         if (items == null) return new ArrayList<>();
+        Set<Long> bookmarkedSet = bookmarkedIds != null ? new HashSet<>(bookmarkedIds) : new HashSet<>();
         List<Word> result = new ArrayList<>();
         for (BookWordWithDefinition bwd : items) {
-            Word word = toWord(bwd);
+            if (bwd == null || bwd.bookWord == null) continue;
+            Word word = toWord(bwd, bookmarkedSet.contains(bwd.bookWord.id));
             if (word != null) result.add(word);
         }
         return result;
     }
 
-    private Word toWord(BookWordWithDefinition bwd) {
+    private List<Word> toWords(List<BookWordWithDefinition> items) {
+        return toWordsWithBookmarks(items, null);
+    }
+
+    private Word toWord(BookWordWithDefinition bwd, boolean isBookmarked) {
         if (bwd == null || bwd.bookWord == null) return null;
         WordDefinitionEntity def = (bwd.definitions != null && !bwd.definitions.isEmpty())
                 ? bwd.definitions.get(0) : null;
@@ -102,8 +149,13 @@ public class WordRepository {
                 chineseDefinition,
                 definitions,
                 phonetics,
-                examples
+                examples,
+                isBookmarked
         );
+    }
+
+    private Word toWord(BookWordWithDefinition bwd) {
+        return toWord(bwd, false);
     }
 
     private List<Definition> parseDefinitions(String json) {

@@ -32,9 +32,11 @@ public class WordListViewModel extends ViewModel {
     public final MutableLiveData<Boolean> isBatchMode = new MutableLiveData<>(false);
     public final MutableLiveData<Set<Long>> selectedWordIds = new MutableLiveData<>(new HashSet<>());
     public final MutableLiveData<VisibilityMode> visibilityMode = new MutableLiveData<>(VisibilityMode.SHOW_BOTH);
+    public final MutableLiveData<Boolean> showBookmarkedOnly = new MutableLiveData<>(false);
 
     public final LiveData<List<VocabBook>> allVocabBooks;
     public final LiveData<List<Word>> words;
+    public final LiveData<List<Word>> filteredWords;
 
     @Inject
     public WordListViewModel(WordRepository wordRepository, VocabBookRepository vocabBookRepository) {
@@ -47,6 +49,11 @@ public class WordListViewModel extends ViewModel {
         mediator.addSource(vocabBookId, id -> reloadWords(mediator));
         mediator.addSource(sortOrder, order -> reloadWords(mediator));
         words = mediator;
+
+        MediatorLiveData<List<Word>> filterMediator = new MediatorLiveData<>();
+        filterMediator.addSource(words, list -> filterMediator.setValue(applyFilter(list)));
+        filterMediator.addSource(showBookmarkedOnly, flag -> filterMediator.setValue(applyFilter(words.getValue())));
+        filteredWords = filterMediator;
     }
 
     private LiveData<List<Word>> currentWordSource;
@@ -85,7 +92,7 @@ public class WordListViewModel extends ViewModel {
     }
 
     public void selectAll() {
-        List<Word> currentWords = words.getValue();
+        List<Word> currentWords = filteredWords.getValue();
         if (currentWords == null) return;
         Set<Long> all = new HashSet<>();
         for (Word w : currentWords) all.add(w.id);
@@ -114,5 +121,23 @@ public class WordListViewModel extends ViewModel {
 
     public void setVisibilityMode(VisibilityMode mode) {
         visibilityMode.setValue(mode);
+    }
+
+    public void toggleBookmarkFilter() {
+        Boolean current = showBookmarkedOnly.getValue();
+        showBookmarkedOnly.setValue(current == null || !current);
+    }
+
+    private List<Word> applyFilter(List<Word> list) {
+        if (list == null) return new ArrayList<>();
+        Boolean bookmarkedOnly = showBookmarkedOnly.getValue();
+        if (Boolean.TRUE.equals(bookmarkedOnly)) {
+            List<Word> filtered = new ArrayList<>();
+            for (Word w : list) {
+                if (w.isBookmarked) filtered.add(w);
+            }
+            return filtered;
+        }
+        return list;
     }
 }

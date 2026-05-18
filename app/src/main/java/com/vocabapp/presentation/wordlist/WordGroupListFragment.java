@@ -64,8 +64,6 @@ public class WordGroupListFragment extends Fragment {
     }
 
     private void setupClickListeners() {
-        binding.btnBack.setOnClickListener(v ->
-                Navigation.findNavController(requireView()).navigateUp());
         binding.btnListView.setOnClickListener(v -> navigateToAllWordList());
     }
 

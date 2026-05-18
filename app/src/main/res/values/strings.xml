@@ -26,8 +26,8 @@
     <string name="card_study">卡片学习</string>
 
     <!-- Sort options -->
-    <string name="sort_time_desc">时间倒序</string>
-    <string name="sort_time_asc">时间正序</string>
+    <string name="sort_time_desc">原序</string>
+    <string name="sort_time_asc">乱序</string>
     <string name="sort_alpha">字母排序</string>
 
     <!-- Word detail -->

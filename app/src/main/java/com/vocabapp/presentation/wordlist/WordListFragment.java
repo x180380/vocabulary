@@ -75,14 +75,16 @@ public class WordListFragment extends Fragment {
     }
 
     private void setupClickListeners() {
-        binding.btnBack.setOnClickListener(v ->
+        binding.btnGroupView.setVisibility(groupCount > 0 ? View.GONE : View.VISIBLE);
+        binding.btnGroupView.setOnClickListener(v ->
                 Navigation.findNavController(requireView()).navigateUp());
+        binding.btnFilter.setOnClickListener(v -> viewModel.toggleBookmarkFilter());
         binding.btnSort.setOnClickListener(v -> showSortMenu());
         binding.btnEdit.setOnClickListener(v -> viewModel.toggleBatchMode());
         binding.btnListenWords.setOnClickListener(v -> navigateToPlaybackMode());
         binding.btnHideDefinition.setOnClickListener(v -> cycleVisibilityMode());
         binding.btnCardStudy.setOnClickListener(v -> {
-            List<Word> words = getDisplayWords(viewModel.words.getValue());
+            List<Word> words = getDisplayWords(viewModel.filteredWords.getValue());
             if (words != null && !words.isEmpty()) navigateToWordDetail(words.get(0));
         });
         binding.btnBatchDelete.setOnClickListener(v -> viewModel.deleteSelected());
@@ -91,7 +93,7 @@ public class WordListFragment extends Fragment {
     }
 
     private void observeData() {
-        viewModel.words.observe(getViewLifecycleOwner(), words -> {
+        viewModel.filteredWords.observe(getViewLifecycleOwner(), words -> {
             List<Word> display = getDisplayWords(words);
             if (display == null || display.isEmpty()) {
                 binding.rvWords.setVisibility(View.GONE);
@@ -107,7 +109,7 @@ public class WordListFragment extends Fragment {
             adapter.setBatchMode(isBatchMode);
             binding.bottomBarNormal.setVisibility(!isBatchMode ? View.VISIBLE : View.GONE);
             binding.bottomBarBatch.setVisibility(isBatchMode ? View.VISIBLE : View.GONE);
-            binding.btnEdit.setImageResource(isBatchMode ? R.drawable.ic_close : R.drawable.ic_edit);
+            binding.btnEdit.setText(isBatchMode ? "完成" : "编辑");
             binding.tvSelectedCount.setVisibility(isBatchMode ? View.VISIBLE : View.GONE);
             binding.btnSelectAll.setVisibility(isBatchMode ? View.VISIBLE : View.GONE);
         });
@@ -121,6 +123,10 @@ public class WordListFragment extends Fragment {
         viewModel.visibilityMode.observe(getViewLifecycleOwner(), mode -> {
             adapter.setVisibilityMode(mode);
             updateHideButton(mode);
+        });
+
+        viewModel.showBookmarkedOnly.observe(getViewLifecycleOwner(), bookmarkedOnly -> {
+            binding.btnFilter.setText(Boolean.TRUE.equals(bookmarkedOnly) ? "全部" : "书签");
         });
     }
 
@@ -148,7 +154,7 @@ public class WordListFragment extends Fragment {
                 .setItems(options, (dialog, which) -> {
                     switch (which) {
                         case 0: viewModel.setSortOrder(SortOrder.BY_TIME_DESC); break;
-                        case 1: viewModel.setSortOrder(SortOrder.BY_TIME_ASC); break;
+                        case 1: viewModel.setSortOrder(SortOrder.RANDOM); break;
                         case 2: viewModel.setSortOrder(SortOrder.BY_ALPHABET_ASC); break;
                     }
                 })
@@ -215,7 +221,7 @@ public class WordListFragment extends Fragment {
             args.putInt("groupCount", groupCount);
         } else {
             LinearLayoutManager lm = (LinearLayoutManager) binding.rvWords.getLayoutManager();
-            List<Word> allWords = viewModel.words.getValue();
+            List<Word> allWords = viewModel.filteredWords.getValue();
             long firstWordId = -1;
             if (lm != null && allWords != null) {
                 int pos = lm.findFirstVisibleItemPosition();

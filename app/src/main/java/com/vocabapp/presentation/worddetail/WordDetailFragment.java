@@ -116,7 +116,7 @@ public class WordDetailFragment extends Fragment {
 
             @Override
             public void onToggleBookmark(Word word) {
-                // bookmark feature removed
+                viewModel.toggleBookmark();
             }
         });
 
@@ -190,6 +190,9 @@ public class WordDetailFragment extends Fragment {
 
     private void observeData() {
         setupTtsProgressListener();
+        viewModel.isBookmarked.observe(getViewLifecycleOwner(), bookmarked ->
+                pagerAdapter.setCurrentBookmarked(Boolean.TRUE.equals(bookmarked)));
+
         viewModel.allWords.observe(getViewLifecycleOwner(), words -> {
             if (words == null || words.isEmpty()) return;
             pagerAdapter.setWords(words);
@@ -200,6 +203,7 @@ public class WordDetailFragment extends Fragment {
                 viewModel.currentIndex.setValue(startIdx);
                 pagerAdapter.setCurrentPosition(startIdx);
                 binding.viewPager.setCurrentItem(startIdx, false);
+                viewModel.onPageChanged(startIdx);
 
                 PlaybackMode mode = viewModel.playbackMode.getValue();
                 if (mode != null) {

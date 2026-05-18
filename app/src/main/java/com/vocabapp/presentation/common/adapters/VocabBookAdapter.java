@@ -69,7 +69,7 @@ public class VocabBookAdapter extends ListAdapter<VocabBook, VocabBookAdapter.Vi
             binding.tvWordCount.setText(binding.getRoot().getContext()
                     .getString(R.string.word_count_format, book.wordCount));
             binding.cardRoot.setCardBackgroundColor(
-                    ColorUtils.getCardColor(binding.getRoot().getContext(), book.colorIndex));
+                    binding.getRoot().getContext().getColor(com.vocabapp.R.color.card_color_5));
             binding.cardRoot.setOnClickListener(v -> onBookClick.onBookClick(book));
             binding.btnPlay.setOnClickListener(v -> onPlayClick.onBookClick(book));
         }
