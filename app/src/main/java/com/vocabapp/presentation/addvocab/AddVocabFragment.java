@@ -45,14 +45,7 @@ public class AddVocabFragment extends Fragment {
                 Navigation.findNavController(requireView()).navigateUp());
 
         viewModel.availableBooks.observe(getViewLifecycleOwner(), books -> {
-            if (books == null || books.isEmpty()) {
-                binding.rvLibrary.setVisibility(View.GONE);
-                binding.tvEmpty.setVisibility(View.VISIBLE);
-            } else {
-                binding.rvLibrary.setVisibility(View.VISIBLE);
-                binding.tvEmpty.setVisibility(View.GONE);
-                adapter.submitList(books);
-            }
+            adapter.submitList(books);
         });
     }
 

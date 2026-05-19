@@ -1,4 +1,4 @@
-package com.vocabapp.presentation.vocablist;
+package com.vocabapp.presentation.myvocab;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,31 +13,31 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.vocabapp.R;
-import com.vocabapp.databinding.FragmentVocabListBinding;
+import com.vocabapp.databinding.FragmentMyVocabBinding;
 import com.vocabapp.domain.model.VocabBook;
 import com.vocabapp.presentation.common.adapters.VocabBookAdapter;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
-public class VocabListFragment extends Fragment {
+public class MyVocabFragment extends Fragment {
 
-    private FragmentVocabListBinding binding;
-    private VocabListViewModel viewModel;
+    private FragmentMyVocabBinding binding;
+    private MyVocabViewModel viewModel;
     private VocabBookAdapter adapter;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        binding = FragmentVocabListBinding.inflate(inflater, container, false);
+        binding = FragmentMyVocabBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        viewModel = new ViewModelProvider(this).get(VocabListViewModel.class);
+        viewModel = new ViewModelProvider(this).get(MyVocabViewModel.class);
 
         setupRecyclerView();
         setupClickListeners();
@@ -49,7 +49,7 @@ public class VocabListFragment extends Fragment {
                 book -> navigateToWordList(book),
                 book -> navigateToPlaybackMode(book.id)
         );
-        adapter.setOnDeleteClick(book -> viewModel.deleteVocabBook(book.id));
+        adapter.setOnDeleteClick(book -> viewModel.removeFromMyVocab(book.id));
         adapter.setOnAddClick(this::navigateToAddVocab);
         binding.rvVocabBooks.setLayoutManager(new GridLayoutManager(requireContext(), 3));
         binding.rvVocabBooks.setAdapter(adapter);
@@ -58,20 +58,15 @@ public class VocabListFragment extends Fragment {
     private void setupClickListeners() {
         binding.fabAdd.setVisibility(View.GONE);
         binding.btnSettings.setOnClickListener(v ->
-                Navigation.findNavController(v).navigate(R.id.action_vocabList_to_settings));
+                Navigation.findNavController(v).navigate(R.id.action_myVocab_to_settings));
         binding.btnEdit.setOnClickListener(v -> viewModel.toggleEditMode());
     }
 
     private void observeData() {
-        viewModel.allBooks.observe(getViewLifecycleOwner(), books -> {
-            if (books == null || books.isEmpty()) {
-                binding.rvVocabBooks.setVisibility(View.GONE);
-                binding.tvEmpty.setVisibility(View.VISIBLE);
-            } else {
-                binding.rvVocabBooks.setVisibility(View.VISIBLE);
-                binding.tvEmpty.setVisibility(View.GONE);
-                adapter.submitList(books);
-            }
+        viewModel.myBooks.observe(getViewLifecycleOwner(), books -> {
+            binding.tvEmpty.setVisibility(View.GONE);
+            binding.rvVocabBooks.setVisibility(View.VISIBLE);
+            adapter.submitList(books);
         });
 
         viewModel.isEditMode.observe(getViewLifecycleOwner(), isEdit -> {
@@ -85,19 +80,19 @@ public class VocabListFragment extends Fragment {
         args.putLong("vocabBookId", book.id);
         args.putString("vocabBookTitle", book.bookName);
         Navigation.findNavController(requireView())
-                .navigate(R.id.action_vocabList_to_wordGroupList, args);
+                .navigate(R.id.action_myVocab_to_wordGroupList, args);
     }
 
     private void navigateToAddVocab() {
         Navigation.findNavController(requireView())
-                .navigate(R.id.action_vocabList_to_addVocab);
+                .navigate(R.id.action_myVocab_to_addVocab);
     }
 
     private void navigateToPlaybackMode(long vocabBookId) {
         Bundle args = new Bundle();
         args.putLong("vocabBookId", vocabBookId);
         Navigation.findNavController(requireView())
-                .navigate(R.id.action_vocabList_to_playbackMode, args);
+                .navigate(R.id.action_myVocab_to_playbackMode, args);
     }
 
     @Override

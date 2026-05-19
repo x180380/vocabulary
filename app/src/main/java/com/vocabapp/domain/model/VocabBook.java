@@ -6,12 +6,14 @@ public class VocabBook {
     public final String assetFile;
     public final int wordCount;
     public final int colorIndex;
+    public final boolean isMine;
 
-    public VocabBook(long id, String bookName, String assetFile, int wordCount, int colorIndex) {
+    public VocabBook(long id, String bookName, String assetFile, int wordCount, int colorIndex, boolean isMine) {
         this.id = id;
         this.bookName = bookName;
         this.assetFile = assetFile;
         this.wordCount = wordCount;
         this.colorIndex = colorIndex;
+        this.isMine = isMine;
     }
 }

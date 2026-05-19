@@ -180,7 +180,7 @@ public class WordListFragment extends Fragment {
     }
 
     private void showMoveToDialog() {
-        List<VocabBook> books = viewModel.allVocabBooks.getValue();
+        List<VocabBook> books = viewModel.myVocabBooks.getValue();
         if (books == null || books.isEmpty()) return;
         BottomSheetDialog dialog = new BottomSheetDialog(requireContext());
         BottomSheetMoveToBinding dialogBinding = BottomSheetMoveToBinding.inflate(getLayoutInflater());

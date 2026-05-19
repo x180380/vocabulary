@@ -69,7 +69,7 @@
         android:id="@+id/tvEmpty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/empty_vocab_list"
+        android:text="@string/empty_my_vocab"
         android:textSize="16sp"
         android:textColor="@color/color_text_secondary"
         android:gravity="center"

@@ -34,7 +34,7 @@ public class WordListViewModel extends ViewModel {
     public final MutableLiveData<VisibilityMode> visibilityMode = new MutableLiveData<>(VisibilityMode.SHOW_BOTH);
     public final MutableLiveData<Boolean> showBookmarkedOnly = new MutableLiveData<>(false);
 
-    public final LiveData<List<VocabBook>> allVocabBooks;
+    public final LiveData<List<VocabBook>> myVocabBooks;
     public final LiveData<List<Word>> words;
     public final LiveData<List<Word>> filteredWords;
 
@@ -43,7 +43,7 @@ public class WordListViewModel extends ViewModel {
         this.wordRepository = wordRepository;
         this.vocabBookRepository = vocabBookRepository;
 
-        allVocabBooks = vocabBookRepository.getAllVocabBooks();
+        myVocabBooks = vocabBookRepository.getMyVocabBooks();
 
         MediatorLiveData<List<Word>> mediator = new MediatorLiveData<>();
         mediator.addSource(vocabBookId, id -> reloadWords(mediator));

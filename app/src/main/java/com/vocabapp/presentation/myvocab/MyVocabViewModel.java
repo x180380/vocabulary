@@ -1,4 +1,4 @@
-package com.vocabapp.presentation.vocablist;
+package com.vocabapp.presentation.myvocab;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -14,16 +14,16 @@ import javax.inject.Inject;
 import dagger.hilt.android.lifecycle.HiltViewModel;
 
 @HiltViewModel
-public class VocabListViewModel extends ViewModel {
+public class MyVocabViewModel extends ViewModel {
 
     private final VocabBookRepository repository;
-    public final LiveData<List<VocabBook>> allBooks;
+    public final LiveData<List<VocabBook>> myBooks;
     public final MutableLiveData<Boolean> isEditMode = new MutableLiveData<>(false);
 
     @Inject
-    public VocabListViewModel(VocabBookRepository repository) {
+    public MyVocabViewModel(VocabBookRepository repository) {
         this.repository = repository;
-        this.allBooks = repository.getAllVocabBooks();
+        this.myBooks = repository.getMyVocabBooks();
     }
 
     public void toggleEditMode() {
@@ -31,7 +31,7 @@ public class VocabListViewModel extends ViewModel {
         isEditMode.setValue(current == null ? true : !current);
     }
 
-    public void deleteVocabBook(long bookId) {
-        repository.deleteVocabBook(bookId);
+    public void removeFromMyVocab(long bookId) {
+        repository.removeFromMyVocab(bookId);
     }
 }

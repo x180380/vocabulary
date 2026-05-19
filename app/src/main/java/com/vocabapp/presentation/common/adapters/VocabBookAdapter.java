@@ -104,7 +104,7 @@ public class VocabBookAdapter extends ListAdapter<VocabBook, RecyclerView.ViewHo
         }
 
         void bind() {
-            binding.getRoot().setOnClickListener(v -> {
+            binding.clAddCard.setOnClickListener(v -> {
                 if (!isEditMode && onAddClick != null) onAddClick.run();
             });
         }

@@ -34,7 +34,8 @@ public class LibraryVocabAdapter extends ListAdapter<VocabBook, LibraryVocabAdap
 
                 @Override
                 public boolean areContentsTheSame(@NonNull VocabBook a, @NonNull VocabBook b) {
-                    return a.bookName.equals(b.bookName) && a.wordCount == b.wordCount;
+                    return a.bookName.equals(b.bookName) && a.wordCount == b.wordCount
+                            && a.isMine == b.isMine;
                 }
             };
 
@@ -63,8 +64,20 @@ public class LibraryVocabAdapter extends ListAdapter<VocabBook, LibraryVocabAdap
             binding.tvBookName.setText(book.bookName);
             binding.tvWordCount.setText(binding.getRoot().getContext()
                     .getString(R.string.word_count_format, book.wordCount));
-            binding.btnAdd.setOnClickListener(v -> onAdd.onAdd(book));
-            binding.getRoot().setOnClickListener(v -> onAdd.onAdd(book));
+            if (book.isMine) {
+                binding.btnAdd.setText("已添加");
+                binding.btnAdd.setEnabled(false);
+                binding.btnAdd.setAlpha(0.4f);
+                binding.getRoot().setOnClickListener(null);
+                binding.getRoot().setClickable(false);
+            } else {
+                binding.btnAdd.setText("添加");
+                binding.btnAdd.setEnabled(true);
+                binding.btnAdd.setAlpha(1f);
+                binding.btnAdd.setOnClickListener(v -> onAdd.onAdd(book));
+                binding.getRoot().setOnClickListener(v -> onAdd.onAdd(book));
+                binding.getRoot().setClickable(true);
+            }
         }
     }
 }

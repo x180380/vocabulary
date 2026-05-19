@@ -26,20 +26,24 @@ public class VocabBookRepository {
         this.executors = executors;
     }
 
-    public LiveData<List<VocabBook>> getAvailableBooks() {
-        return Transformations.map(dao.getLibraryBooksWithCount(), this::toModels);
+    public LiveData<List<VocabBook>> getAllLibraryBooks() {
+        return Transformations.map(dao.getAllLibraryBooksWithCount(), this::toModels);
     }
 
     public void addToMyVocab(long bookId) {
         executors.diskIO().execute(() -> dao.markAsMine(bookId));
     }
 
+    public void removeFromMyVocab(long bookId) {
+        executors.diskIO().execute(() -> dao.markAsNotMine(bookId));
+    }
+
     public void deleteVocabBook(long bookId) {
         executors.diskIO().execute(() -> dao.deleteById(bookId));
     }
 
-    public LiveData<List<VocabBook>> getAllVocabBooks() {
-        return Transformations.map(dao.getAllVocabBooksWithCount(), this::toModels);
+    public LiveData<List<VocabBook>> getMyVocabBooks() {
+        return Transformations.map(dao.getMyVocabBooksWithCount(), this::toModels);
     }
 
     private List<VocabBook> toModels(List<VocabBookWithCount> entities) {
@@ -59,7 +63,8 @@ public class VocabBookRepository {
                 e.book.bookName,
                 e.book.assetFile,
                 e.wordCount,
-                colorIndexFor(e.book.assetFile)
+                colorIndexFor(e.book.assetFile),
+                e.book.isMine
         );
     }
 

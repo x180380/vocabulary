@@ -21,7 +21,7 @@ public class AddVocabViewModel extends ViewModel {
     @Inject
     public AddVocabViewModel(VocabBookRepository repository) {
         this.repository = repository;
-        this.availableBooks = repository.getAvailableBooks();
+        this.availableBooks = repository.getAllLibraryBooks();
     }
 
     public void addToMyVocab(long bookId) {

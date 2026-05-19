@@ -3,25 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/vocabListFragment">
+    app:startDestination="@id/myVocabFragment">
 
     <fragment
-        android:id="@+id/vocabListFragment"
-        android:name="com.vocabapp.presentation.vocablist.VocabListFragment"
-        android:label="@string/title_vocab_list"
-        tools:layout="@layout/fragment_vocab_list">
+        android:id="@+id/myVocabFragment"
+        android:name="com.vocabapp.presentation.myvocab.MyVocabFragment"
+        android:label="@string/title_my_vocab"
+        tools:layout="@layout/fragment_my_vocab">
 
         <action
-            android:id="@+id/action_vocabList_to_wordGroupList"
+            android:id="@+id/action_myVocab_to_wordGroupList"
             app:destination="@id/wordGroupListFragment" />
         <action
-            android:id="@+id/action_vocabList_to_addVocab"
+            android:id="@+id/action_myVocab_to_addVocab"
             app:destination="@id/addVocabFragment" />
         <action
-            android:id="@+id/action_vocabList_to_settings"
+            android:id="@+id/action_myVocab_to_settings"
             app:destination="@id/settingsFragment" />
         <action
-            android:id="@+id/action_vocabList_to_playbackMode"
+            android:id="@+id/action_myVocab_to_playbackMode"
             app:destination="@id/playbackModeFragment" />
     </fragment>
 

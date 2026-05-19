@@ -2,7 +2,7 @@
     <string name="app_name">单词本</string>
 
     <!-- Screen titles -->
-    <string name="title_vocab_list">我的单词本</string>
+    <string name="title_my_vocab">我的单词本</string>
     <string name="title_add_vocab">添加单词本</string>
     <string name="title_settings">收藏设置</string>
     <string name="title_playback_mode">播放单词</string>
@@ -63,7 +63,7 @@
     <string name="seconds_format">%d秒</string>
 
     <!-- Empty states -->
-    <string name="empty_vocab_list">还没有单词本\n点击 + 添加</string>
+    <string name="empty_my_vocab">还没有单词本\n点击 + 添加</string>
     <string name="empty_word_list">这个单词本还没有单词</string>
 
     <!-- Batch mode -->
