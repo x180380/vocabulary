@@ -47,7 +47,6 @@ public class WordDetailFragment extends Fragment {
     private Runnable playAudioRunnable;
     private Runnable enableOverlayRunnable;
     private Runnable autoAdvanceAfterTtsRunnable;
-    private boolean initialScrollDone = false;
     private boolean tapOverlayEnabled = false;
     private boolean readyToAdvance = false;
 
@@ -197,19 +196,28 @@ public class WordDetailFragment extends Fragment {
 
         viewModel.allWords.observe(getViewLifecycleOwner(), words -> {
             if (words == null || words.isEmpty()) return;
+
+            Integer savedIndex = viewModel.currentIndex.getValue();
             pagerAdapter.setWords(words);
 
-            if (!initialScrollDone) {
-                initialScrollDone = true;
-                int startIdx = viewModel.findStartIndex(words);
-                viewModel.currentIndex.setValue(startIdx);
-                pagerAdapter.setCurrentPosition(startIdx);
-                binding.viewPager.setCurrentItem(startIdx, false);
-                viewModel.onPageChanged(startIdx);
+            boolean firstLoad = !viewModel.isPositionInitialized();
+            int targetIdx;
+            if (firstLoad) {
+                viewModel.markPositionInitialized();
+                targetIdx = viewModel.findStartIndex(words);
+            } else {
+                targetIdx = (savedIndex != null && savedIndex < words.size()) ? savedIndex : 0;
+            }
 
+            viewModel.currentIndex.setValue(targetIdx);
+            pagerAdapter.setCurrentPosition(targetIdx);
+            binding.viewPager.setCurrentItem(targetIdx, false);
+            viewModel.onPageChanged(targetIdx);
+
+            if (firstLoad) {
                 PlaybackMode mode = viewModel.playbackMode.getValue();
                 if (mode != null) {
-                    playAudioRunnable = () -> playPageAudio(startIdx);
+                    playAudioRunnable = () -> playPageAudio(targetIdx);
                     handler.postDelayed(playAudioRunnable, 500);
                     if (mode != PlaybackMode.STUDY_MODE) {
                         enableOverlayRunnable = this::enableTapOverlay;

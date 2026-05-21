@@ -41,6 +41,7 @@ public class WordDetailViewModel extends ViewModel {
     private long startWordId = -1;
     private int groupCount = -1;
     private long initialWordId = -1;
+    private boolean positionInitialized = false;
 
     @Inject
     public WordDetailViewModel(WordRepository wordRepository, UserPreferencesManager prefsManager) {
@@ -78,6 +79,14 @@ public class WordDetailViewModel extends ViewModel {
             if (words.get(i).id == startWordId) { startIdx = i; break; }
         }
         return new ArrayList<>(words.subList(startIdx, Math.min(startIdx + groupCount, words.size())));
+    }
+
+    public boolean isPositionInitialized() {
+        return positionInitialized;
+    }
+
+    public void markPositionInitialized() {
+        positionInitialized = true;
     }
 
     public int findStartIndex(List<Word> words) {
