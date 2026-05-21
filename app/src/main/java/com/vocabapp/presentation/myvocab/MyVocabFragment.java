@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -59,6 +60,7 @@ public class MyVocabFragment extends Fragment {
         binding.fabAdd.setVisibility(View.GONE);
         binding.btnSettings.setOnClickListener(v ->
                 Navigation.findNavController(v).navigate(R.id.action_myVocab_to_settings));
+        binding.btnNew.setOnClickListener(v -> showCreateDialog());
         binding.btnEdit.setOnClickListener(v -> viewModel.toggleEditMode());
     }
 
@@ -73,6 +75,23 @@ public class MyVocabFragment extends Fragment {
             adapter.setEditMode(Boolean.TRUE.equals(isEdit));
             binding.btnEdit.setText(Boolean.TRUE.equals(isEdit) ? "完成" : "编辑");
         });
+    }
+
+    private void showCreateDialog() {
+        EditText input = new EditText(requireContext());
+        input.setHint(getString(R.string.vocab_name_hint));
+        input.setSingleLine(true);
+        int pad = (int) (16 * getResources().getDisplayMetrics().density);
+        input.setPadding(pad, pad, pad, pad);
+        new android.app.AlertDialog.Builder(requireContext())
+                .setTitle("新建单词本")
+                .setView(input)
+                .setPositiveButton("创建", (dialog, which) -> {
+                    String name = input.getText() != null ? input.getText().toString() : "";
+                    viewModel.createCustomVocab(name);
+                })
+                .setNegativeButton("取消", null)
+                .show();
     }
 
     private void navigateToWordList(VocabBook book) {

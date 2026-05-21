@@ -31,6 +31,11 @@ public class MyVocabViewModel extends ViewModel {
         isEditMode.setValue(current == null ? true : !current);
     }
 
+    public void createCustomVocab(String name) {
+        String trimmed = name == null ? "" : name.trim();
+        if (!trimmed.isEmpty()) repository.createCustomVocab(trimmed);
+    }
+
     public void removeFromMyVocab(long bookId) {
         repository.removeFromMyVocab(bookId);
     }

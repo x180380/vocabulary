@@ -5,8 +5,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.AsyncDifferConfig;
+import androidx.recyclerview.widget.AsyncListDiffer;
 import androidx.recyclerview.widget.DiffUtil;
-import androidx.recyclerview.widget.ListAdapter;
+import androidx.recyclerview.widget.ListUpdateCallback;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.vocabapp.R;
@@ -14,10 +17,13 @@ import com.vocabapp.databinding.ItemAddVocabBookBinding;
 import com.vocabapp.databinding.ItemVocabBookBinding;
 import com.vocabapp.domain.model.VocabBook;
 
-public class VocabBookAdapter extends ListAdapter<VocabBook, RecyclerView.ViewHolder> {
+import java.util.List;
+
+public class VocabBookAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final int TYPE_ADD = 0;
     private static final int TYPE_BOOK = 1;
+    private static final int HEADER_COUNT = 1;
 
     public interface OnBookClickListener {
         void onBookClick(VocabBook book);
@@ -25,14 +31,25 @@ public class VocabBookAdapter extends ListAdapter<VocabBook, RecyclerView.ViewHo
 
     private final OnBookClickListener onBookClick;
     private final OnBookClickListener onPlayClick;
+    private final AsyncListDiffer<VocabBook> differ;
     private OnBookClickListener onDeleteClick;
     private Runnable onAddClick;
     private boolean isEditMode = false;
 
     public VocabBookAdapter(OnBookClickListener onBookClick, OnBookClickListener onPlayClick) {
-        super(DIFF_CALLBACK);
         this.onBookClick = onBookClick;
         this.onPlayClick = onPlayClick;
+        this.differ = new AsyncListDiffer<>(
+                new OffsetListUpdateCallback(this, HEADER_COUNT),
+                new AsyncDifferConfig.Builder<>(DIFF_CALLBACK).build());
+    }
+
+    public void submitList(List<VocabBook> list) {
+        differ.submitList(list);
+    }
+
+    private VocabBook getItem(int listPosition) {
+        return differ.getCurrentList().get(listPosition);
     }
 
     public void setOnDeleteClick(OnBookClickListener listener) {
@@ -70,7 +87,7 @@ public class VocabBookAdapter extends ListAdapter<VocabBook, RecyclerView.ViewHo
 
     @Override
     public int getItemCount() {
-        return super.getItemCount() + 1;
+        return differ.getCurrentList().size() + HEADER_COUNT;
     }
 
     @NonNull
@@ -107,6 +124,36 @@ public class VocabBookAdapter extends ListAdapter<VocabBook, RecyclerView.ViewHo
             binding.clAddCard.setOnClickListener(v -> {
                 if (!isEditMode && onAddClick != null) onAddClick.run();
             });
+        }
+    }
+
+    private static class OffsetListUpdateCallback implements ListUpdateCallback {
+        private final RecyclerView.Adapter<?> adapter;
+        private final int offset;
+
+        OffsetListUpdateCallback(RecyclerView.Adapter<?> adapter, int offset) {
+            this.adapter = adapter;
+            this.offset = offset;
+        }
+
+        @Override
+        public void onInserted(int position, int count) {
+            adapter.notifyItemRangeInserted(position + offset, count);
+        }
+
+        @Override
+        public void onRemoved(int position, int count) {
+            adapter.notifyItemRangeRemoved(position + offset, count);
+        }
+
+        @Override
+        public void onMoved(int fromPosition, int toPosition) {
+            adapter.notifyItemMoved(fromPosition + offset, toPosition + offset);
+        }
+
+        @Override
+        public void onChanged(int position, int count, @Nullable Object payload) {
+            adapter.notifyItemRangeChanged(position + offset, count, payload);
         }
     }
 

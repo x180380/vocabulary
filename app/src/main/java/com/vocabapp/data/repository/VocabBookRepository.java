@@ -30,6 +30,17 @@ public class VocabBookRepository {
         return Transformations.map(dao.getAllLibraryBooksWithCount(), this::toModels);
     }
 
+    public void createCustomVocab(String name) {
+        executors.diskIO().execute(() -> {
+            com.vocabapp.data.local.database.entities.VocabBookEntity entity =
+                    new com.vocabapp.data.local.database.entities.VocabBookEntity();
+            entity.bookName = name;
+            entity.assetFile = null;
+            entity.isMine = true;
+            dao.insertVocabBook(entity);
+        });
+    }
+
     public void addToMyVocab(long bookId) {
         executors.diskIO().execute(() -> dao.markAsMine(bookId));
     }

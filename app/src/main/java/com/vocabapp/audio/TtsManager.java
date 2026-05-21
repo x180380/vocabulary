@@ -50,6 +50,15 @@ public class TtsManager {
         tts.speak(text, TextToSpeech.QUEUE_ADD, null, utteranceId);
     }
 
+    public void speakChineseQueued(String text, boolean flush, long pauseAfterMs, String utteranceId) {
+        if (!isReady || muted || text == null || text.isEmpty()) return;
+        tts.setLanguage(Locale.SIMPLIFIED_CHINESE);
+        tts.speak(text, flush ? TextToSpeech.QUEUE_FLUSH : TextToSpeech.QUEUE_ADD, null, utteranceId);
+        if (pauseAfterMs > 0) {
+            tts.playSilentUtterance(pauseAfterMs, TextToSpeech.QUEUE_ADD, utteranceId + "_pause");
+        }
+    }
+
     public void stop() {
         if (isReady) tts.stop();
     }

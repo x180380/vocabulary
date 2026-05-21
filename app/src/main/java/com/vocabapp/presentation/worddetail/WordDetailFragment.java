@@ -27,8 +27,10 @@ import com.vocabapp.domain.enums.VisibilityMode;
 import com.vocabapp.domain.model.Definition;
 import com.vocabapp.domain.model.Word;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -312,7 +314,7 @@ public class WordDetailFragment extends Fragment {
 
         switch (mode) {
             case CHINESE_RECALL_ENGLISH:
-                ttsManager.speakChinese(getChineseText(word), "page_cn_" + word.id);
+                speakChineseDefinition(word, "page_cn_" + word.id);
                 break;
             case ENGLISH_RECALL_CHINESE:
                 ttsManager.speakEnglish(word.english, prefsManager.getAccent(), "page_en_" + word.id);
@@ -321,10 +323,12 @@ public class WordDetailFragment extends Fragment {
                 ttsManager.speakEnglish(word.english, prefsManager.getAccent(), "study_en_" + word.id);
                 break;
             case MEMORIZE_EXAMPLE:
-                String exChinese = (word.examples != null && !word.examples.isEmpty()
-                        && word.examples.get(0).chinese != null)
-                        ? word.examples.get(0).chinese : getChineseText(word);
-                ttsManager.speakChinese(exChinese, "page_cn_" + word.id);
+                if (word.examples != null && !word.examples.isEmpty()
+                        && word.examples.get(0).chinese != null) {
+                    ttsManager.speakChinese(word.examples.get(0).chinese, "page_cn_" + word.id);
+                } else {
+                    speakChineseDefinition(word, "page_cn_" + word.id);
+                }
                 break;
         }
     }
@@ -347,7 +351,7 @@ public class WordDetailFragment extends Fragment {
             long wordId = parseWordId(utteranceId);
             if (currentIdx < words.size() && words.get(currentIdx).id == wordId) {
                 Word word = words.get(currentIdx);
-                ttsManager.speakChinese(getChineseText(word), "study_cn_" + word.id);
+                speakChineseDefinition(word, "study_cn_" + word.id);
             }
 
         } else if (mode == PlaybackMode.STUDY_MODE && utteranceId.startsWith("study_cn_")) {
@@ -399,7 +403,7 @@ public class WordDetailFragment extends Fragment {
             viewModel.revealEnglish();
             ttsManager.speakEnglish(word.english, prefsManager.getAccent(), "tap_en_" + word.id);
         } else if (mode == PlaybackMode.ENGLISH_RECALL_CHINESE) {
-            ttsManager.speakChinese(getChineseText(word), "tap_cn_" + word.id);
+            speakChineseDefinition(word, "tap_cn_" + word.id);
         } else if (mode == PlaybackMode.MEMORIZE_EXAMPLE) {
             viewModel.revealEnglish();
             if (word.examples != null && !word.examples.isEmpty()) {
@@ -506,15 +510,52 @@ public class WordDetailFragment extends Fragment {
 
     // ── Helpers ──────────────────────────────────────────────────────────────
 
-    private String getChineseText(Word word) {
-        if (word.definitions == null || word.definitions.isEmpty()) return "";
-        StringBuilder sb = new StringBuilder();
-        for (Definition def : word.definitions) {
-            if (def.partOfSpeech != null && !def.partOfSpeech.isEmpty())
-                sb.append(def.partOfSpeech).append(" ");
-            sb.append(def.meaning).append("。");
+    private static final Map<String, String> POS_CHINESE = new HashMap<>();
+    static {
+        POS_CHINESE.put("n.", "名词");
+        POS_CHINESE.put("v.", "动词");
+        POS_CHINESE.put("vt.", "及物动词");
+        POS_CHINESE.put("vi.", "不及物动词");
+        POS_CHINESE.put("adj.", "形容词");
+        POS_CHINESE.put("adv.", "副词");
+        POS_CHINESE.put("prep.", "介词");
+        POS_CHINESE.put("conj.", "连词");
+        POS_CHINESE.put("pron.", "代词");
+        POS_CHINESE.put("art.", "冠词");
+        POS_CHINESE.put("num.", "数词");
+        POS_CHINESE.put("int.", "感叹词");
+        POS_CHINESE.put("pl.", "复数");
+        POS_CHINESE.put("part.", "分词");
+        POS_CHINESE.put("det.", "限定词");
+    }
+
+    private static final long POS_PAUSE_MS = 500L;
+
+    // Speaks each definition as: part-of-speech (Chinese) → 1s pause → meaning.
+    // Only the final meaning carries utteranceId so the playback onDone logic fires
+    // exactly once, after the whole sequence; intermediate segments use throwaway ids.
+    private void speakChineseDefinition(Word word, String utteranceId) {
+        if (word == null || word.definitions == null || word.definitions.isEmpty()) return;
+        boolean first = true;
+        int n = word.definitions.size();
+        for (int i = 0; i < n; i++) {
+            Definition def = word.definitions.get(i);
+            String pos = posSpoken(def.partOfSpeech);
+            if (!pos.isEmpty()) {
+                ttsManager.speakChineseQueued(pos, first, POS_PAUSE_MS, "seg_pos_" + word.id + "_" + i);
+                first = false;
+            }
+            String meaning = (def.meaning != null ? def.meaning : "") + "。";
+            String id = (i == n - 1) ? utteranceId : "seg_mean_" + word.id + "_" + i;
+            ttsManager.speakChineseQueued(meaning, first, 0, id);
+            first = false;
         }
-        return sb.toString().trim();
+    }
+
+    private String posSpoken(String pos) {
+        if (pos == null || pos.isEmpty()) return "";
+        String mapped = POS_CHINESE.get(pos.toLowerCase(Locale.ROOT));
+        return mapped != null ? mapped : pos;
     }
 
     private long parseWordId(String utteranceId) {
